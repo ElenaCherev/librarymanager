@@ -9,7 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import ru.spring5.elena.librarymanager.api.dto.Edition;
 import ru.spring5.elena.librarymanager.api.dto.Genre;
-import ru.spring5.elena.librarymanager.domain.entity.AuthorEntity;
 import ru.spring5.elena.librarymanager.domain.entity.GenreEntity;
 import ru.spring5.elena.librarymanager.domain.repository.EditionRepository;
 import ru.spring5.elena.librarymanager.domain.repository.GenreRepository;

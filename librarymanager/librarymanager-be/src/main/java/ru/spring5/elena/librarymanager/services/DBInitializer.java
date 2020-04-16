@@ -1,7 +1,7 @@
 package ru.spring5.elena.librarymanager.services;
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+//import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
@@ -9,9 +9,9 @@ import javax.annotation.PostConstruct;
 //Заполняем БД данными примера
 @RequiredArgsConstructor
 @Service
-@Slf4j
+//@Slf4j
 public class DBInitializer {
-
+/*
     private final ReaderService readerService;
 
     private final SectionService sectionService;
@@ -27,7 +27,7 @@ public class DBInitializer {
     private final EditionService editionService;
 
     private final BookService bookService;
-
+*/
     @PostConstruct
     public void initDB() {
         //logger.info("Starting database initialization...");
