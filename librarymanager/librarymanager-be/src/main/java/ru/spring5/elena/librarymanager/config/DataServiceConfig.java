@@ -48,7 +48,7 @@ public class DataServiceConfig {
         hibernateProp.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
         hibernateProp.put("hibernate.hbm2ddl.auto", "create-drop");
         hibernateProp.put("hibernate.show_sql", "true"); // Показывать sql-код в консоли, удобно для отладки
-        hibernateProp.put("hibernate.hbm2ddl.auto", "update"); // сгеннерировать БД из классов сущностей и обновлять её, если стрктура классов-сущностей поменняется
+        hibernateProp.put("hibernate.hbm2ddl.auto", "none"); // сгеннерировать БД из классов сущностей и обновлять её, если стрктура классов-сущностей поменняется
         hibernateProp.put("hibernate.max_fetch_depth", 3);
         hibernateProp.put("hibernate.jdbc.batch_size", 10);
         hibernateProp.put("hibernate.jdbc.fetch_size", 50);
