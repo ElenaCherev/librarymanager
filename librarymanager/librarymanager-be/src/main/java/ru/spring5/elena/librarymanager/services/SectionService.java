@@ -1,7 +1,6 @@
 package ru.spring5.elena.librarymanager.services;
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 
 import java.util.Collections;
 import java.util.List;
@@ -24,7 +23,6 @@ import ru.spring5.elena.librarymanager.mapper.SectionMapper;
 
 @RequiredArgsConstructor
 @Service
-@Slf4j
 public class SectionService {
 
     private final SectionRepository sectionRepository;

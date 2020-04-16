@@ -1,7 +1,6 @@
 package ru.spring5.elena.librarymanager.services;
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -10,8 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import ru.spring5.elena.librarymanager.api.dto.Edition;
 import ru.spring5.elena.librarymanager.api.dto.PublishingHouse;
-import ru.spring5.elena.librarymanager.domain.entity.AuthorEntity;
-import ru.spring5.elena.librarymanager.domain.entity.EditionEntity;
 import ru.spring5.elena.librarymanager.domain.entity.PublishingHouseEntity;
 import ru.spring5.elena.librarymanager.domain.repository.EditionRepository;
 import ru.spring5.elena.librarymanager.domain.repository.PublishingHouseRepository;
@@ -26,7 +23,6 @@ import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
-@Slf4j
 public class PublishingHouseService {
     private final PublishingHouseRepository publishingHouseRepository;
     private final EditionRepository editionRepository;
