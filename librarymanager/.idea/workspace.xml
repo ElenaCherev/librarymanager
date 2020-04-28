@@ -1,174 +1,188 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-	<component name="ChangeListManager">
-		<list default="true" id="92ff27cc-0581-44c7-8bd0-0f5170efa312"
-			name="Default Changelist" comment="" />
-		<option name="SHOW_DIALOG" value="false" />
-		<option name="HIGHLIGHT_CONFLICTS" value="true" />
-		<option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
-		<option name="LAST_RESOLUTION" value="IGNORE" />
-	</component>
-	<component name="FileTemplateManagerImpl">
-		<option name="RECENT_TEMPLATES">
-			<list>
-				<option value="Class" />
-				<option value="Interface" />
-			</list>
-		</option>
-	</component>
-	<component name="ProjectId" id="1YTx2SBKUufAEmngSePGGt7gM7W" />
-	<component name="ProjectViewState">
-		<option name="hideEmptyMiddlePackages" value="true" />
-		<option name="showExcludedFiles" value="true" />
-		<option name="showLibraryContents" value="true" />
-	</component>
-	<component name="PropertiesComponent">
-		<property name="RunOnceActivity.ShowReadmeOnStart"
-			value="true" />
-		<property name="settings.editor.selected.configurable"
-			value="preferences.pluginManager" />
-	</component>
-	<component name="RecentsManager">
-		<key name="ExtractSuperBase.RECENT_KEYS">
-			<recent name="ru.spring5.elena.librarymanager.controller" />
-			<recent name="ru.spring5.elena.librarymanager.api" />
-		</key>
-		<key name="CopyClassDialog.RECENTS_KEY">
-			<recent name="ru.spring5.elena.librarymanager.api.dto" />
-			<recent name="be" />
-		</key>
-	</component>
-	<component name="SvnConfiguration">
-		<configuration />
-	</component>
-	<component name="TaskManager">
-		<task active="true" id="Default" summary="Default task">
-			<changelist id="92ff27cc-0581-44c7-8bd0-0f5170efa312"
-				name="Default Changelist" comment="" />
-			<created>1582980183420</created>
-			<option name="number" value="Default" />
-			<option name="presentableId" value="Default" />
-			<updated>1582980183420</updated>
-		</task>
-		<servers />
-	</component>
-	<component name="WindowStateProjectService">
-		<state x="765" y="212"
-			key="#com.intellij.ide.util.MemberChooser" timestamp="1583501392749">
-			<screen x="0" y="0" width="1920" height="1040" />
-		</state>
-		<state x="765" y="212"
-			key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040"
-			timestamp="1583501392749" />
-		<state x="689" y="300"
-			key="#com.intellij.ide.util.PackageChooserDialog"
-			timestamp="1585580656007">
-			<screen x="0" y="0" width="1920" height="1040" />
-		</state>
-		<state x="689" y="300"
-			key="#com.intellij.ide.util.PackageChooserDialog/0.0.1920.1040@0.0.1920.1040"
-			timestamp="1585580656007" />
-		<state x="784" y="449"
-			key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog"
-			timestamp="1585391858574">
-			<screen x="0" y="0" width="1920" height="1040" />
-		</state>
-		<state x="784" y="449"
-			key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1040@0.0.1920.1040"
-			timestamp="1585391858574" />
-		<state x="746" y="388" width="427" height="267"
-			key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes"
-			timestamp="1583234882526">
-			<screen x="0" y="0" width="1920" height="1040" />
-		</state>
-		<state x="746" y="388" width="427" height="267"
-			key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040@0.0.1920.1040"
-			timestamp="1583234882526" />
-		<state x="658" y="0"
-			key="#com.intellij.refactoring.rename.AutomaticRenamingDialog"
-			timestamp="1586013878722">
-			<screen x="0" y="0" width="1920" height="1040" />
-		</state>
-		<state x="658" y="0"
-			key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040"
-			timestamp="1586013878722" />
-		<state x="690" y="269"
-			key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog"
-			timestamp="1583416285972">
-			<screen x="0" y="0" width="1920" height="1040" />
-		</state>
-		<state x="690" y="269"
-			key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040"
-			timestamp="1583416285972" />
-		<state width="1876" height="137" key="GridCell.Tab.0.bottom"
-			timestamp="1585581003111">
-			<screen x="0" y="0" width="1920" height="1040" />
-		</state>
-		<state width="1876" height="137"
-			key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040"
-			timestamp="1585581003111" />
-		<state width="1876" height="137" key="GridCell.Tab.0.center"
-			timestamp="1585581003111">
-			<screen x="0" y="0" width="1920" height="1040" />
-		</state>
-		<state width="1876" height="137"
-			key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040"
-			timestamp="1585581003111" />
-		<state width="1876" height="137" key="GridCell.Tab.0.left"
-			timestamp="1585581003111">
-			<screen x="0" y="0" width="1920" height="1040" />
-		</state>
-		<state width="1876" height="137"
-			key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040"
-			timestamp="1585581003111" />
-		<state width="1876" height="137" key="GridCell.Tab.0.right"
-			timestamp="1585581003111">
-			<screen x="0" y="0" width="1920" height="1040" />
-		</state>
-		<state width="1876" height="137"
-			key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040"
-			timestamp="1585581003111" />
-		<state x="540" y="257" key="IDE.errors.dialog"
-			timestamp="1585580984557">
-			<screen x="0" y="0" width="1920" height="1040" />
-		</state>
-		<state x="540" y="257"
-			key="IDE.errors.dialog/0.0.1920.1040@0.0.1920.1040"
-			timestamp="1585580984557" />
-		<state x="504" y="199" key="Maven.ArtifactSearchDialog"
-			timestamp="1585399063095">
-			<screen x="0" y="0" width="1920" height="1040" />
-		</state>
-		<state x="504" y="199"
-			key="Maven.ArtifactSearchDialog/0.0.1920.1040@0.0.1920.1040"
-			timestamp="1585399063095" />
-		<state x="371" y="174" key="SettingsEditor"
-			timestamp="1585384651845">
-			<screen x="0" y="0" width="1920" height="1040" />
-		</state>
-		<state x="371" y="174"
-			key="SettingsEditor/0.0.1920.1040@0.0.1920.1040"
-			timestamp="1585384651845" />
-		<state x="667" y="402" key="com.intellij.ide.util.TipDialog"
-			timestamp="1586073964695">
-			<screen x="0" y="0" width="1920" height="1040" />
-		</state>
-		<state x="667" y="402"
-			key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040"
-			timestamp="1586073964695" />
-		<state x="667" y="154" width="585" height="732" key="find.popup"
-			timestamp="1585378766147">
-			<screen x="0" y="0" width="1920" height="1040" />
-		</state>
-		<state x="667" y="154" width="585" height="732"
-			key="find.popup/0.0.1920.1040@0.0.1920.1040"
-			timestamp="1585378766147" />
-		<state x="623" y="225" key="search.everywhere.popup"
-			timestamp="1583078759902">
-			<screen x="0" y="0" width="1920" height="1040" />
-		</state>
-		<state x="623" y="225"
-			key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040"
-			timestamp="1583078759902" />
-	</component>
+  <component name="ChangeListManager">
+    <list default="true" id="92ff27cc-0581-44c7-8bd0-0f5170efa312" name="Default Changelist" comment="Настроила liquibase генерировать скрипт изменнения БД по пакету сущнностей">
+      <change afterPath="$PROJECT_DIR$/librarymanager-be/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/librarymanager-be/src/main/resources/liquibase-diff-changeLog.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/librarymanager-be/src/main/resources/liquibase.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_collections_google_collections_1_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_istack_istack_commons_runtime_3_0_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_xml_fastinfoset_FastInfoset_1_2_15.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_jaxb_runtime_2_3_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_txw2_2_3_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_1_0_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_5_4_12_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_24_0_GA.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_jandex_2_1_1_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jvnet_staxex_stax_ex_1_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_jpa_2_2_2_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/librarymanager-be/librarymanager-be.iml" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/librarymanager-be.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/librarymanager-be/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/librarymanager-be/target/classes/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/librarymanager-be/target/classes/META-INF/maven/ru.spring5.elena/librarymanager-be/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/librarymanager-be/target/classes/META-INF/maven/ru.spring5.elena/librarymanager-be/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/librarymanager-be/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/librarymanager-be/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/librarymanager-fe/target/classes/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/librarymanager-fe/target/classes/META-INF/maven/ru.spring5.elena/librarymanager-fe/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/librarymanager-fe/target/classes/META-INF/maven/ru.spring5.elena/librarymanager-fe/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/librarymanager-fe/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-fe/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/librarymanager-fe/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-fe/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/librarymanager-fe/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-fe/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Elena Cherev" />
+      </list>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1YTx2SBKUufAEmngSePGGt7gM7W" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="ru.spring5.elena.librarymanager.controller" />
+      <recent name="ru.spring5.elena.librarymanager.api" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ru.spring5.elena.librarymanager.api.dto" />
+      <recent name="be" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="92ff27cc-0581-44c7-8bd0-0f5170efa312" name="Default Changelist" comment="" />
+      <created>1582980183420</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582980183420</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Настроила liquibase генерировать скрипт изменнения БД по пакету сущнностей" />
+    <option name="LAST_COMMIT_MESSAGE" value="Настроила liquibase генерировать скрипт изменнения БД по пакету сущнностей" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="135" y="42" key="#Project_Structure" timestamp="1588073401720">
+      <screen x="62" y="0" width="962" height="768" />
+    </state>
+    <state x="135" y="42" key="#Project_Structure/62.0.962.768@62.0.962.768" timestamp="1588073401720" />
+    <state x="765" y="212" key="#com.intellij.ide.util.MemberChooser" timestamp="1583501392749">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="765" y="212" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1583501392749" />
+    <state x="689" y="300" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1585580656007">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="689" y="300" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585580656007" />
+    <state x="784" y="449" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1585391858574">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="784" y="449" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585391858574" />
+    <state x="746" y="388" width="427" height="267" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1583234882526">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="746" y="388" width="427" height="267" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040@0.0.1920.1040" timestamp="1583234882526" />
+    <state x="658" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1586013878722">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="658" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586013878722" />
+    <state x="690" y="269" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583416285972">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="269" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583416285972" />
+    <state x="89" y="0" key="CommitChangelistDialog2" timestamp="1588073897941">
+      <screen x="62" y="0" width="962" height="768" />
+    </state>
+    <state x="89" y="0" key="CommitChangelistDialog2/62.0.962.768@62.0.962.768" timestamp="1588073897941" />
+    <state width="919" height="91" key="GridCell.Tab.0.bottom" timestamp="1588074136808">
+      <screen x="62" y="0" width="962" height="768" />
+    </state>
+    <state width="1876" height="137" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585581003111" />
+    <state width="919" height="91" key="GridCell.Tab.0.bottom/62.0.962.768@62.0.962.768" timestamp="1588074136808" />
+    <state width="919" height="91" key="GridCell.Tab.0.center" timestamp="1588074136808">
+      <screen x="62" y="0" width="962" height="768" />
+    </state>
+    <state width="1876" height="137" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585581003111" />
+    <state width="919" height="91" key="GridCell.Tab.0.center/62.0.962.768@62.0.962.768" timestamp="1588074136808" />
+    <state width="919" height="91" key="GridCell.Tab.0.left" timestamp="1588074136808">
+      <screen x="62" y="0" width="962" height="768" />
+    </state>
+    <state width="1876" height="137" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585581003111" />
+    <state width="919" height="91" key="GridCell.Tab.0.left/62.0.962.768@62.0.962.768" timestamp="1588074136808" />
+    <state width="919" height="91" key="GridCell.Tab.0.right" timestamp="1588074136808">
+      <screen x="62" y="0" width="962" height="768" />
+    </state>
+    <state width="1876" height="137" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585581003111" />
+    <state width="919" height="91" key="GridCell.Tab.0.right/62.0.962.768@62.0.962.768" timestamp="1588074136808" />
+    <state x="540" y="257" key="IDE.errors.dialog" timestamp="1585580984557">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="540" y="257" key="IDE.errors.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585580984557" />
+    <state x="504" y="199" key="Maven.ArtifactSearchDialog" timestamp="1585399063095">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="504" y="199" key="Maven.ArtifactSearchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585399063095" />
+    <state x="371" y="174" key="SettingsEditor" timestamp="1585384651845">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="371" y="174" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1585384651845" />
+    <state x="135" y="117" key="Vcs.Push.Dialog.v2" timestamp="1588073118588">
+      <screen x="62" y="0" width="962" height="768" />
+    </state>
+    <state x="135" y="117" key="Vcs.Push.Dialog.v2/62.0.962.768@62.0.962.768" timestamp="1588073118588" />
+    <state x="667" y="402" key="com.intellij.ide.util.TipDialog" timestamp="1586073964695">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="667" y="402" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586073964695" />
+    <state x="667" y="154" width="585" height="732" key="find.popup" timestamp="1585378766147">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="667" y="154" width="585" height="732" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585378766147" />
+    <state x="272" y="175" key="git4idea.merge.GitPullDialog" timestamp="1588073149712">
+      <screen x="62" y="0" width="962" height="768" />
+    </state>
+    <state x="272" y="175" key="git4idea.merge.GitPullDialog/62.0.962.768@62.0.962.768" timestamp="1588073149712" />
+    <state x="623" y="225" key="search.everywhere.popup" timestamp="1583078759902">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1583078759902" />
+  </component>
 </project>
