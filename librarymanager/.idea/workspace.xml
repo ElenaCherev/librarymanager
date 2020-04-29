@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="92ff27cc-0581-44c7-8bd0-0f5170efa312" name="Default Changelist" comment="Настроила liquibase генерировать скрипт изменнения БД по пакету сущнностей">
+    <list default="true" id="92ff27cc-0581-44c7-8bd0-0f5170efa312" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/librarymanager-be/src/main/resources/changeLog.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_xml_bind_jaxb_api_2_3_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/librarymanager-be/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/resources/liquibase-diff-changeLog.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/resources/liquibase.properties" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/resources/liquibase.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/librarymanager-be/target/classes/db/changelog/db.changelog-master.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/librarymanager-be/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/librarymanager-be/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/librarymanager-fe/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-fe/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/librarymanager-fe/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-fe/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +41,17 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="1YTx2SBKUufAEmngSePGGt7gM7W" />
+  <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="false" id="Update" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -111,26 +132,26 @@
       <screen x="62" y="0" width="962" height="768" />
     </state>
     <state x="89" y="0" key="CommitChangelistDialog2/62.0.962.768@62.0.962.768" timestamp="1588157868682" />
-    <state width="919" height="197" key="GridCell.Tab.0.bottom" timestamp="1588074918012">
+    <state width="919" height="90" key="GridCell.Tab.0.bottom" timestamp="1588161368683">
       <screen x="62" y="0" width="962" height="768" />
     </state>
     <state width="1876" height="137" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585581003111" />
-    <state width="919" height="197" key="GridCell.Tab.0.bottom/62.0.962.768@62.0.962.768" timestamp="1588074918012" />
-    <state width="919" height="197" key="GridCell.Tab.0.center" timestamp="1588074918012">
+    <state width="919" height="90" key="GridCell.Tab.0.bottom/62.0.962.768@62.0.962.768" timestamp="1588161368683" />
+    <state width="919" height="90" key="GridCell.Tab.0.center" timestamp="1588161368683">
       <screen x="62" y="0" width="962" height="768" />
     </state>
     <state width="1876" height="137" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585581003111" />
-    <state width="919" height="197" key="GridCell.Tab.0.center/62.0.962.768@62.0.962.768" timestamp="1588074918012" />
-    <state width="919" height="197" key="GridCell.Tab.0.left" timestamp="1588074917996">
+    <state width="919" height="90" key="GridCell.Tab.0.center/62.0.962.768@62.0.962.768" timestamp="1588161368683" />
+    <state width="919" height="90" key="GridCell.Tab.0.left" timestamp="1588161368683">
       <screen x="62" y="0" width="962" height="768" />
     </state>
     <state width="1876" height="137" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585581003111" />
-    <state width="919" height="197" key="GridCell.Tab.0.left/62.0.962.768@62.0.962.768" timestamp="1588074917996" />
-    <state width="919" height="197" key="GridCell.Tab.0.right" timestamp="1588074918012">
+    <state width="919" height="90" key="GridCell.Tab.0.left/62.0.962.768@62.0.962.768" timestamp="1588161368683" />
+    <state width="919" height="90" key="GridCell.Tab.0.right" timestamp="1588161368683">
       <screen x="62" y="0" width="962" height="768" />
     </state>
     <state width="1876" height="137" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585581003111" />
-    <state width="919" height="197" key="GridCell.Tab.0.right/62.0.962.768@62.0.962.768" timestamp="1588074918012" />
+    <state width="919" height="90" key="GridCell.Tab.0.right/62.0.962.768@62.0.962.768" timestamp="1588161368683" />
     <state x="540" y="257" key="IDE.errors.dialog" timestamp="1585580984557">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -155,6 +176,10 @@
       <screen x="62" y="0" width="962" height="768" />
     </state>
     <state x="135" y="117" key="Vcs.Push.Dialog.v2/62.0.962.768@62.0.962.768" timestamp="1588158024496" />
+    <state x="154" y="92" width="778" height="584" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1588161967628">
+      <screen x="62" y="0" width="962" height="768" />
+    </state>
+    <state x="154" y="92" width="778" height="584" key="com.intellij.history.integration.ui.views.FileHistoryDialog/62.0.962.768@62.0.962.768" timestamp="1588161967628" />
     <state x="396" y="297" key="com.intellij.ide.util.TipDialog" timestamp="1588157408165">
       <screen x="62" y="0" width="962" height="768" />
     </state>
