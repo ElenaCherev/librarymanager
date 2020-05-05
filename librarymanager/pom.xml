@@ -20,6 +20,7 @@
 		<junit.version>3.8.1</junit.version>
 		<liquibase.version>3.8.9</liquibase.version>
 		<oracle.version>19.6.0.0</oracle.version>
+		<h2.version>1.4.200</h2.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -48,5 +49,6 @@
 	<modules>
 		<module>librarymanager-be</module>
 		<module>librarymanager-fe</module>
+		<module>librarymanager-db</module>
 	</modules>
 </project>

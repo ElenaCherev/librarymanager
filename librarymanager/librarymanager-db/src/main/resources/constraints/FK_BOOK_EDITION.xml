@@ -1,0 +1,6 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.8.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet author="owle8" id="61eda1dc-d79c-4621-92fa-d5456bc58b92">
+        <addForeignKeyConstraint baseColumnNames="EDITION_ID" baseTableName="BOOKS" constraintName="FK_BOOK_EDITION" deferrable="false" initiallyDeferred="false" referencedColumnNames="EDITION_ID" referencedTableName="EDITIONS" validate="true"/>
+    </changeSet>
+</databaseChangeLog>
