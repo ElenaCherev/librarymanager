@@ -1,0 +1,40 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.8.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet author="owle8" id="e5f0968f-62a9-4e74-a630-fb0ed1b3501d">
+        <addNotNullConstraint
+                tableName="BOOK_USINGS"
+                columnName="BOOK_USING_ID"
+        />
+    </changeSet>
+    <changeSet author="owle8" id="c413637f-f6cf-4daf-b4b2-83a0dafb322f">
+        <addPrimaryKey
+                columnNames="BOOK_USING_ID"
+                tableName="BOOK_USINGS"
+                constraintName="BOOK_USINGSPK"
+        />
+    </changeSet>
+    <changeSet author="owle8" id="acef7527-a068-427c-927d-0ec8f614e086">
+        <addForeignKeyConstraint
+                baseColumnNames="BOOK_ID"
+                baseTableName="BOOK_USINGS"
+                constraintName="FK_BOOK_BOOK_USING"
+                deferrable="false"
+                initiallyDeferred="false"
+                referencedColumnNames="BOOK_ID"
+                referencedTableName="BOOKS"
+                validate="true"
+        />
+    </changeSet>
+    <changeSet author="owle8" id="fb1c0acb-1156-44af-a253-8abde652ec56">
+        <addForeignKeyConstraint
+                baseColumnNames="READER_ID"
+                baseTableName="BOOK_USINGS"
+                constraintName="FK_READER_BOOK_USING"
+                deferrable="false"
+                initiallyDeferred="false"
+                referencedColumnNames="READER_ID"
+                referencedTableName="READERS"
+                validate="true"
+        />
+    </changeSet>
+</databaseChangeLog>

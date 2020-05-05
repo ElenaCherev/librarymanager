@@ -1,0 +1,76 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.8.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet author="owle8" id="32d9cf35-48c7-461f-8fcf-7a58b5aa5f65">
+        <addNotNullConstraint
+                tableName="EDITIONS"
+                columnName="EDITION_ID"
+        />
+    </changeSet>
+    <changeSet author="owle8" id="aaf00818-ec43-4452-bdd5-fc8e64cf0cf2">
+        <addPrimaryKey
+                tableName="EDITIONS"
+                columnNames="EDITION_ID"
+                constraintName="EDITIONSPK"
+        />
+    </changeSet>
+    <changeSet author="owle8" id="becd35b0-962a-4e68-967d-8ad4cc866b4f">
+        <addForeignKeyConstraint
+                baseColumnNames="LANG_ID"
+                baseTableName="EDITIONS"
+                constraintName="FK_EDITION_LANG"
+                deferrable="false"
+                initiallyDeferred="false"
+                referencedColumnNames="LANG_ID"
+                referencedTableName="LANGS"
+                validate="true"
+        />
+    </changeSet>
+    <changeSet author="owle8" id="bfcf44d1-e37b-41a2-a94e-3597d8c6de27">
+        <addForeignKeyConstraint
+                baseColumnNames="GENERE_ID"
+                baseTableName="EDITIONS"
+                constraintName="FK_EDITION_GENERE"
+                deferrable="false"
+                initiallyDeferred="false"
+                referencedColumnNames="GENERE_ID"
+                referencedTableName="GENERES"
+                validate="true"
+        />
+    </changeSet>
+    <changeSet author="owle8" id="9ef1f5e7-4171-4dde-8acd-a45de7127758">
+        <addForeignKeyConstraint
+                baseColumnNames="PUPL_LANG_ID"
+                baseTableName="EDITIONS"
+                constraintName="FK_EDITION_PUBL_LANG"
+                deferrable="false"
+                initiallyDeferred="false"
+                referencedColumnNames="LANG_ID"
+                referencedTableName="LANGS"
+                validate="true"
+        />
+    </changeSet>
+    <changeSet author="owle8" id="48bc304d-b83f-46eb-b21d-fe864d815866">
+        <addForeignKeyConstraint
+                baseColumnNames="PUBLISHING_HOUSE_ID"
+                baseTableName="EDITIONS"
+                constraintName="FK_EDITION_PUBLISHING_HOUSE"
+                deferrable="false"
+                initiallyDeferred="false"
+                referencedColumnNames="PUBLISHING_HOUSE_ID"
+                referencedTableName="PUBLISHING_HOUSES"
+                validate="true"
+        />
+    </changeSet>
+    <changeSet author="owle8" id="d8305f7e-ff09-4cbb-9d82-9b0f1d53dc5f">
+        <addForeignKeyConstraint
+                baseColumnNames="SECTION_ID"
+                baseTableName="EDITIONS"
+                constraintName="FK_EDITION_SECTION"
+                deferrable="false"
+                initiallyDeferred="false"
+                referencedColumnNames="SECTION_ID"
+                referencedTableName="SECTIONS"
+                validate="true"
+        />
+    </changeSet>
+</databaseChangeLog>

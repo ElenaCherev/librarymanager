@@ -3,7 +3,11 @@
     <changeSet author="owle8" id="c4bfc8cf-db6c-427b-9012-079449d67582">
         <createTable tableName="LIBRARIANS">
             <column name="LIBRARIAN_ID" type="NUMBER(19, 0)">
-                <constraints nullable="false" primaryKey="true" primaryKeyName="LIBRARIANSPK"/>
+                <constraints
+                        nullable="false"
+                        primaryKey="true"
+                        primaryKeyName="LIBRARIANSPK"
+                />
             </column>
             <column name="VERSION" type="NUMBER(10, 0)"/>
         </createTable>

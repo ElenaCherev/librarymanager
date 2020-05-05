@@ -1,0 +1,40 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.8.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet author="owle8" id="87cecc0c-6b2e-4be6-82b4-833a9b1c341f">
+        <addNotNullConstraint
+                tableName="ORDERS"
+                columnName="ORDER_ID"
+        />
+    </changeSet>
+    <changeSet author="owle8" id="4ae72bbd-34b6-4e94-a511-bf1cef51604f">
+        <addPrimaryKey
+                tableName="ORDERS"
+                columnNames="ORDER_ID"
+                constraintName="ORDERSPK"
+        />
+    </changeSet>
+    <changeSet author="owle8" id="0c23cd31-2e87-4b52-8851-18eefb63e33d">
+        <addForeignKeyConstraint
+                baseColumnNames="EDITION_ID"
+                baseTableName="ORDERS"
+                constraintName="FK_ORDER_EDITION"
+                deferrable="false"
+                initiallyDeferred="false"
+                referencedColumnNames="EDITION_ID"
+                referencedTableName="EDITIONS"
+                validate="true"
+        />
+    </changeSet>
+    <changeSet author="owle8" id="cd49d350-a932-4ae0-a0fd-5ed915fad521">
+        <addForeignKeyConstraint
+                baseColumnNames="READER_ID"
+                baseTableName="ORDERS"
+                constraintName="FK_READER_ORDER"
+                deferrable="false"
+                initiallyDeferred="false"
+                referencedColumnNames="READER_ID"
+                referencedTableName="READERS"
+                validate="true"
+        />
+    </changeSet>
+</databaseChangeLog>

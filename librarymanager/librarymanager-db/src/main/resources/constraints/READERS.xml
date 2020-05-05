@@ -1,0 +1,16 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.8.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet author="owle8" id="0dc17e3f-51cb-430b-be81-f349419b6ab1">
+        <addNotNullConstraint
+                tableName="READERS"
+                columnName="READER_ID"
+        />
+    </changeSet>
+    <changeSet author="owle8" id="bd86b4f8-8437-4076-846b-e932e9ea53bb">
+        <addPrimaryKey
+                tableName="READERS"
+                columnNames="READER_ID"
+                constraintName="READERSPK"
+        />
+    </changeSet>
+</databaseChangeLog>

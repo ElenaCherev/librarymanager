@@ -2,9 +2,7 @@
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.8.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
     <changeSet author="owle8" id="cc1f47a9-e61d-4264-b04d-0527466f5311">
         <createTable tableName="EDITIONS">
-            <column name="EDITION_ID" type="NUMBER(19, 0)">
-                <constraints nullable="false" primaryKey="true" primaryKeyName="EDITIONSPK"/>
-            </column>
+            <column name="EDITION_ID" type="NUMBER(19, 0)"/>
             <column name="AGE" type="NUMBER(10, 0)"/>
             <column name="DOWNLOAD_LINK" type="VARCHAR2(255)"/>
             <column name="INFO" type="VARCHAR2(255)"/>
