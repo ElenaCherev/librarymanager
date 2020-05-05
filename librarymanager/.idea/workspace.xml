@@ -1,147 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="92ff27cc-0581-44c7-8bd0-0f5170efa312" name="Default Changelist" comment="Работу с БД выннесли в модуль librarymanager-db">
-      <change afterPath="$PROJECT_DIR$/librarymanager-db/src/main/resources/changelog.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/librarymanager-db/src/main/resources/constraints/AUTHORS.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/librarymanager-db/src/main/resources/constraints/GENERES.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/librarymanager-db/src/main/resources/constraints/LANGS.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/librarymanager-db/src/main/resources/constraints/LIBRARIANS.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/librarymanager-db/src/main/resources/constraints/PUBLISHING_HOUSES.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/librarymanager-db/src/main/resources/constraints/READERS.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/librarymanager-db/src/main/resources/sql/changelog.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/librarymanager-db/src/main/resources/tables/changelog.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Servers/.project" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Servers/.settings/org.eclipse.wst.server.core.prefs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Servers/Tomcat v9.0 Server at localhost-config/catalina.policy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Servers/Tomcat v9.0 Server at localhost-config/catalina.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Servers/Tomcat v9.0 Server at localhost-config/context.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Servers/Tomcat v9.0 Server at localhost-config/server.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Servers/Tomcat v9.0 Server at localhost-config/tomcat-users.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Servers/Tomcat v9.0 Server at localhost-config/web.xml" beforeDir="false" />
+    <list default="true" id="92ff27cc-0581-44c7-8bd0-0f5170efa312" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/api/AuthorApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/api/AuthorApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/api/BookApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/api/BookApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/api/BookUsingApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/api/BookUsingApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/api/DictionaryApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/api/DictionaryApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/api/EditionApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/api/EditionApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/api/LibrarianApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/api/LibrarianApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/api/OrderApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/api/OrderApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/api/PublishingHouseApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/api/PublishingHouseApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/api/ReaderApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/api/ReaderApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/api/SectionApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/api/SectionApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/api/dto/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/api/dto/Author.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/api/dto/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/api/dto/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/api/dto/BookUsing.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/api/dto/BookUsing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/api/dto/Edition.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/api/dto/Edition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/api/dto/Genre.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/api/dto/Genre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/api/dto/Lang.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/api/dto/Lang.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/api/dto/Librarian.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/api/dto/Librarian.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/api/dto/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/api/dto/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/api/dto/PublishingHouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/api/dto/PublishingHouse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/api/dto/Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/api/dto/Reader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/api/dto/Section.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/api/dto/Section.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/config/DataServiceConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/config/DataServiceConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/controller/AuthorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/controller/AuthorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/controller/BookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/controller/BookUsingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/controller/BookUsingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/controller/DictionaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/controller/DictionaryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/controller/EditionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/controller/EditionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/controller/LibrarianController.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/controller/LibrarianController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/controller/PublishingHouseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/controller/PublishingHouseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/controller/ReaderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/controller/ReaderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/controller/SectionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/controller/SectionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/domain/entity/AuthorEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/domain/entity/AuthorEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/domain/entity/BookEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/domain/entity/BookEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/domain/entity/BookUsingEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/domain/entity/BookUsingEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/domain/entity/EditionEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/domain/entity/EditionEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/domain/entity/GenreEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/domain/entity/GenreEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/domain/entity/LangEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/domain/entity/LangEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/domain/entity/LibrarianEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/domain/entity/LibrarianEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/domain/entity/OrderEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/domain/entity/OrderEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/domain/entity/PublishingHouseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/domain/entity/PublishingHouseEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/domain/entity/ReaderEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/domain/entity/ReaderEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/domain/entity/SectionEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/domain/entity/SectionEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/domain/repository/AuthorRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/domain/repository/AuthorRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/domain/repository/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/domain/repository/BookRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/domain/repository/BookUsingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/domain/repository/BookUsingRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/domain/repository/EditionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/domain/repository/EditionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/domain/repository/GenreRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/domain/repository/GenreRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/domain/repository/LangRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/domain/repository/LangRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/domain/repository/LibrarianRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/domain/repository/LibrarianRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/domain/repository/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/domain/repository/OrderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/domain/repository/PublishingHouseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/domain/repository/PublishingHouseRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/domain/repository/ReaderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/domain/repository/ReaderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/domain/repository/SectionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/domain/repository/SectionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/mapper/AuthorMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/mapper/AuthorMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/mapper/BookMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/mapper/BookMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/mapper/BookUsingMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/mapper/BookUsingMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/mapper/EditionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/mapper/EditionMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/mapper/GenreMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/mapper/GenreMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/mapper/LangMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/mapper/LangMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/mapper/LibrarianMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/mapper/LibrarianMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/mapper/OrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/mapper/OrderMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/mapper/PublishingHouseMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/mapper/PublishingHouseMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/mapper/ReaderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/mapper/ReaderMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/mapper/SectionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/mapper/SectionMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/services/AuthorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/services/AuthorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/services/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/services/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/services/BookUsingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/services/BookUsingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/services/DBInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/services/DBInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/services/EditionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/services/EditionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/services/GenreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/services/GenreService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/services/LangService.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/services/LangService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/services/LibrarianService.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/services/LibrarianService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/services/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/services/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/services/PublishingHouseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/services/PublishingHouseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/services/ReaderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/services/ReaderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/services/SectionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/services/SectionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/util/AgeRating.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/util/AgeRating.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/util/DateFormatter.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/util/DateFormatter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/util/JSON/DtoGrid.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/util/JSON/DtoGrid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/util/JSON/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/util/JSON/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/util/OrderState.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/util/OrderState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/spring5/elena/librarymanager/util/UrlUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/main/java/ru/elenacherev/librarymanager/util/UrlUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/src/test/java/ru/spring5/elena/librarymanager/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/src/test/java/ru/elenacherev/librarymanager/AppTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-be/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-be/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-db/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-db/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-db/src/main/resources/constraints/FK_AUTHOR_EDITION.xml" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-db/src/main/resources/constraints/AUTHOR_EDITION.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-db/src/main/resources/constraints/FK_AUTHOR_EDITION_EDITION.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-db/src/main/resources/constraints/FK_BOOK_BOOK_USING.xml" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-db/src/main/resources/constraints/BOOK_USINGS.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-db/src/main/resources/constraints/FK_BOOK_EDITION.xml" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-db/src/main/resources/constraints/BOOKS.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-db/src/main/resources/constraints/FK_EDIDION_LANG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-db/src/main/resources/constraints/EDITIONS.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-db/src/main/resources/constraints/FK_EDITION_GENERE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-db/src/main/resources/constraints/FK_EDITION_PUBLISHING_HOUSE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-db/src/main/resources/constraints/FK_EDITION_PUBL_LANG.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-db/src/main/resources/constraints/FK_EDITION_SECTION.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-db/src/main/resources/constraints/FK_ORDER_EDITION.xml" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-db/src/main/resources/constraints/ORDERS.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-db/src/main/resources/constraints/FK_READER_BOOK_USING.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-db/src/main/resources/constraints/FK_READER_ORDER.xml" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-db/src/main/resources/indexes/changelog.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-db/src/main/resources/constraints/FK_SECTIONS_PARENT_SECTION.xml" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-db/src/main/resources/constraints/SECTIONS.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-db/src/main/resources/indexes/IX_AUTHOR_EDITION.xml" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-db/src/main/resources/indexes/AUTHOR_EDITION.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-db/src/main/resources/primary key/PK_AUTHOR_EDITION.xml" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-db/src/main/resources/constraints/changelog.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-db/src/main/resources/tables/AUTHORS.xml" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-db/src/main/resources/tables/AUTHORS.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-db/src/main/resources/tables/AUTHOR_EDITION.xml" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-db/src/main/resources/tables/AUTHOR_EDITION.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-db/src/main/resources/tables/BOOKS.xml" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-db/src/main/resources/tables/BOOKS.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-db/src/main/resources/tables/BOOK_USINGS.xml" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-db/src/main/resources/tables/BOOK_USINGS.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-db/src/main/resources/tables/EDITIONS.xml" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-db/src/main/resources/tables/EDITIONS.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-db/src/main/resources/tables/GENERES.xml" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-db/src/main/resources/tables/GENERES.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-db/src/main/resources/tables/LANGS.xml" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-db/src/main/resources/tables/LANGS.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-db/src/main/resources/tables/LIBRARIANS.xml" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-db/src/main/resources/tables/LIBRARIANS.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-db/src/main/resources/tables/ORDERS.xml" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-db/src/main/resources/tables/ORDERS.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-db/src/main/resources/tables/PUBLISHING_HOUSES.xml" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-db/src/main/resources/tables/PUBLISHING_HOUSES.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-db/src/main/resources/tables/READERS.xml" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-db/src/main/resources/tables/READERS.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-db/src/main/resources/tables/SECTIONS.xml" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-db/src/main/resources/tables/SECTIONS.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-fe/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-fe/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-fe/src/main/java/org/librarymanager/fe/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-fe/src/main/java/ru/elenacherev/librarymanager/fe/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-fe/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-fe/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-fe/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-fe/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librarymanager-fe/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/librarymanager-fe/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,13 +105,21 @@
       <option name="project" value="LOCAL" />
       <updated>1588674563285</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="На каждую таблицу БД написан свой набор changelog'ов">
+      <created>1588682979570</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1588682979570</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Настроила liquibase генерировать скрипт изменнения БД по пакету сущнностей" />
     <MESSAGE value="Работу с БД выннесли в модуль librarymanager-db" />
-    <option name="LAST_COMMIT_MESSAGE" value="Работу с БД выннесли в модуль librarymanager-db" />
+    <MESSAGE value="На каждую таблицу БД написан свой набор changelog'ов" />
+    <option name="LAST_COMMIT_MESSAGE" value="На каждую таблицу БД написан свой набор changelog'ов" />
   </component>
   <component name="WindowStateProjectService">
     <state x="135" y="42" key="#Project_Structure" timestamp="1588667233701">
@@ -281,30 +150,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="269" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583416285972" />
-    <state x="62" y="0" key="CommitChangelistDialog2" timestamp="1588677814677">
+    <state x="98" y="0" key="CommitChangelistDialog2" timestamp="1588683040673">
       <screen x="62" y="0" width="962" height="768" />
     </state>
-    <state x="62" y="0" key="CommitChangelistDialog2/62.0.962.768@62.0.962.768" timestamp="1588677814677" />
-    <state width="919" height="100" key="GridCell.Tab.0.bottom" timestamp="1588677771908">
+    <state x="98" y="0" key="CommitChangelistDialog2/62.0.962.768@62.0.962.768" timestamp="1588683040673" />
+    <state width="919" height="139" key="GridCell.Tab.0.bottom" timestamp="1588682984351">
       <screen x="62" y="0" width="962" height="768" />
     </state>
     <state width="1876" height="137" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585581003111" />
-    <state width="919" height="100" key="GridCell.Tab.0.bottom/62.0.962.768@62.0.962.768" timestamp="1588677771908" />
-    <state width="919" height="100" key="GridCell.Tab.0.center" timestamp="1588677771908">
+    <state width="919" height="139" key="GridCell.Tab.0.bottom/62.0.962.768@62.0.962.768" timestamp="1588682984351" />
+    <state width="919" height="139" key="GridCell.Tab.0.center" timestamp="1588682984351">
       <screen x="62" y="0" width="962" height="768" />
     </state>
     <state width="1876" height="137" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585581003111" />
-    <state width="919" height="100" key="GridCell.Tab.0.center/62.0.962.768@62.0.962.768" timestamp="1588677771908" />
-    <state width="919" height="100" key="GridCell.Tab.0.left" timestamp="1588677771908">
+    <state width="919" height="139" key="GridCell.Tab.0.center/62.0.962.768@62.0.962.768" timestamp="1588682984351" />
+    <state width="919" height="139" key="GridCell.Tab.0.left" timestamp="1588682984351">
       <screen x="62" y="0" width="962" height="768" />
     </state>
     <state width="1876" height="137" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585581003111" />
-    <state width="919" height="100" key="GridCell.Tab.0.left/62.0.962.768@62.0.962.768" timestamp="1588677771908" />
-    <state width="919" height="100" key="GridCell.Tab.0.right" timestamp="1588677771908">
+    <state width="919" height="139" key="GridCell.Tab.0.left/62.0.962.768@62.0.962.768" timestamp="1588682984351" />
+    <state width="919" height="139" key="GridCell.Tab.0.right" timestamp="1588682984351">
       <screen x="62" y="0" width="962" height="768" />
     </state>
     <state width="1876" height="137" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585581003111" />
-    <state width="919" height="100" key="GridCell.Tab.0.right/62.0.962.768@62.0.962.768" timestamp="1588677771908" />
+    <state width="919" height="139" key="GridCell.Tab.0.right/62.0.962.768@62.0.962.768" timestamp="1588682984351" />
     <state x="540" y="257" key="IDE.errors.dialog" timestamp="1585580984557">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
