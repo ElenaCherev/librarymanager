@@ -1,0 +1,23 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.8.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet author="owle8" id="cc1f47a9-e61d-4264-b04d-0527466f5311">
+        <createTable tableName="EDITIONS">
+            <column name="EDITION_ID" type="NUMBER(19, 0)"/>
+            <column name="AGE" type="NUMBER(10, 0)"/>
+            <column name="DOWNLOAD_LINK" type="VARCHAR2(255)"/>
+            <column name="INFO" type="VARCHAR2(255)"/>
+            <column name="IS_ILLUSTRATED" type="NUMBER(1, 0)"/>
+            <column name="ISBN" type="VARCHAR2(255)"/>
+            <column name="PUBLISHING_YEAR" type="NUMBER(10, 0)"/>
+            <column name="TITLE" type="VARCHAR2(255)"/>
+            <column name="VERSION" type="NUMBER(10, 0)"/>
+            <column name="WORK_TITLE" type="VARCHAR2(255)"/>
+            <column name="YEAR" type="NUMBER(10, 0)"/>
+            <column name="GENERE_ID" type="NUMBER(19, 0)"/>
+            <column name="LANG_ID" type="NUMBER(19, 0)"/>
+            <column name="PUPL_LANG_ID" type="NUMBER(19, 0)"/>
+            <column name="PUBLISHING_HOUSE_ID" type="NUMBER(19, 0)"/>
+            <column name="SECTION_ID" type="NUMBER(19, 0)"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

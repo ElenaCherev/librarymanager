@@ -145,7 +145,7 @@
         </createTable>
     </changeSet>
     <changeSet author="owle8 (generated)" id="1588065169526-13">
-        <createIndex indexName="IX_null" tableName="AUTHOR_EDITION" unique="true">
+        <createIndex indexName="IX_AUTHOR_EDITION" tableName="AUTHOR_EDITION" unique="true">
             <column name="AUTHOR_ID"/>
             <column name="EDITION_ID"/>
         </createIndex>
@@ -154,42 +154,42 @@
         <addPrimaryKey columnNames="AUTHOR_ID, EDITION_ID" forIndexName="IX_null" tableName="AUTHOR_EDITION"/>
     </changeSet>
     <changeSet author="owle8 (generated)" id="1588065169526-15">
-        <addForeignKeyConstraint baseColumnNames="AUTHOR_ID" baseTableName="AUTHOR_EDITION" constraintName="FK_3v5oxnqdqgsi10soenb883yc5" deferrable="false" initiallyDeferred="false" referencedColumnNames="AUTHOR_ID" referencedTableName="AUTHORS" validate="true"/>
+        <addForeignKeyConstraint baseColumnNames="AUTHOR_ID" baseTableName="AUTHOR_EDITION" constraintName="FK_AUTHOR_EDITION" deferrable="false" initiallyDeferred="false" referencedColumnNames="AUTHOR_ID" referencedTableName="AUTHORS" validate="true"/>
     </changeSet>
     <changeSet author="owle8 (generated)" id="1588065169526-16">
-        <addForeignKeyConstraint baseColumnNames="READER_ID" baseTableName="ORDERS" constraintName="FK_6ghagbgrucksoicav9hr7hdqw" deferrable="false" initiallyDeferred="false" referencedColumnNames="READER_ID" referencedTableName="READERS" validate="true"/>
+        <addForeignKeyConstraint baseColumnNames="READER_ID" baseTableName="ORDERS" constraintName="FK_READER_ORDER" deferrable="false" initiallyDeferred="false" referencedColumnNames="READER_ID" referencedTableName="READERS" validate="true"/>
     </changeSet>
     <changeSet author="owle8 (generated)" id="1588065169526-17">
-        <addForeignKeyConstraint baseColumnNames="PARENT_SECTION_ID" baseTableName="SECTIONS" constraintName="FK_6idw33mmpehyrsrb9vg447a7k" deferrable="false" initiallyDeferred="false" referencedColumnNames="SECTION_ID" referencedTableName="SECTIONS" validate="true"/>
+        <addForeignKeyConstraint baseColumnNames="PARENT_SECTION_ID" baseTableName="SECTIONS" constraintName="FK_SECTIONS_PARENT_SECTION" deferrable="false" initiallyDeferred="false" referencedColumnNames="SECTION_ID" referencedTableName="SECTIONS" validate="true"/>
     </changeSet>
     <changeSet author="owle8 (generated)" id="1588065169526-18">
-        <addForeignKeyConstraint baseColumnNames="LANG_ID" baseTableName="EDITIONS" constraintName="FK_6iodep5gadcyhdusnnei6xim8" deferrable="false" initiallyDeferred="false" referencedColumnNames="LANG_ID" referencedTableName="LANGS" validate="true"/>
+        <addForeignKeyConstraint baseColumnNames="LANG_ID" baseTableName="EDITIONS" constraintName="FK_EDITION_LANG" deferrable="false" initiallyDeferred="false" referencedColumnNames="LANG_ID" referencedTableName="LANGS" validate="true"/>
     </changeSet>
     <changeSet author="owle8 (generated)" id="1588065169526-19">
-        <addForeignKeyConstraint baseColumnNames="GENERE_ID" baseTableName="EDITIONS" constraintName="FK_e8s2by1ylvrac2urdui845w1f" deferrable="false" initiallyDeferred="false" referencedColumnNames="GENERE_ID" referencedTableName="GENERES" validate="true"/>
+        <addForeignKeyConstraint baseColumnNames="GENERE_ID" baseTableName="EDITIONS" constraintName="FK_EDITION_GENERE" deferrable="false" initiallyDeferred="false" referencedColumnNames="GENERE_ID" referencedTableName="GENERES" validate="true"/>
     </changeSet>
     <changeSet author="owle8 (generated)" id="1588065169526-20">
-        <addForeignKeyConstraint baseColumnNames="EDITION_ID" baseTableName="BOOKS" constraintName="FK_f4spjdcc7kjxtdhd2ltdp0vuo" deferrable="false" initiallyDeferred="false" referencedColumnNames="EDITION_ID" referencedTableName="EDITIONS" validate="true"/>
+        <addForeignKeyConstraint baseColumnNames="EDITION_ID" baseTableName="BOOKS" constraintName="FK_BOOK_EDITION" deferrable="false" initiallyDeferred="false" referencedColumnNames="EDITION_ID" referencedTableName="EDITIONS" validate="true"/>
     </changeSet>
     <changeSet author="owle8 (generated)" id="1588065169526-21">
-        <addForeignKeyConstraint baseColumnNames="READER_ID" baseTableName="BOOK_USINGS" constraintName="FK_f759qdlig1hyjptndk7vpiw8" deferrable="false" initiallyDeferred="false" referencedColumnNames="READER_ID" referencedTableName="READERS" validate="true"/>
+        <addForeignKeyConstraint baseColumnNames="READER_ID" baseTableName="BOOK_USINGS" constraintName="FK_READER_BOOK_USING" deferrable="false" initiallyDeferred="false" referencedColumnNames="READER_ID" referencedTableName="READERS" validate="true"/>
     </changeSet>
     <changeSet author="owle8 (generated)" id="1588065169526-22">
-        <addForeignKeyConstraint baseColumnNames="PUPL_LANG_ID" baseTableName="EDITIONS" constraintName="FK_iehelar182qq5lt55goa7igww" deferrable="false" initiallyDeferred="false" referencedColumnNames="LANG_ID" referencedTableName="LANGS" validate="true"/>
+        <addForeignKeyConstraint baseColumnNames="PUPL_LANG_ID" baseTableName="EDITIONS" constraintName="FK_EDITION_PUBL_LANG" deferrable="false" initiallyDeferred="false" referencedColumnNames="LANG_ID" referencedTableName="LANGS" validate="true"/>
     </changeSet>
     <changeSet author="owle8 (generated)" id="1588065169526-23">
-        <addForeignKeyConstraint baseColumnNames="EDITION_ID" baseTableName="ORDERS" constraintName="FK_kies7f64xadko3uv4i2ub4m2" deferrable="false" initiallyDeferred="false" referencedColumnNames="EDITION_ID" referencedTableName="EDITIONS" validate="true"/>
+        <addForeignKeyConstraint baseColumnNames="EDITION_ID" baseTableName="ORDERS" constraintName="FK_ORDER_EDITION" deferrable="false" initiallyDeferred="false" referencedColumnNames="EDITION_ID" referencedTableName="EDITIONS" validate="true"/>
     </changeSet>
     <changeSet author="owle8 (generated)" id="1588065169526-24">
-        <addForeignKeyConstraint baseColumnNames="BOOK_ID" baseTableName="BOOK_USINGS" constraintName="FK_m51tcvh75ww97rpjjjoh2abko" deferrable="false" initiallyDeferred="false" referencedColumnNames="BOOK_ID" referencedTableName="BOOKS" validate="true"/>
+        <addForeignKeyConstraint baseColumnNames="BOOK_ID" baseTableName="BOOK_USINGS" constraintName="FK_BOOK_BOOK_USING" deferrable="false" initiallyDeferred="false" referencedColumnNames="BOOK_ID" referencedTableName="BOOKS" validate="true"/>
     </changeSet>
     <changeSet author="owle8 (generated)" id="1588065169526-25">
-        <addForeignKeyConstraint baseColumnNames="PUBLISHING_HOUSE_ID" baseTableName="EDITIONS" constraintName="FK_nm2puqm7dk4f08tyw8ghcykbx" deferrable="false" initiallyDeferred="false" referencedColumnNames="PUBLISHING_HOUSE_ID" referencedTableName="PUBLISHING_HOUSES" validate="true"/>
+        <addForeignKeyConstraint baseColumnNames="PUBLISHING_HOUSE_ID" baseTableName="EDITIONS" constraintName="FK_EDITION_PUBLISHING_HOUSE" deferrable="false" initiallyDeferred="false" referencedColumnNames="PUBLISHING_HOUSE_ID" referencedTableName="PUBLISHING_HOUSES" validate="true"/>
     </changeSet>
     <changeSet author="owle8 (generated)" id="1588065169526-26">
-        <addForeignKeyConstraint baseColumnNames="EDITION_ID" baseTableName="AUTHOR_EDITION" constraintName="FK_pedkfkekafen7sim3yryiwb9w" deferrable="false" initiallyDeferred="false" referencedColumnNames="EDITION_ID" referencedTableName="EDITIONS" validate="true"/>
+        <addForeignKeyConstraint baseColumnNames="EDITION_ID" baseTableName="AUTHOR_EDITION" constraintName="FK_AUTHOR_EDITION_EDITION" deferrable="false" initiallyDeferred="false" referencedColumnNames="EDITION_ID" referencedTableName="EDITIONS" validate="true"/>
     </changeSet>
     <changeSet author="owle8 (generated)" id="1588065169526-27">
-        <addForeignKeyConstraint baseColumnNames="SECTION_ID" baseTableName="EDITIONS" constraintName="FK_t0hksows3l416cxd6waxgtfr3" deferrable="false" initiallyDeferred="false" referencedColumnNames="SECTION_ID" referencedTableName="SECTIONS" validate="true"/>
+        <addForeignKeyConstraint baseColumnNames="SECTION_ID" baseTableName="EDITIONS" constraintName="FK_EDITION_SECTION" deferrable="false" initiallyDeferred="false" referencedColumnNames="SECTION_ID" referencedTableName="SECTIONS" validate="true"/>
     </changeSet>
 </databaseChangeLog>
