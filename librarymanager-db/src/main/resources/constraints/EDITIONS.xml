@@ -39,7 +39,7 @@
     </changeSet>
     <changeSet author="owle8" id="9ef1f5e7-4171-4dde-8acd-a45de7127758">
         <addForeignKeyConstraint
-                baseColumnNames="PUPL_LANG_ID"
+                baseColumnNames="PUBL_LANG_ID"
                 baseTableName="EDITIONS"
                 constraintName="FK_EDITION_PUBL_LANG"
                 deferrable="false"

@@ -1,12 +1,12 @@
 <?xml version="1.1" encoding="UTF-8" standalone="no"?>
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.8.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
-    <changeSet author="owle8" id="">
+    <changeSet author="owle8" id="fff2c46e-18f0-4fc8-878a-8be59d6b9867">
         <addNotNullConstraint
                 tableName="PUBLISHING_HOUSES"
                 columnName="PUBLISHING_HOUSE_ID"
         />
     </changeSet>
-    <changeSet author="owle8" id="">
+    <changeSet author="owle8" id="202dba37-7c06-4e93-bcde-98e3cc5f26b1">
         <addPrimaryKey
                 tableName="PUBLISHING_HOUSES"
                 columnNames="PUBLISHING_HOUSE_ID"

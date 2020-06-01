@@ -1,0 +1,44 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.8.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet author="owle8" id="ebc778e0-1707-4758-8cbe-3d83142a23b3">
+        <addNotNullConstraint
+                tableName="AUTHORS_EDITIONS"
+                columnName="EDITION_ID"
+        />
+        <addNotNullConstraint
+                tableName="AUTHORS_EDITIONS"
+                columnName="AUTHOR_ID"
+        />
+    </changeSet>
+    <changeSet author="owle8" id="2ef2c83d-a906-47cf-a9e6-e05726791327">
+        <addPrimaryKey
+                constraintName="PK_AUTHORS_EDITIONS"
+                columnNames="AUTHOR_ID, EDITION_ID"
+                tableName="AUTHORS_EDITIONS"
+        />
+    </changeSet>
+    <changeSet author="owle8" id="2c71912b-bc01-4bfb-b428-25feb1c78aad">
+        <addForeignKeyConstraint
+                baseColumnNames="AUTHOR_ID"
+                baseTableName="AUTHORS_EDITIONS"
+                constraintName="FK_AUTHORS_EDITIONS"
+                deferrable="false"
+                initiallyDeferred="false"
+                referencedColumnNames="AUTHOR_ID"
+                referencedTableName="AUTHORS"
+                validate="true"
+        />
+    </changeSet>
+    <changeSet author="owle8" id="db2dd351-cd3b-4cbe-bf0e-517eeb55b3da">
+        <addForeignKeyConstraint
+                baseColumnNames="EDITION_ID"
+                baseTableName="AUTHORS_EDITIONS"
+                constraintName="FK_AUTHORS_EDITIONS_EDITION"
+                deferrable="false"
+                initiallyDeferred="false"
+                referencedColumnNames="EDITION_ID"
+                referencedTableName="EDITIONS"
+                validate="true"
+        />
+    </changeSet>
+</databaseChangeLog>
