@@ -1,13 +1,11 @@
-package ru.elenacherev.librarymanager;
+package ru.elenacherev.librarymanager
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.boot.runApplication
 
 @SpringBootApplication
-public class LibraryManagerApplication {
+class Application
 
-    public static void main(String[] args) {
-        SpringApplication.run(LibraryManagerApplication.class, args);
-    }
-
+fun main(args: Array<String>) {
+    runApplication<Application>(*args)
 }
