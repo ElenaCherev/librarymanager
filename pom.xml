@@ -27,11 +27,15 @@
 		<maven.compiler.target>${java.version}</maven.compiler.target>
 		<oracle.version>19.6.0.0</oracle.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<spring.boot.version>2.2.6.RELEASE</spring.boot.version>
+		<spring.boot.version>2.3.0.RELEASE</spring.boot.version>
 	</properties>
 
 	<dependencyManagement>
 		<dependencies>
+			<dependency>
+				<groupId>com.fasterxml.jackson.module</groupId>
+				<artifactId>jackson-module-kotlin</artifactId>
+			</dependency>
 			<dependency>
 				<groupId>org.jetbrains.kotlin</groupId>
 				<artifactId>kotlin-stdlib</artifactId>
