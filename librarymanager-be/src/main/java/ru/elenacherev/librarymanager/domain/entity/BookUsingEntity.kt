@@ -1,12 +1,22 @@
 package ru.elenacherev.librarymanager.domain.entity
 
 import java.util.*
-import javax.persistence.*
+import javax.persistence.Column
+import javax.persistence.Entity
+import javax.persistence.GeneratedValue
+import javax.persistence.GenerationType
+import javax.persistence.Id
+import javax.persistence.JoinColumn
+import javax.persistence.ManyToOne
+import javax.persistence.Table
+import javax.persistence.Temporal
+import javax.persistence.TemporalType
+import javax.persistence.Version
 import javax.validation.constraints.NotNull
 
 @Entity
 @Table(name = "BOOK_USINGS")
-data class BookUsingEntity (
+class BookUsingEntity (
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) //уникальный ID, генерируется сам в БД
     @Column(name = "BOOK_USING_ID")

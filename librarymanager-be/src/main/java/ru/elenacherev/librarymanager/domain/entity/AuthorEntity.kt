@@ -2,14 +2,26 @@ package ru.elenacherev.librarymanager.domain.entity
 
 import org.hibernate.annotations.Formula
 import java.util.*
-import javax.persistence.*
+import javax.persistence.Column
+import javax.persistence.Entity
+import javax.persistence.GeneratedValue
+import javax.persistence.GenerationType
+import javax.persistence.Id
+import javax.persistence.JoinColumn
+import javax.persistence.JoinTable
+import javax.persistence.ManyToMany
+import javax.persistence.Table
+import javax.persistence.Temporal
+import javax.persistence.TemporalType
+import javax.persistence.Transient
+import javax.persistence.Version
 import javax.validation.constraints.NotEmpty
 import javax.validation.constraints.NotNull
 import javax.validation.constraints.Size
 
 @Entity
 @Table(name = "AUTHORS")
-data class AuthorEntity (
+class AuthorEntity (
     //уникальный ID, генерируется сам в БД
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

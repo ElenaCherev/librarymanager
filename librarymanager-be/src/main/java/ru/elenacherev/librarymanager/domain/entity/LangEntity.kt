@@ -1,11 +1,17 @@
 package ru.elenacherev.librarymanager.domain.entity
 
-import javax.persistence.*
+import javax.persistence.CascadeType
+import javax.persistence.Column
+import javax.persistence.Entity
+import javax.persistence.Id
+import javax.persistence.OneToMany
+import javax.persistence.Table
+import javax.persistence.Version
 import javax.validation.constraints.NotNull
 
 @Entity
 @Table(name = "LANGS")
-data class LangEntity(
+class LangEntity(
     @Id
     @Column(name = "LANG_ID")
     @get: NotNull
