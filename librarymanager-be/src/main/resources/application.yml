@@ -1,0 +1,17 @@
+server:
+  port: 8080
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521:XE
+    platform: oracle
+    driverClassName: oracle.jdbc.OracleDriver
+    database-platform: org.hibernate.dialect.OracleDialect
+    username: SYSTEM
+    password: admin
+  liquibase:
+    change-log: classpath:changelog.xml
+  jpa:
+    hibernate:
+      ddl-auto: none

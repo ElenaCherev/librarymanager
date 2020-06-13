@@ -15,7 +15,7 @@
             <column name="YEAR" type="NUMBER(10, 0)"/>
             <column name="GENERE_ID" type="NUMBER(19, 0)"/>
             <column name="LANG_ID" type="NUMBER(19, 0)"/>
-            <column name="PUPL_LANG_ID" type="NUMBER(19, 0)"/>
+            <column name="PUBL_LANG_ID" type="NUMBER(19, 0)"/>
             <column name="PUBLISHING_HOUSE_ID" type="NUMBER(19, 0)"/>
             <column name="SECTION_ID" type="NUMBER(19, 0)"/>
         </createTable>
