@@ -10,6 +10,7 @@ import javax.persistence.OneToMany
 import javax.persistence.Table
 import javax.persistence.Version
 import javax.validation.constraints.NotNull
+import javax.validation.constraints.Size
 
 @Entity
 @Table(name = "GENRES")
@@ -27,6 +28,7 @@ class GenreEntity (
     var version: Int = 0,
 
     @Column(name = "TITLE")
+    @Size(min = 1, max = 255)
     var title: String,
 
     @OneToMany(mappedBy = "genre", cascade = [CascadeType.ALL], orphanRemoval = true)

@@ -13,6 +13,7 @@ import javax.persistence.OneToMany
 import javax.persistence.Table
 import javax.persistence.Version
 import javax.validation.constraints.NotNull
+import javax.validation.constraints.Size
 
 @Entity
 @Table(name = "PUBLISHING_HOUSES")
@@ -20,7 +21,7 @@ class PublishingHouseEntity (
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) //уникальный ID, генерируется сам в БД
     @Column(name = "PUBLISHING_HOUSE_ID")
-    @get: NotNull
+    @NotNull
     var publishingHouseId: Long? = null,
 
     //версия, инкрементится при редактировании записи
@@ -29,6 +30,7 @@ class PublishingHouseEntity (
     var version: Int  = 0,
 
     @Column(name = "TITLE")
+    @Size(min = 1, max = 255)
     var title: String,
 
     @Basic(fetch = FetchType.LAZY)

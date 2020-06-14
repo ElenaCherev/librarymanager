@@ -16,6 +16,7 @@ import javax.persistence.OneToMany
 import javax.persistence.Table
 import javax.persistence.Version
 import javax.validation.constraints.NotNull
+import javax.validation.constraints.Size
 
 @Entity
 @Table(name = "EDITIONS")
@@ -32,9 +33,11 @@ class EditionEntity (
     var version: Int  = 0,
 
     @Column(name = "TITLE")
+    @Size(min = 1, max = 255)
     var title: String,
 
     @Column(name = "WORK_TITLE")
+    @Size(min = 1, max = 255)
     var workTitle: String,
 
     @Column(name = "YEAR")
@@ -56,12 +59,14 @@ class EditionEntity (
     var publishingYear: Int = 0,
 
     @Column(name = "ISBN")
+    @Size(min = 1, max = 255)
     var isbn: String,
 
     @Column(name = "IS_ILLUSTRATED")
     var isIllustrated: Boolean = false,
 
     @Column(name = "DOWNLOAD_LINK")
+    @Size(min = 1, max = 255)
     var downloadLink: String? = null,
 
     @Enumerated(EnumType.ORDINAL)
@@ -69,6 +74,7 @@ class EditionEntity (
     var age: AgeRating,
 
     @Column(name = "INFO")
+    @Size(min = 1, max = 255)
     var info: String? = null,
 
     @ManyToOne

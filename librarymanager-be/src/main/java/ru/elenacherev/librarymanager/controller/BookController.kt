@@ -1,7 +1,6 @@
 package ru.elenacherev.librarymanager.controller
 
 import org.springframework.data.domain.Pageable
-import org.springframework.http.MediaType
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
@@ -16,8 +15,7 @@ import ru.elenacherev.librarymanager.services.BookService
 import javax.validation.Valid
 
 @RequestMapping(
-    value = ["librarymanager/books"],
-    produces = [MediaType.APPLICATION_JSON_VALUE]
+    value = ["books"]
 )
 @RestController
 class BookController(

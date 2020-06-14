@@ -19,7 +19,7 @@ interface EditionRepository : JpaRepository<EditionEntity, Long> {
     fun findAllBySection(section: SectionEntity, pageable: Pageable): Page<EditionEntity>
 
     //Переписать!!! Работает неправильно!!! Переделать все запросы Много-Много
-    fun findAllByAuthors(authors: AuthorEntity, pageable: Pageable): Page<EditionEntity>
+    fun findAllByAuthor(author: AuthorEntity, pageable: Pageable): Page<EditionEntity>
     fun findAllByGenre(genre: GenreEntity, pageable: Pageable): Page<EditionEntity>
     fun findAllByLang(lang: LangEntity, pageable: Pageable): Page<EditionEntity>
     fun findAllByPublLang(publLang: LangEntity, pageable: Pageable): Page<EditionEntity>

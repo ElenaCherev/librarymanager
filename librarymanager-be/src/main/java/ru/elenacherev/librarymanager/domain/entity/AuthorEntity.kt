@@ -26,7 +26,7 @@ class AuthorEntity (
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "AUTHOR_ID")
-    @get:NotNull
+    @NotNull
     var authorId:  Long? = null,
 
     //версия, инкрементится при редактировании записи
@@ -36,24 +36,24 @@ class AuthorEntity (
 
     //имя
     @Column(name = "FIRST_NAME", nullable = false)
-    @get:NotEmpty(message = "{validation.firstname.notempty.message}")
-    @get:Size(min = 3, max = 60, message = "{validation.firstname.size.message}")
+    @NotEmpty(message = "{validation.firstname.notempty.message}")
+    @Size(min = 3, max = 60, message = "{validation.firstname.size.message}")
     var firstName:  String,
 
     //фамилия
     @Column(name = "SURNAME", nullable = false)
-    @get:NotEmpty(message = "{validation.surname.notempty.message}")
-    @get:Size(min = 1, max = 60, message = "{validation.surname.size.message}")
+    @NotEmpty(message = "{validation.surname.notempty.message}")
+    @Size(min = 1, max = 60, message = "{validation.surname.size.message}")
     var surname :   String,
 
     //отчество
     @Column(name = "PATRONYMIC")
-    @get:Size(min = 0, max = 60, message = "{validation.patronymic.Size.message}")
+    @Size(min = 0, max = 60, message = "{validation.patronymic.Size.message}")
     var patronymic :  String? = null,
 
     @Temporal(TemporalType.DATE)
     @Column(name = "BIRTHDATE")
-    @get:NotNull(message = "{validation.birthday.NotEmpty.message}")
+    @NotNull(message = "{validation.birthday.NotEmpty.message}")
     var birthdate : Date? = null,
 
     @Temporal(TemporalType.DATE)
@@ -62,7 +62,7 @@ class AuthorEntity (
 
     //доп. информация
     @Column(name = "INFO")
-    @get:Size(min = 0, max = 1000, message = "{validation.info.Size.message}")
+    @Size(min = 0, max = 1000, message = "{validation.info.Size.message}")
     var info :  String? = null,
 
     //Все работы данного автора

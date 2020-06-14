@@ -1,7 +1,6 @@
 package ru.elenacherev.librarymanager.controller
 
 import org.springframework.data.domain.Pageable
-import org.springframework.http.MediaType
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
@@ -14,7 +13,7 @@ import ru.elenacherev.librarymanager.api.PublishingHouseApi
 import ru.elenacherev.librarymanager.api.dto.PublishingHouse
 import ru.elenacherev.librarymanager.services.PublishingHouseService
 
-@RequestMapping(value = ["librarymanager/publishinghouse"], produces = [MediaType.APPLICATION_JSON_VALUE])
+@RequestMapping(value = ["publishinghouse"])
 @RestController
 class PublishingHouseController(
     val publishingHouseService: PublishingHouseService

@@ -63,7 +63,7 @@ class AuthorService(
     @Transactional(readOnly = true)
     fun findEditionsByAuthorId(authorId: Long, pageable: Pageable): Page<Edition> {
         return authorRepository.findById(authorId)
-            .map { entity -> editionRepository.findAllByAuthors(entity, pageable) }
+            .map { entity -> editionRepository.findAllByAuthor(entity, pageable) }
             .orElse(Page.empty())
             .map(EditionEntity::map)
     }

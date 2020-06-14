@@ -1,7 +1,6 @@
 package ru.elenacherev.librarymanager.controller
 
 import org.springframework.data.domain.Pageable
-import org.springframework.http.MediaType
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
@@ -13,7 +12,7 @@ import ru.elenacherev.librarymanager.api.OrderApi
 import ru.elenacherev.librarymanager.api.dto.Order
 import ru.elenacherev.librarymanager.services.OrderService
 
-@RequestMapping(value = ["librarymanager/orders"], produces = [MediaType.APPLICATION_JSON_VALUE])
+@RequestMapping(value = ["orders"])
 @RestController
 class OrderController(
     var orderService: OrderService

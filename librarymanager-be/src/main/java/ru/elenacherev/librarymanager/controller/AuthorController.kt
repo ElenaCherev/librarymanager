@@ -1,7 +1,6 @@
 package ru.elenacherev.librarymanager.controller
 
 import org.springframework.data.domain.Pageable
-import org.springframework.http.MediaType
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
@@ -14,7 +13,7 @@ import ru.elenacherev.librarymanager.api.AuthorApi
 import ru.elenacherev.librarymanager.api.dto.Author
 import ru.elenacherev.librarymanager.services.AuthorService
 
-@RequestMapping(value = ["librarymanager/authors"], produces = [MediaType.APPLICATION_JSON_VALUE])
+@RequestMapping(value = ["authors"])
 @RestController
 class AuthorController(
     val authorService: AuthorService
