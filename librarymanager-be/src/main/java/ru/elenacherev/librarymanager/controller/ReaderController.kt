@@ -13,7 +13,7 @@ import ru.elenacherev.librarymanager.api.ReaderApi
 import ru.elenacherev.librarymanager.api.dto.Reader
 import ru.elenacherev.librarymanager.services.ReaderService
 
-@RequestMapping(value = ["readers"])
+@RequestMapping("/readers")
 @RestController
 class ReaderController(
     val readerService: ReaderService

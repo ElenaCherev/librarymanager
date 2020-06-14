@@ -13,7 +13,7 @@ import ru.elenacherev.librarymanager.api.PublishingHouseApi
 import ru.elenacherev.librarymanager.api.dto.PublishingHouse
 import ru.elenacherev.librarymanager.services.PublishingHouseService
 
-@RequestMapping(value = ["publishinghouse"])
+@RequestMapping("/publishinghouse")
 @RestController
 class PublishingHouseController(
     val publishingHouseService: PublishingHouseService

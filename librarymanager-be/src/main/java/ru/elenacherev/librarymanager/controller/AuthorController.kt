@@ -13,7 +13,7 @@ import ru.elenacherev.librarymanager.api.AuthorApi
 import ru.elenacherev.librarymanager.api.dto.Author
 import ru.elenacherev.librarymanager.services.AuthorService
 
-@RequestMapping(value = ["authors"])
+@RequestMapping("/authors")
 @RestController
 class AuthorController(
     val authorService: AuthorService

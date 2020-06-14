@@ -13,7 +13,7 @@ import ru.elenacherev.librarymanager.api.EditionApi
 import ru.elenacherev.librarymanager.api.dto.Edition
 import ru.elenacherev.librarymanager.services.EditionService
 
-@RequestMapping(value = ["editions"])
+@RequestMapping("/editions")
 @RestController
 class EditionController(
     var editionService: EditionService

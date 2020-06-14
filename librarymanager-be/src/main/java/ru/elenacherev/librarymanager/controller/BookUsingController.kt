@@ -13,7 +13,7 @@ import ru.elenacherev.librarymanager.api.dto.BookUsing
 import ru.elenacherev.librarymanager.services.BookUsingService
 import javax.validation.Valid
 
-@RequestMapping(value = ["bookUsings"])
+@RequestMapping("/bookUsings")
 @RestController
 class BookUsingController(
     val bookUsingService: BookUsingService

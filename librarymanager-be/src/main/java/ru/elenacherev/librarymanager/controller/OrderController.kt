@@ -12,7 +12,7 @@ import ru.elenacherev.librarymanager.api.OrderApi
 import ru.elenacherev.librarymanager.api.dto.Order
 import ru.elenacherev.librarymanager.services.OrderService
 
-@RequestMapping(value = ["orders"])
+@RequestMapping("/orders")
 @RestController
 class OrderController(
     var orderService: OrderService

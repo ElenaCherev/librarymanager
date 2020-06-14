@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController
 import ru.elenacherev.librarymanager.api.SectionApi
 import ru.elenacherev.librarymanager.services.SectionService
 
-@RequestMapping(value = ["sections"])
+@RequestMapping("/sections")
 @RestController
 class SectionController(
     val sectionService: SectionService

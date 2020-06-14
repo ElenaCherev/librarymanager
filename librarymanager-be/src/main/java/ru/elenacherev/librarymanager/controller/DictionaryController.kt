@@ -12,7 +12,7 @@ import ru.elenacherev.librarymanager.api.DictionaryApi
 import ru.elenacherev.librarymanager.services.GenreService
 import ru.elenacherev.librarymanager.services.LangService
 
-@RequestMapping(value = ["dictionary"])
+@RequestMapping("/dictionary")
 @RestController
 class DictionaryController(
     val genresService: GenreService,

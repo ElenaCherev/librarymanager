@@ -12,7 +12,7 @@ import ru.elenacherev.librarymanager.api.LibrarianApi
 import ru.elenacherev.librarymanager.api.dto.Librarian
 import ru.elenacherev.librarymanager.services.LibrarianService
 
-@RequestMapping(value = ["librarians"])
+@RequestMapping("/librarians")
 @RestController
 class LibrarianController(
     val librarianService: LibrarianService

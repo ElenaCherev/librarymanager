@@ -2,6 +2,8 @@ package ru.elenacherev.librarymanager
 
 import org.apache.commons.lang3.RandomStringUtils
 import org.assertj.core.api.Assertions.assertThat
+import org.junit.jupiter.api.AfterEach
+import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
 import org.springframework.data.domain.Pageable
@@ -46,6 +48,7 @@ class RepositoriesTests(
     var section: SectionEntity? = null
     var publishingHouse: PublishingHouseEntity? = null
 
+    @BeforeEach
     fun initTestData() {
         genre = genreRepository.saveAndFlush(TEST_GENRE_ENTITY)
         assertThat(genre!!)
@@ -68,6 +71,7 @@ class RepositoriesTests(
             .isNotNull()
     }
 
+    @AfterEach
     fun dropTestData(){
         genre?.let { genreRepository.delete(it) }
         lang?.let { langRepository.delete(it) }
@@ -78,8 +82,6 @@ class RepositoriesTests(
     /** BookRepository */
     @Test
     fun `Test findAllByEdition of BookRepository`() {
-        initTestData()
-
         val edition = editionRepository.saveAndFlush(testEditionEntity(
             genre = genre!!,
             lang = lang!!,
@@ -108,14 +110,11 @@ class RepositoriesTests(
 
         bookRepository.delete(book)
         editionRepository.delete(edition)
-        dropTestData()
     }
 
     /** BookUsingRepository*/
     @Test
     fun `Test findAllByReader of BookUsingRepository`() {
-        initTestData()
-
         val edition = editionRepository.saveAndFlush(testEditionEntity(
             genre = genre!!,
             lang = lang!!,
@@ -159,13 +158,10 @@ class RepositoriesTests(
         editionRepository.delete(edition)
         readerRepository.delete(reader)
         bookUsingRepository.delete(bookUsing)
-        dropTestData()
     }
 
     @Test
     fun `Test findAllByBook of BookUsingRepository`() {
-        initTestData()
-
         val edition = editionRepository.saveAndFlush(testEditionEntity(
             genre = genre!!,
             lang = lang!!,
@@ -209,14 +205,11 @@ class RepositoriesTests(
         editionRepository.delete(edition)
         readerRepository.delete(reader)
         bookUsingRepository.delete(bookUsing)
-        dropTestData()
     }
 
     /** EditionRepository */
     @Test
     fun `Test findAllBySection of EditionRepository`() {
-        initTestData()
-
         val edition = editionRepository.saveAndFlush(testEditionEntity(
             genre = genre!!,
             lang = lang!!,
@@ -237,13 +230,10 @@ class RepositoriesTests(
             .contains(edition)
 
         editionRepository.delete(edition)
-        dropTestData()
     }
 
     @Test
     fun `Test findAllByAuthors of EditionRepository`() {
-        initTestData()
-
         val author: AuthorEntity  = authorRepository.saveAndFlush(TEST_AUTHOR_ENTITY)
         assertThat(author)
             .extracting(AuthorEntity::authorId)
@@ -273,13 +263,10 @@ class RepositoriesTests(
 
         authorRepository.delete(author)
         editionRepository.delete(edition)
-        dropTestData()
     }
 
     @Test
     fun `Test findAllByGenre of EditionRepository`() {
-        initTestData()
-
         val edition = editionRepository.saveAndFlush(testEditionEntity(
             genre = genre!!,
             lang = lang!!,
@@ -300,13 +287,10 @@ class RepositoriesTests(
             .contains(edition)
 
         editionRepository.delete(edition)
-        dropTestData()
     }
 
     @Test
     fun `Test findAllByLang of EditionRepository`() {
-        initTestData()
-
         val edition = editionRepository.saveAndFlush(testEditionEntity(
             genre = genre!!,
             lang = lang!!,
@@ -327,13 +311,10 @@ class RepositoriesTests(
             .contains(edition)
 
         editionRepository.delete(edition)
-        dropTestData()
     }
 
     @Test
     fun `Test findAllByPublLang of EditionRepository`() {
-        initTestData()
-
         val edition = editionRepository.saveAndFlush(testEditionEntity(
             genre = genre!!,
             lang = lang!!,
@@ -354,13 +335,10 @@ class RepositoriesTests(
             .contains(edition)
 
         editionRepository.delete(edition)
-        dropTestData()
     }
 
     @Test
     fun `Test findAllByPublishingHouse of EditionRepository`() {
-        initTestData()
-
         val edition = editionRepository.saveAndFlush(testEditionEntity(
             genre = genre!!,
             lang = lang!!,
@@ -381,13 +359,11 @@ class RepositoriesTests(
             .contains(edition)
 
         editionRepository.delete(edition)
-        dropTestData()
     }
 
     /** OrderRepository */
     @Test
     fun `Test findAllByEdition of OrderRepository`() {
-        initTestData()
         val edition = editionRepository.saveAndFlush(testEditionEntity(
             genre = genre!!,
             lang = lang!!,
@@ -423,12 +399,10 @@ class RepositoriesTests(
         orderRepository.delete(order)
         editionRepository.delete(edition)
         readerRepository.delete(reader)
-        dropTestData()
     }
 
     @Test
     fun `Test findAllByReader of OrderRepository`() {
-        initTestData()
         val edition = editionRepository.saveAndFlush(testEditionEntity(
             genre = genre!!,
             lang = lang!!,
@@ -464,14 +438,11 @@ class RepositoriesTests(
         orderRepository.delete(order)
         editionRepository.delete(edition)
         readerRepository.delete(reader)
-        dropTestData()
     }
 
     /** SectionRepository */
     @Test
     fun `Test findAllByParentSection of SectionRepository`() {
-        initTestData()
-
         val subSection = sectionRepository.saveAndFlush(
             SectionEntity(
                 parentSection = section,
@@ -492,6 +463,5 @@ class RepositoriesTests(
             .contains(subSection)
 
         sectionRepository.delete(subSection)
-        dropTestData()
     }
 }
