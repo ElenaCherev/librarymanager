@@ -30,7 +30,7 @@ import ru.elenacherev.librarymanager.domain.repository.SectionRepository
 
 /** Testing nonempty repository */
 @DataJpaTest
-class RepositoriesTests(
+class RepositoriesTests (
     //val entityManager: TestEntityManager,
     val authorRepository: AuthorRepository,
     val bookRepository: BookRepository,
