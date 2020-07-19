@@ -5,7 +5,8 @@ import org.springframework.stereotype.Repository
 import org.springframework.transaction.annotation.Propagation
 import org.springframework.transaction.annotation.Transactional
 import ru.elenacherev.librarymanager.domain.entity.PublishingHouseEntity
+import java.util.*
 
 @Repository
 @Transactional(propagation = Propagation.MANDATORY)
-interface PublishingHouseRepository : JpaRepository<PublishingHouseEntity, Long> 
+interface PublishingHouseRepository : JpaRepository<PublishingHouseEntity, UUID>

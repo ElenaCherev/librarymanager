@@ -14,8 +14,8 @@ fun ReaderEntity.map() = Reader(
     regDate = regDate,
     telephone = telephone,
     email = email,
-    bookUsingIds = bookUsings.map(BookUsingEntity::bookUsingId),
-    orderIds = orders.map(OrderEntity::orderId)
+    bookUsingIds = bookUsings.mapNotNull(BookUsingEntity::bookUsingId),
+    orderIds = orders.mapNotNull(OrderEntity::orderId)
 )
 
 fun Reader.map() = ReaderEntity(

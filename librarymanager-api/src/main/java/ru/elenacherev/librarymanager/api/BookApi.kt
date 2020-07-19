@@ -4,11 +4,12 @@ import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import ru.elenacherev.librarymanager.api.dto.Book
 import ru.elenacherev.librarymanager.api.dto.BookUsing
+import java.util.*
 import javax.validation.Valid
 
 interface BookApi {
     fun getBook(
-        bookId: Long
+        bookId: UUID
     ): Book?
 
     fun searchBooks(
@@ -20,17 +21,17 @@ interface BookApi {
     ): Book
 
     fun saveBook(
-        bookId: Long,
+        bookId: UUID,
         book: @Valid Book
     ): Book
 
     fun searchBookUsings(
-        bookId: Long,
+        bookId: UUID,
         pageable: Pageable
     ): Page<BookUsing>
 
     fun updateBookUsings(
-        bookId: Long,
-        bookUsingIds: List<Long>
+        bookId: UUID,
+        bookUsingIds: List<UUID>
     ): List<BookUsing>
 }

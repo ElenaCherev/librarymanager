@@ -1,5 +1,6 @@
 package ru.elenacherev.librarymanager.domain.entity
 
+import org.hibernate.annotations.ColumnDefault
 import ru.elenacherev.librarymanager.api.enum.AgeRating
 import java.util.*
 import javax.persistence.CascadeType
@@ -8,7 +9,6 @@ import javax.persistence.Entity
 import javax.persistence.EnumType
 import javax.persistence.Enumerated
 import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
 import javax.persistence.Id
 import javax.persistence.JoinColumn
 import javax.persistence.ManyToMany
@@ -23,11 +23,12 @@ import javax.validation.constraints.Size
 @Table(name = "EDITIONS")
 data class EditionEntity(
 
-    @Id
-    @GeneratedValue
     @Column(name = "EDITION_ID")
+    @ColumnDefault("random_uuid()")
+    @GeneratedValue
+    @Id
     @get:NotNull
-    var editionId: Long? = null,
+    var editionId: UUID? = null,
 
     //версия, инкрементится при редактировании записи
     @Version
@@ -46,7 +47,7 @@ data class EditionEntity(
     var year: Int = 0,
 
     @ManyToOne
-    @JoinColumn(name = "GENERE_ID")
+    @JoinColumn(name = "GENRE_ID")
     var genre: GenreEntity,
 
     @ManyToOne

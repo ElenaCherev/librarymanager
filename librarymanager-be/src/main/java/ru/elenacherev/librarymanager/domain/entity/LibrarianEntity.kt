@@ -1,9 +1,10 @@
 package ru.elenacherev.librarymanager.domain.entity
 
+import org.hibernate.annotations.ColumnDefault
+import java.util.*
 import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
 import javax.persistence.Id
 import javax.persistence.Table
 import javax.persistence.Version
@@ -13,14 +14,15 @@ import javax.validation.constraints.NotNull
 @Table(name = "LIBRARIANS")
 data class LibrarianEntity(
 
-    @Id
-    @GeneratedValue
     @Column(name = "LIBRARIAN_ID")
+    @ColumnDefault("random_uuid()")
+    @GeneratedValue
+    @Id
     @get:NotNull
-    var librarianId: Long? = null,
+    var librarianId: UUID? = null,
 
     //версия, инкрементится при редактировании записи
-    @Version
     @Column(name = "VERSION")
+    @Version
     var version: Int = 0
 )

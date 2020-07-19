@@ -1,15 +1,16 @@
 package ru.elenacherev.librarymanager.api.dto
 
-import java.util.Date
+import java.time.Instant
+import java.util.*
 
 data class Author(
-    var authorId: Long?,
+    var authorId: UUID?,
     var firstName: String,
     var surname: String,
     var patronymic: String?,
-    var birthdate: Date?,
-    var deathdate: Date?,
+    var birthdate: Instant?,
+    var deathdate: Instant?,
     var info: String?,
     var fio: String?,
-    var edidionIds: List<Long?>
+    var edidionIds: List<UUID>
 )

@@ -9,8 +9,8 @@ fun BookUsingEntity.map() = BookUsing(
     bookUsingId = bookUsingId,
     startDate = startDate,
     endDate = endDate,
-    bookId = book.bookId ?: 0,
-    readerId = reader?.readerId ?: 0
+    bookId = book.bookId!!,
+    readerId = reader.readerId!!
 )
 
 fun BookUsing.map(

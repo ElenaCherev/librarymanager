@@ -5,7 +5,8 @@ import org.springframework.stereotype.Repository
 import org.springframework.transaction.annotation.Propagation
 import org.springframework.transaction.annotation.Transactional
 import ru.elenacherev.librarymanager.domain.entity.ReaderEntity
+import java.util.*
 
 @Repository
 @Transactional(propagation = Propagation.MANDATORY)
-interface ReaderRepository : JpaRepository<ReaderEntity, Long> 
+interface ReaderRepository : JpaRepository<ReaderEntity, UUID>

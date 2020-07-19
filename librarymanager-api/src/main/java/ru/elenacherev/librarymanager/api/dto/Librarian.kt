@@ -1,6 +1,7 @@
 package ru.elenacherev.librarymanager.api.dto
 
-data class Librarian
-(
-    var librarianId: Long? = null
+import java.util.*
+
+data class Librarian(
+    var librarianId: UUID? = null
 )

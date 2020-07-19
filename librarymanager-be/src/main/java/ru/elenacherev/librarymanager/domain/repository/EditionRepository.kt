@@ -12,10 +12,12 @@ import ru.elenacherev.librarymanager.domain.entity.GenreEntity
 import ru.elenacherev.librarymanager.domain.entity.LangEntity
 import ru.elenacherev.librarymanager.domain.entity.PublishingHouseEntity
 import ru.elenacherev.librarymanager.domain.entity.SectionEntity
+import java.util.*
 
 @Repository
 @Transactional(propagation = Propagation.MANDATORY)
-interface EditionRepository : JpaRepository<EditionEntity, Long> {
+interface EditionRepository : JpaRepository<EditionEntity, UUID> {
+
     fun findAllBySection(section: SectionEntity, pageable: Pageable): Page<EditionEntity>
 
     //Переписать!!! Работает неправильно!!! Переделать все запросы Много-Много

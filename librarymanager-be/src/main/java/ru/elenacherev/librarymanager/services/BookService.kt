@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 import ru.elenacherev.librarymanager.api.dto.Book
 import ru.elenacherev.librarymanager.api.dto.BookUsing
-import ru.elenacherev.librarymanager.domain.entity.AuthorEntity
 import ru.elenacherev.librarymanager.domain.entity.BookEntity
 import ru.elenacherev.librarymanager.domain.entity.BookUsingEntity
 import ru.elenacherev.librarymanager.domain.entity.EditionEntity
@@ -17,7 +16,7 @@ import ru.elenacherev.librarymanager.mapper.map
 import java.util.*
 
 @Service
-class BookService (
+class BookService(
     val bookRepository: BookRepository,
     val bookUsingRepository: BookUsingRepository,
     val editionRepository: EditionRepository
@@ -37,19 +36,19 @@ class BookService (
     }
 
     @Transactional(readOnly = true)
-    fun findBookById(id: Long): Book {
+    fun findBookById(id: UUID): Book {
         return bookRepository
             .findById(id)
             .map(BookEntity::map)
             .orElse(null)
     }
 
-    fun save(bookId: Long, dto: Book): Book {
+    fun save(bookId: UUID, dto: Book): Book {
         val edition: EditionEntity = editionRepository.findById(dto.editionId).get()
         return bookRepository
             .findById(bookId)
             .map { dto.map(edition) }
-            .map{ book: BookEntity -> bookRepository.saveAndFlush(book) }
+            .map { book: BookEntity -> bookRepository.saveAndFlush(book) }
             .map(BookEntity::map)
             .orElse(null)
     }
@@ -58,13 +57,13 @@ class BookService (
         val edition: EditionEntity = editionRepository.findById(dto.editionId).get()
         return Optional.of(dto)
             .map { dto.map(edition) }
-            .map{ book: BookEntity -> bookRepository.saveAndFlush(book) }
+            .map { book: BookEntity -> bookRepository.saveAndFlush(book) }
             .map(BookEntity::map)
             .get()
     }
 
     @Transactional(readOnly = true)
-    fun findBookUsingsByBookId(bookId: Long, pageable: Pageable): Page<BookUsing> {
+    fun findBookUsingsByBookId(bookId: UUID, pageable: Pageable): Page<BookUsing> {
         return bookRepository.findById(bookId)
             .map { entity -> bookUsingRepository.findAllByBook(entity, pageable) }
             .orElse(Page.empty())
@@ -72,14 +71,14 @@ class BookService (
     }
 
     @Transactional
-    fun updateBookUsings(bookId: Long, bookUsingIds: List<Long>): List<BookUsing> {
+    fun updateBookUsings(bookId: UUID, bookUsingIds: List<UUID>): List<BookUsing> {
         return bookRepository.findById(bookId)
             .map { bookEntity ->
                 bookEntity.bookUsings.clear()
                 bookEntity.bookUsings += bookUsingIds.map(bookUsingRepository::getOne)
                 return@map bookEntity
             }
-            .map{ book: BookEntity -> bookRepository.saveAndFlush(book) }
+            .map { book: BookEntity -> bookRepository.saveAndFlush(book) }
             .map(BookEntity::bookUsings)
             .orElse(Collections.emptySet())
             .map(BookUsingEntity::map)

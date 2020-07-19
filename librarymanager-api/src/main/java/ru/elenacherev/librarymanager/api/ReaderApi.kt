@@ -5,11 +5,13 @@ import org.springframework.data.domain.Pageable
 import ru.elenacherev.librarymanager.api.dto.BookUsing
 import ru.elenacherev.librarymanager.api.dto.Order
 import ru.elenacherev.librarymanager.api.dto.Reader
+import java.util.*
 import javax.validation.Valid
 
 interface ReaderApi {
+
     fun getReader(
-        readerId:  Long
+        readerId: UUID
     ): Reader?
 
     fun searchReaders(
@@ -21,27 +23,27 @@ interface ReaderApi {
     ): Reader
 
     fun saveReader(
-        readerId:  Long,
+        readerId: UUID,
         reader: @Valid Reader
     ): Reader
 
     fun searchOrders(
-        readerId: Long,
+        readerId: UUID,
         pageable: Pageable
     ): Page<Order>
 
     fun updateOrders(
-        readerId:  Long,
-        orderIds:  List<Long>
+        readerId: UUID,
+        orderIds: List<UUID>
     ): List<Order>
 
     fun searchBookUsings(
-        readerId:  Long,
+        readerId: UUID,
         pageable: Pageable
     ): Page<BookUsing>
 
     fun updateBookUsings(
-        readerId:  Long,
-        bookUsingIds:  List<Long>
+        readerId: UUID,
+        bookUsingIds: List<UUID>
     ): List<BookUsing>
 }

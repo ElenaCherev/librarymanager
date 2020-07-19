@@ -1,5 +1,7 @@
 package ru.elenacherev.librarymanager.domain.entity
 
+import org.hibernate.annotations.ColumnDefault
+import java.util.*
 import javax.persistence.CascadeType
 import javax.persistence.Column
 import javax.persistence.Entity
@@ -15,15 +17,16 @@ import javax.validation.constraints.Size
 @Table(name = "LANGS")
 data class LangEntity(
 
-    @Id
-    @GeneratedValue
     @Column(name = "LANG_ID")
+    @ColumnDefault("random_uuid()")
+    @GeneratedValue
+    @Id
     @get:NotNull
-    var langId: Long? = null,
+    var langId: UUID? = null,
 
     //версия, инкрементится при редактировании записи
-    @Version
     @Column(name = "VERSION")
+    @Version
     var version: Int = 0,
 
     @Column(name = "TITLE")

@@ -1,5 +1,7 @@
 package ru.elenacherev.librarymanager.domain.entity
 
+import org.hibernate.annotations.ColumnDefault
+import java.time.Instant
 import java.util.*
 import javax.persistence.Column
 import javax.persistence.Entity
@@ -17,11 +19,12 @@ import javax.validation.constraints.NotNull
 @Table(name = "BOOK_USINGS")
 data class BookUsingEntity(
 
-    @Id
-    @GeneratedValue
     @Column(name = "BOOK_USING_ID")
-    @get: NotNull
-    var bookUsingId: Long? = null,
+    @ColumnDefault("random_uuid()")
+    @GeneratedValue
+    @Id
+    @get:NotNull
+    var bookUsingId: UUID? = null,
 
     //версия, инкрементится при редактировании записи
     @Version
@@ -29,20 +32,18 @@ data class BookUsingEntity(
     var version: Int = 0,
 
     //Книгу взяли
-    @Temporal(TemporalType.DATE)
     @Column(name = "START_DATE")
     @NotNull
-    var startDate: Date,
+    var startDate: Instant,
 
     //Книгу вернули
-    @Temporal(TemporalType.DATE)
     @Column(name = "END_DATE")
-    var endDate: Date? = null,
+    var endDate: Instant? = null,
 
     //кто взял книгу
     @ManyToOne
     @JoinColumn(name = "READER_ID")
-    var reader: ReaderEntity? = null,
+    var reader: ReaderEntity,
 
     //какую книгу взяли
     @ManyToOne

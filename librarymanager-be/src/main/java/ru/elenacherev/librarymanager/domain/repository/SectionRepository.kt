@@ -7,9 +7,10 @@ import org.springframework.stereotype.Repository
 import org.springframework.transaction.annotation.Propagation
 import org.springframework.transaction.annotation.Transactional
 import ru.elenacherev.librarymanager.domain.entity.SectionEntity
+import java.util.*
 
 @Repository
 @Transactional(propagation = Propagation.MANDATORY)
-interface SectionRepository : JpaRepository<SectionEntity, Long> {
+interface SectionRepository : JpaRepository<SectionEntity, UUID> {
     fun findAllByParentSection(parentSection: SectionEntity, pageble: Pageable): Page<SectionEntity>
 }

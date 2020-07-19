@@ -1,11 +1,12 @@
 package ru.elenacherev.librarymanager.api.dto
 
 import ru.elenacherev.librarymanager.api.enum.AgeRating
+import java.util.*
 
 data class Edition(
-    var editionId: Long? = null,
+    var editionId: UUID? = null,
     val title: String,
-    val workTitle : String,
+    val workTitle: String,
     val year: Int,
     val publishingYear: Int = 0,
     val isbn: String,
@@ -14,15 +15,15 @@ data class Edition(
     val age: AgeRating,
     val info: String? = null,
     val langString: String,
-    val langId: Long,
+    val langId: UUID,
     val publLangString: String,
-    val publLangId: Long,
+    val publLangId: UUID,
     val publishingHouseString: String,
-    val publishingHouseId: Long,
+    val publishingHouseId: UUID,
     val genreString: String,
-    val genreId: Long,
+    val genreId: UUID,
     val sectionTitle: String,
-    val sectionId: Long,
-    val authorIds: List<Long?>,
+    val sectionId: UUID,
+    val authorIds: List<UUID>,
     val authorFIOs: List<String>
 )

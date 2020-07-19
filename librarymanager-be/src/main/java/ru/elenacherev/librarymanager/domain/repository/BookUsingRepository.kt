@@ -9,10 +9,12 @@ import org.springframework.transaction.annotation.Transactional
 import ru.elenacherev.librarymanager.domain.entity.BookEntity
 import ru.elenacherev.librarymanager.domain.entity.BookUsingEntity
 import ru.elenacherev.librarymanager.domain.entity.ReaderEntity
+import java.util.*
 
 @Repository
 @Transactional(propagation = Propagation.MANDATORY)
-interface BookUsingRepository : JpaRepository<BookUsingEntity, Long> {
+interface BookUsingRepository : JpaRepository<BookUsingEntity, UUID> {
+
     fun findAllByReader(reader: ReaderEntity, pageable: Pageable): Page<BookUsingEntity>
     fun findAllByBook(book: BookEntity, pageable: Pageable): Page<BookUsingEntity>
 }

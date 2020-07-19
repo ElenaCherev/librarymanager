@@ -1,6 +1,8 @@
 package ru.elenacherev.librarymanager.domain.entity
 
+import org.hibernate.annotations.ColumnDefault
 import org.hibernate.annotations.Formula
+import java.time.Instant
 import java.util.*
 import javax.persistence.Column
 import javax.persistence.Entity
@@ -22,15 +24,16 @@ import javax.validation.constraints.Size
 @Table(name = "AUTHORS")
 data class AuthorEntity(
 
-    @Id
-    @GeneratedValue
     @Column(name = "AUTHOR_ID")
+    @ColumnDefault("random_uuid()")
+    @GeneratedValue
+    @Id
     @get:NotNull
-    var authorId: Long? = null,
+    var authorId: UUID? = null,
 
     //версия, инкрементится при редактировании записи
-    @Version
     @Column(name = "VERSION", nullable = false)
+    @Version
     var version: Int = 0,
 
     //имя
@@ -50,14 +53,12 @@ data class AuthorEntity(
     @Size(min = 0, max = 60)
     var patronymic: String? = null,
 
-    @Temporal(TemporalType.DATE)
     @Column(name = "BIRTHDATE")
     @NotNull
-    var birthdate: Date? = null,
+    var birthdate: Instant? = null,
 
-    @Temporal(TemporalType.DATE)
     @Column(name = "DEATHDATE")
-    var deathdate: Date? = null,
+    var deathdate: Instant? = null,
 
     //доп. информация
     @Column(name = "INFO")

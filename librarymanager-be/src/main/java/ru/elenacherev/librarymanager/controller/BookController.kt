@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController
 import ru.elenacherev.librarymanager.api.BookApi
 import ru.elenacherev.librarymanager.api.dto.Book
 import ru.elenacherev.librarymanager.services.BookService
+import java.util.*
 import javax.validation.Valid
 
 @RequestMapping("/books")
@@ -22,7 +23,7 @@ class BookController(
 
     @GetMapping(value = ["/{bookid}"])
     override fun getBook(
-        @PathVariable("bookid") bookId: Long
+        @PathVariable("bookid") bookId: UUID
     ) = bookService.findBookById(bookId)
 
     @PostMapping("/search")
@@ -37,19 +38,19 @@ class BookController(
 
     @PutMapping(value = ["/{bookid}"])
     override fun saveBook(
-        @PathVariable("bookid") bookId: Long,
+        @PathVariable("bookid") bookId: UUID,
         @RequestBody book: @Valid Book
     ) = bookService.save(bookId, book)
 
     @PostMapping("/{bookid}/bookusings/search")
     override fun searchBookUsings(
-        @PathVariable("bookid") bookId: Long,
+        @PathVariable("bookid") bookId: UUID,
         pageable: Pageable
     ) = bookService.findBookUsingsByBookId(bookId, pageable)
 
     @PutMapping("/{bookid}/bookusings/")
     override fun updateBookUsings(
-        @PathVariable("bookid") bookId: Long,
-        @RequestParam("list") bookUsingIds: List<Long>
+        @PathVariable("bookid") bookId: UUID,
+        @RequestParam("list") bookUsingIds: List<UUID>
     ) = bookService.updateBookUsings(bookId, bookUsingIds)
 }

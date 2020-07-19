@@ -21,8 +21,8 @@ import kotlin.random.Random
 /*CONSTANTS */
 
 val TEST_AUTHOR_ENTITY = AuthorEntity(
-    birthdate = Date.from(Instant.now()),
-    deathdate = Date.from(Instant.now()),
+    birthdate = Instant.now(),
+    deathdate = Instant.now(),
     firstName = RandomStringUtils.random(60),
     surname = RandomStringUtils.random(60),
     patronymic = RandomStringUtils.random(60),
@@ -57,7 +57,7 @@ val TEST_SECTION_ENTITY = SectionEntity(
 )
 
 /* FACTORY */
-fun  testEditionEntity(
+fun testEditionEntity(
     genre: GenreEntity,
     lang: LangEntity,
     section: SectionEntity,
@@ -94,8 +94,8 @@ fun testBookUsingEntity(
 ) = BookUsingEntity(
     book = book,
     reader = reader,
-    startDate = Date.from(Instant.now()),
-    endDate =  Date.from(Instant.now())
+    startDate = Instant.now(),
+    endDate = Instant.now()
 )
 
 fun testOrderEntity(

@@ -11,9 +11,9 @@ import ru.elenacherev.librarymanager.mapper.map
 import java.util.*
 
 @Service
-class LibrarianService (
+class LibrarianService(
     var librarianRepository: LibrarianRepository
-){
+) {
     @Transactional(readOnly = true)
     fun findAllByPage(pageable: Pageable): Page<Librarian> {
         return librarianRepository
@@ -29,7 +29,7 @@ class LibrarianService (
     }
 
     @Transactional(readOnly = true)
-    fun findLibrarianById(librarianId: Long): Librarian {
+    fun findLibrarianById(librarianId: UUID): Librarian {
         return librarianRepository
             .findById(librarianId)
             .map(LibrarianEntity::map)
@@ -37,11 +37,11 @@ class LibrarianService (
     }
 
     @Transactional
-    fun save(librarianId: Long, dto: Librarian): Librarian {
+    fun save(librarianId: UUID, dto: Librarian): Librarian {
         return librarianRepository
             .findById(librarianId)
             .map(dto::map)
-            .map{librarian: LibrarianEntity -> librarianRepository.saveAndFlush(librarian) }
+            .map { librarian: LibrarianEntity -> librarianRepository.saveAndFlush(librarian) }
             .map(LibrarianEntity::map)
             .orElse(null)
     }
@@ -50,7 +50,7 @@ class LibrarianService (
     fun create(dto: Librarian): Librarian {
         return Optional.of(dto)
             .map(Librarian::map)
-            .map{librarian: LibrarianEntity -> librarianRepository.saveAndFlush(librarian) }
+            .map { librarian: LibrarianEntity -> librarianRepository.saveAndFlush(librarian) }
             .map(LibrarianEntity::map)
             .orElse(null)
     }

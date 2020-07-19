@@ -1,5 +1,6 @@
 package ru.elenacherev.librarymanager.domain.entity
 
+import org.hibernate.annotations.ColumnDefault
 import java.util.*
 import javax.persistence.CascadeType
 import javax.persistence.Column
@@ -17,15 +18,16 @@ import javax.validation.constraints.NotNull
 @Table(name = "BOOKS")
 data class BookEntity(
 
-    @Id
     @Column(name = "BOOK_ID")
+    @ColumnDefault("random_uuid()")
     @GeneratedValue
+    @Id
     @get:NotNull
-    var bookId: Long? = null,
+    var bookId: UUID? = null,
 
     //версия, инкрементится при редактировании записи
-    @Version
     @Column(name = "VERSION")
+    @Version
     var version: Int = 0,
 
     @Column(name = "IS_RESERVED")

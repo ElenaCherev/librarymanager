@@ -14,26 +14,26 @@ import ru.elenacherev.librarymanager.mapper.map
 import java.util.*
 
 @Service
-class SectionService (
+class SectionService(
     val sectionRepository: SectionRepository,
     val editionRepository: EditionRepository
-){
+) {
     @Transactional
     fun create(dto: Section): Section {
 
         var parentSection: SectionEntity? = null
-        if(dto.parentSectionId !=null)
+        if (dto.parentSectionId != null)
             parentSection = sectionRepository.findById(dto.parentSectionId!!).get()
 
         return Optional.of(dto)
-            .map{dto.map( parentSection)}
-            .map{ section: SectionEntity -> sectionRepository.saveAndFlush(section) }
+            .map { dto.map(parentSection) }
+            .map { section: SectionEntity -> sectionRepository.saveAndFlush(section) }
             .map(SectionEntity::map)
             .orElse(null)
     }
 
     @Transactional(readOnly = true)
-    fun findSectionById(id: Long): Section {
+    fun findSectionById(id: UUID): Section {
         return sectionRepository
             .findById(id)
             .map(SectionEntity::map)
@@ -42,7 +42,7 @@ class SectionService (
 
     @Transactional(readOnly = true)
     fun findAllByParentSectionId(
-        parentSectionId: Long,
+        parentSectionId: UUID,
         pageable: Pageable
     ): Page<Section> {
         return sectionRepository
@@ -52,23 +52,22 @@ class SectionService (
 
     @Transactional(readOnly = true)
     fun findAllRootSections(pageable: Pageable): Page<Section> {
-        return findAllByParentSectionId(0.toLong(), pageable) //!!!
+        return findAllByParentSectionId(UUID.fromString(""), pageable) //!!!
     }
 
     @Transactional(readOnly = true)
     fun findeAllEditionsBySectionId(
-        sectionId: Long,
+        sectionId: UUID,
         pageable: Pageable
     ): Page<Edition> {
         return editionRepository.findAllBySection(
-                sectionRepository
-                    .findById(sectionId).
-                    orElse(null), pageable)
-                .map(EditionEntity::map)
+            sectionRepository
+                .findById(sectionId).orElse(null), pageable)
+            .map(EditionEntity::map)
     }
 
     @Transactional
-    fun updateEditionsByAuthorId(sectionId: Long, editionIds: List<Long>): List<Edition> {
+    fun updateEditionsByAuthorId(sectionId: UUID, editionIds: List<UUID>): List<Edition> {
         return sectionRepository
             .findById(sectionId)
             .map { sectionEntity ->
@@ -77,8 +76,8 @@ class SectionService (
                     editionIds.map(editionRepository::getOne)
                 return@map sectionEntity
             }
-            .map{ section: SectionEntity -> sectionRepository.saveAndFlush(section) }
-            .map{ obj: SectionEntity -> obj.editions }
+            .map { section: SectionEntity -> sectionRepository.saveAndFlush(section) }
+            .map { obj: SectionEntity -> obj.editions }
             .orElse(mutableSetOf())
             .map(EditionEntity::map)
     }

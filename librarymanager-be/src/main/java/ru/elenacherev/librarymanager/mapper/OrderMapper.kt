@@ -12,8 +12,8 @@ fun OrderEntity.map() = Order(
     orderState = orderState,
     readerFio = reader.fio,
     editionTitle = edition.title,
-    readerId = reader.readerId ?: 0,
-    editionId = edition.editionId ?: 0
+    readerId = reader.readerId!!,
+    editionId = edition.editionId!!
 )
 
 fun Order.map(readerEntity: ReaderEntity,
@@ -27,7 +27,7 @@ fun Order.map(readerEntity: ReaderEntity,
 )
 
 fun Order.map(
-    entity:OrderEntity,
+    entity: OrderEntity,
     readerEntity: ReaderEntity,
     editionEntity: EditionEntity
 ) = entity.also {

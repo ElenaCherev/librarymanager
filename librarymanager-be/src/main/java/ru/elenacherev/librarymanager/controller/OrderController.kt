@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController
 import ru.elenacherev.librarymanager.api.OrderApi
 import ru.elenacherev.librarymanager.api.dto.Order
 import ru.elenacherev.librarymanager.services.OrderService
+import java.util.*
 
 @RequestMapping("/orders")
 @RestController
@@ -20,7 +21,7 @@ class OrderController(
 
     @GetMapping("/{orderid}")
     override fun getOrder(
-        @PathVariable("orderid") orderId: Long
+        @PathVariable("orderid") orderId: UUID
     ) = orderService.findOrderById(orderId)
 
     @PostMapping("/search")
@@ -35,7 +36,7 @@ class OrderController(
 
     @PutMapping("/{orderid}")
     override fun saveOrder(
-        @PathVariable("orderid") orderId: Long,
+        @PathVariable("orderid") orderId: UUID,
         @RequestBody order: Order
     ) = orderService.save(orderId, order)
 }

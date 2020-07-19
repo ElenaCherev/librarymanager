@@ -1,12 +1,13 @@
 package ru.elenacherev.librarymanager.domain.entity
 
+import org.hibernate.annotations.ColumnDefault
+import java.util.*
 import javax.persistence.Basic
 import javax.persistence.CascadeType
 import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.FetchType
 import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
 import javax.persistence.Id
 import javax.persistence.Lob
 import javax.persistence.OneToMany
@@ -19,11 +20,12 @@ import javax.validation.constraints.Size
 @Table(name = "PUBLISHING_HOUSES")
 data class PublishingHouseEntity(
 
-    @Id
-    @GeneratedValue
     @Column(name = "PUBLISHING_HOUSE_ID")
+    @ColumnDefault("random_uuid()")
+    @GeneratedValue
+    @Id
     @get:NotNull
-    var publishingHouseId: Long? = null,
+    var publishingHouseId: UUID? = null,
 
     //версия, инкрементится при редактировании записи
     @Version

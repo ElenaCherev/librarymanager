@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController
 import ru.elenacherev.librarymanager.api.LibrarianApi
 import ru.elenacherev.librarymanager.api.dto.Librarian
 import ru.elenacherev.librarymanager.services.LibrarianService
+import java.util.*
 
 @RequestMapping("/librarians")
 @RestController
@@ -20,7 +21,7 @@ class LibrarianController(
 
     @GetMapping("/{librarianid}")
     override fun getLibrarian(
-        @PathVariable("librarianid") librarianId: Long
+        @PathVariable("librarianid") librarianId: UUID
     ) = librarianService.findLibrarianById(librarianId)
 
     @PostMapping("/search")
@@ -35,7 +36,7 @@ class LibrarianController(
 
     @PutMapping("/{librarianid}")
     override fun saveLibrarian(
-        @PathVariable("librarianid") librarianId: Long,
+        @PathVariable("librarianid") librarianId: UUID,
         @RequestBody librarian: Librarian
     ) = librarianService.save(librarianId, librarian)
 }

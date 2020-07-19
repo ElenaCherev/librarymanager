@@ -35,7 +35,7 @@ class BookUsingService(
     }
 
     @Transactional(readOnly = true)
-    fun findBookUsingById(bookUsingId: Long): BookUsing {
+    fun findBookUsingById(bookUsingId: UUID): BookUsing {
         return bookUsingRepository
             .findById(bookUsingId)
             .map(BookUsingEntity::map)
@@ -43,13 +43,13 @@ class BookUsingService(
     }
 
     @Transactional
-    fun save(bookUsingId: Long, dto: BookUsing): BookUsing {
+    fun save(bookUsingId: UUID, dto: BookUsing): BookUsing {
         val reader: ReaderEntity = readerRepository.findById(dto.readerId).get()
         val book: BookEntity = bookRepository.findById(dto.bookId).get()
 
         return bookUsingRepository.findById(bookUsingId)
             .map { dto.map(book, reader) }
-            .map{ bookUsing: BookUsingEntity -> bookUsingRepository.saveAndFlush(bookUsing) }
+            .map { bookUsing: BookUsingEntity -> bookUsingRepository.saveAndFlush(bookUsing) }
             .map(BookUsingEntity::map)
             .orElse(null)
     }
@@ -59,23 +59,22 @@ class BookUsingService(
         val readerEntity: ReaderEntity = readerRepository.findById(dto.readerId).get()
         val bookEntity: BookEntity = bookRepository.findById(dto.bookId).get()
         return Optional.of(dto)
-            .map{dto.map(bookEntity, readerEntity)}
-            .map{ bookUsing: BookUsingEntity -> bookUsingRepository.saveAndFlush(bookUsing) }
+            .map { dto.map(bookEntity, readerEntity) }
+            .map { bookUsing: BookUsingEntity -> bookUsingRepository.saveAndFlush(bookUsing) }
             .map(BookUsingEntity::map)
             .orElse(null)
     }
 
     @Transactional(readOnly = true)
-    fun findAllByReaderId(readerId: Long, pageable: Pageable): Page<BookUsing> {
+    fun findAllByReaderId(readerId: UUID, pageable: Pageable): Page<BookUsing> {
         return bookUsingRepository
             .findAllByReader(
                 readerRepository.findById(readerId).get(),
-                pageable).
-            map(BookUsingEntity::map)
+                pageable).map(BookUsingEntity::map)
     }
 
     @Transactional(readOnly = true)
-    fun findAllByBookId(bookId: Long, pageable: Pageable): Page<BookUsing> {
+    fun findAllByBookId(bookId: UUID, pageable: Pageable): Page<BookUsing> {
         return bookUsingRepository
             .findAllByBook(
                 bookRepository.findById(bookId).get(),

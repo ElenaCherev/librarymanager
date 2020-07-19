@@ -9,7 +9,7 @@ fun BookEntity.map() = Book(
     isAvailable = isAvailable,
     isReserved = isReserved,
     shelfNumber = shelfNumber,
-    editionId = edition.editionId ?: 0,
+    editionId = edition.editionId!!,
     title = edition.title
 )
 

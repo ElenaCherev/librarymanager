@@ -33,7 +33,7 @@ import ru.elenacherev.librarymanager.domain.repository.SectionRepository
 /** Testing nonempty repository */
 @EnableAutoConfiguration
 @DataJpaTest
-class RepositoriesTests (
+class RepositoriesTests(
     //val entityManager: TestEntityManager,
     @Autowired val authorRepository: AuthorRepository,
     @Autowired val bookRepository: BookRepository,
@@ -75,7 +75,7 @@ class RepositoriesTests (
     }
 
     @AfterEach
-    fun dropTestData(){
+    fun dropTestData() {
         genre?.let { genreRepository.delete(it) }
         lang?.let { langRepository.delete(it) }
         section?.let { sectionRepository.delete(it) }
@@ -107,7 +107,7 @@ class RepositoriesTests (
             pageable = Pageable.unpaged()
         )
         assertThat(result)
-            .isNotEmpty()
+            .isNotEmpty
             .hasSize(1)
             .contains(book)
 
@@ -153,7 +153,7 @@ class RepositoriesTests (
             pageable = Pageable.unpaged()
         )
         assertThat(result)
-            .isNotEmpty()
+            .isNotEmpty
             .hasSize(1)
             .contains(bookUsing)
 
@@ -200,7 +200,7 @@ class RepositoriesTests (
             pageable = Pageable.unpaged()
         )
         assertThat(result)
-            .isNotEmpty()
+            .isNotEmpty
             .hasSize(1)
             .contains(bookUsing)
 
@@ -228,7 +228,7 @@ class RepositoriesTests (
             pageable = Pageable.unpaged()
         )
         assertThat(result)
-            .isNotEmpty()
+            .isNotEmpty
             .hasSize(1)
             .contains(edition)
 
@@ -237,7 +237,7 @@ class RepositoriesTests (
 
     @Test
     fun `Test findAllByAuthors of EditionRepository`() {
-        val author: AuthorEntity  = authorRepository.saveAndFlush(TEST_AUTHOR_ENTITY)
+        val author: AuthorEntity = authorRepository.saveAndFlush(TEST_AUTHOR_ENTITY)
         assertThat(author)
             .extracting(AuthorEntity::authorId)
             .isNotNull()
@@ -260,7 +260,7 @@ class RepositoriesTests (
             pageable = Pageable.unpaged()
         )
         assertThat(result)
-            .isNotEmpty()
+            .isNotEmpty
             .hasSize(1)
             .contains(edition)
 
@@ -285,7 +285,7 @@ class RepositoriesTests (
             pageable = Pageable.unpaged()
         )
         assertThat(result)
-            .isNotEmpty()
+            .isNotEmpty
             .hasSize(1)
             .contains(edition)
 
@@ -309,7 +309,7 @@ class RepositoriesTests (
             pageable = Pageable.unpaged()
         )
         assertThat(result)
-            .isNotEmpty()
+            .isNotEmpty
             .hasSize(1)
             .contains(edition)
 
@@ -333,7 +333,7 @@ class RepositoriesTests (
             pageable = Pageable.unpaged()
         )
         assertThat(result)
-            .isNotEmpty()
+            .isNotEmpty
             .hasSize(1)
             .contains(edition)
 
@@ -357,7 +357,7 @@ class RepositoriesTests (
             pageable = Pageable.unpaged()
         )
         assertThat(result)
-            .isNotEmpty()
+            .isNotEmpty
             .hasSize(1)
             .contains(edition)
 
@@ -395,7 +395,7 @@ class RepositoriesTests (
             pageable = Pageable.unpaged()
         )
         assertThat(result)
-            .isNotEmpty()
+            .isNotEmpty
             .hasSize(1)
             .contains(order)
 
@@ -434,7 +434,7 @@ class RepositoriesTests (
             pageable = Pageable.unpaged()
         )
         assertThat(result)
-            .isNotEmpty()
+            .isNotEmpty
             .hasSize(1)
             .contains(order)
 
@@ -457,11 +457,11 @@ class RepositoriesTests (
             .isNotNull()
 
         val result = sectionRepository.findAllByParentSection(
-            parentSection =  section!!,
+            parentSection = section!!,
             pageble = Pageable.unpaged()
         )
         assertThat(result)
-            .isNotEmpty()
+            .isNotEmpty
             .hasSize(1)
             .contains(subSection)
 

@@ -4,10 +4,11 @@ import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import ru.elenacherev.librarymanager.api.dto.Edition
 import ru.elenacherev.librarymanager.api.dto.Section
+import java.util.*
 
 interface SectionApi {
     fun getSection(
-        sectionId:  Long
+        sectionId: UUID
     ): Section?
 
     fun searchRootSections(
@@ -15,17 +16,17 @@ interface SectionApi {
     ): Page<Section>
 
     fun searchSectionsByParentSectionId(
-        sectionId:  Long,
+        sectionId: UUID,
         pageable: Pageable
     ): Page<Section>
 
     fun searchEditionsBySectionId(
-        sectionId:  Long,
+        sectionId: UUID,
         pageable: Pageable
     ): Page<Edition>
 
     fun updateEditionsBySectionId(
-        sectionId:  Long,
-        editionIds:  List<Long>
+        sectionId: UUID,
+        editionIds: List<UUID>
     ): List<Edition>
 }

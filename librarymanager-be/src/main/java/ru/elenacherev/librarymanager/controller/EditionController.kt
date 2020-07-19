@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController
 import ru.elenacherev.librarymanager.api.EditionApi
 import ru.elenacherev.librarymanager.api.dto.Edition
 import ru.elenacherev.librarymanager.services.EditionService
+import java.util.*
 
 @RequestMapping("/editions")
 @RestController
@@ -21,7 +22,7 @@ class EditionController(
 
     @GetMapping("/{editionid}")
     override fun getEdition(
-        @PathVariable("editionid") editionId: Long
+        @PathVariable("editionid") editionId: UUID
     ) = editionService.findById(editionId)
 
     @PostMapping("/search")
@@ -36,31 +37,31 @@ class EditionController(
 
     @PutMapping("/{editionid}")
     override fun saveEdition(
-        @PathVariable("editionid") editionId: Long,
+        @PathVariable("editionid") editionId: UUID,
         @RequestBody edition: Edition
     ) = editionService.save(editionId, edition)
 
     @PostMapping("/{editionid}/books/search")
     override fun searchBooksByEditionId(
-        @PathVariable("editionid") editionId: Long,
+        @PathVariable("editionid") editionId: UUID,
         pageable: Pageable
     ) = editionService.findAllBooksByEditionId(editionId, pageable)
 
     @PutMapping("/{editionid}/books/")
     override fun updateBooksByEditionId(
-        @PathVariable("editionid") editionId: Long,
-        @RequestParam("list") bookIds: List<Long>
+        @PathVariable("editionid") editionId: UUID,
+        @RequestParam("list") bookIds: List<UUID>
     ) = editionService.updateBooksByEditionId(editionId, bookIds)
 
     @PostMapping("/{editionid}/orders/search")
     override fun searchOrdersByEditionId(
-        @PathVariable("editionid") editionId: Long,
+        @PathVariable("editionid") editionId: UUID,
         pageable: Pageable
     ) = editionService.findAllOrdersByEditionId(editionId, pageable)
 
     @PutMapping("/{editionid}/orders/")
     override fun updateOrdersByEditionId(
-        @PathVariable("editionid") editionId: Long,
-        @RequestParam("list") orderIds: List<Long>
+        @PathVariable("editionid") editionId: UUID,
+        @RequestParam("list") orderIds: List<UUID>
     ) = editionService.updateOrdersByEditionId(editionId, orderIds)
 }

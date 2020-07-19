@@ -8,9 +8,11 @@ import org.springframework.transaction.annotation.Propagation
 import org.springframework.transaction.annotation.Transactional
 import ru.elenacherev.librarymanager.domain.entity.BookEntity
 import ru.elenacherev.librarymanager.domain.entity.EditionEntity
+import java.util.*
 
 @Repository
 @Transactional(propagation = Propagation.MANDATORY)
-interface BookRepository : JpaRepository<BookEntity, Long> {
+interface BookRepository : JpaRepository<BookEntity, UUID> {
+
     fun findAllByEdition(edition: EditionEntity, pageable: Pageable): Page<BookEntity>
 }

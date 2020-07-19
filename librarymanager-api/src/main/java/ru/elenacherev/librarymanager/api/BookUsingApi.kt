@@ -3,11 +3,12 @@ package ru.elenacherev.librarymanager.api
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import ru.elenacherev.librarymanager.api.dto.BookUsing
+import java.util.*
 import javax.validation.Valid
 
 interface BookUsingApi {
     fun getBookUsing(
-        bookusingid:  Long
+        bookusingid: UUID
     ): BookUsing?
 
     fun searchBookUsings(
@@ -19,7 +20,7 @@ interface BookUsingApi {
     ): BookUsing
 
     fun saveBookUsing(
-        bookUsingId: Long,
+        bookUsingId: UUID,
         bookUsing: @Valid BookUsing
     ): BookUsing
 }

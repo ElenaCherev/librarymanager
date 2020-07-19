@@ -14,7 +14,7 @@ import ru.elenacherev.librarymanager.mapper.map
 import java.util.*
 
 @Service
-class AuthorService(    
+class AuthorService(
     val authorRepository: AuthorRepository,
     val editionRepository: EditionRepository
 ) {
@@ -29,24 +29,24 @@ class AuthorService(
     @Transactional(readOnly = true)
     fun findAllByPage(pageable: Pageable): Page<Author> {
         return authorRepository
-                .findAll(pageable)
-                .map(AuthorEntity::map)
+            .findAll(pageable)
+            .map(AuthorEntity::map)
 
     }
 
     @Transactional(readOnly = true)
-    fun findAuthorById(authorId: Long): Author? {
+    fun findAuthorById(authorId: UUID): Author? {
         return authorRepository.findById(authorId)
             .map(AuthorEntity::map)
             .orElse(null)
     }
 
     @Transactional
-    fun save(authorId: Long, dto: Author): Author {
+    fun save(authorId: UUID, dto: Author): Author {
         return authorRepository
             .findById(authorId)
             .map(dto::map)
-            .map{ author: AuthorEntity -> authorRepository.saveAndFlush(author) }
+            .map { author: AuthorEntity -> authorRepository.saveAndFlush(author) }
             .map(AuthorEntity::map)
             .get()
     }
@@ -55,13 +55,13 @@ class AuthorService(
     fun create(dto: Author): Author {
         return Optional.of(dto)
             .map(Author::map)
-            .map{ author: AuthorEntity -> authorRepository.saveAndFlush(author) }
+            .map { author: AuthorEntity -> authorRepository.saveAndFlush(author) }
             .map(AuthorEntity::map)
             .get()
     }
 
     @Transactional(readOnly = true)
-    fun findEditionsByAuthorId(authorId: Long, pageable: Pageable): Page<Edition> {
+    fun findEditionsByAuthorId(authorId: UUID, pageable: Pageable): Page<Edition> {
         return authorRepository.findById(authorId)
             .map { entity -> editionRepository.findAllByAuthor(entity, pageable) }
             .orElse(Page.empty())
@@ -69,16 +69,16 @@ class AuthorService(
     }
 
     @Transactional
-    fun updateEditionsByAuthorId(authorId: Long, editionIds: List<Long>): List<Edition> {
+    fun updateEditionsByAuthorId(authorId: UUID, editionIds: List<UUID>): List<Edition> {
         return authorRepository
             .findById(authorId)
             .map { authorEntity ->
                 authorEntity.editions.clear()
-                authorEntity.editions +=  editionIds.map(editionRepository::getOne)
+                authorEntity.editions += editionIds.map(editionRepository::getOne)
                 return@map authorEntity
             }
-            .map{ author: AuthorEntity -> authorRepository.saveAndFlush(author) }
-            .map{ obj: AuthorEntity -> obj.editions }
+            .map { author: AuthorEntity -> authorRepository.saveAndFlush(author) }
+            .map { obj: AuthorEntity -> obj.editions }
             .orElse(mutableSetOf())
             .map(EditionEntity::map)
             .toList()

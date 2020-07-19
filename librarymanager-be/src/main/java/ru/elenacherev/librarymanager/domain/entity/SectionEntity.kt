@@ -1,10 +1,11 @@
 package ru.elenacherev.librarymanager.domain.entity
 
+import org.hibernate.annotations.ColumnDefault
+import java.util.*
 import javax.persistence.CascadeType
 import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
 import javax.persistence.Id
 import javax.persistence.JoinColumn
 import javax.persistence.ManyToOne
@@ -19,11 +20,12 @@ import javax.validation.constraints.Size
 @Table(name = "SECTIONS")
 data class SectionEntity(
 
-    @Id
-    @GeneratedValue
     @Column(name = "SECTION_ID")
+    @ColumnDefault("random_uuid()")
+    @GeneratedValue
+    @Id
     @get:NotNull
-    var sectionId: Long? = null,
+    var sectionId: UUID? = null,
 
     //версия, инкрементится при редактировании записи
     @Version
