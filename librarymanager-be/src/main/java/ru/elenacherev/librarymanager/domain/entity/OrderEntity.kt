@@ -19,17 +19,18 @@ import javax.validation.constraints.NotNull
 
 @Entity
 @Table(name = "ORDERS")
-class OrderEntity (
+data class OrderEntity(
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //уникальный ID, генерируется сам в БД
+    @GeneratedValue
     @Column(name = "ORDER_ID")
-    @get: NotNull
+    @get:NotNull
     var orderId: Long? = null,
 
     //версия, инкрементится при редактировании записи
     @Version
     @Column(name = "VERSION")
-    var version: Int  = 0,
+    var version: Int = 0,
 
     //дата выполнения заказа (когда его выдали)
     @Temporal(TemporalType.DATE)
@@ -39,7 +40,7 @@ class OrderEntity (
     //дата создания заказа
     @Temporal(TemporalType.DATE)
     @Column(name = "ORDER_DATE")
-    @NotNull(message = "{validation.orderDate.NotEmpty.message}")
+    @NotNull
     var orderDate: Date,
 
     // состояние заказа

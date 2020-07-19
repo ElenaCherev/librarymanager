@@ -5,7 +5,6 @@ import java.util.*
 import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
 import javax.persistence.Id
 import javax.persistence.JoinColumn
 import javax.persistence.JoinTable
@@ -21,13 +20,13 @@ import javax.validation.constraints.Size
 
 @Entity
 @Table(name = "AUTHORS")
-class AuthorEntity (
-    //уникальный ID, генерируется сам в БД
+data class AuthorEntity(
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     @Column(name = "AUTHOR_ID")
-    @NotNull
-    var authorId:  Long? = null,
+    @get:NotNull
+    var authorId: Long? = null,
 
     //версия, инкрементится при редактировании записи
     @Version
@@ -36,34 +35,34 @@ class AuthorEntity (
 
     //имя
     @Column(name = "FIRST_NAME", nullable = false)
-    @NotEmpty(message = "{validation.firstname.notempty.message}")
-    @Size(min = 3, max = 60, message = "{validation.firstname.size.message}")
-    var firstName:  String,
+    @NotEmpty
+    @Size(min = 3, max = 60)
+    var firstName: String,
 
     //фамилия
     @Column(name = "SURNAME", nullable = false)
-    @NotEmpty(message = "{validation.surname.notempty.message}")
-    @Size(min = 1, max = 60, message = "{validation.surname.size.message}")
-    var surname :   String,
+    @NotEmpty
+    @Size(min = 1, max = 60)
+    var surname: String,
 
     //отчество
     @Column(name = "PATRONYMIC")
-    @Size(min = 0, max = 60, message = "{validation.patronymic.Size.message}")
-    var patronymic :  String? = null,
+    @Size(min = 0, max = 60)
+    var patronymic: String? = null,
 
     @Temporal(TemporalType.DATE)
     @Column(name = "BIRTHDATE")
-    @NotNull(message = "{validation.birthday.NotEmpty.message}")
-    var birthdate : Date? = null,
+    @NotNull
+    var birthdate: Date? = null,
 
     @Temporal(TemporalType.DATE)
     @Column(name = "DEATHDATE")
-    var deathdate  : Date? = null,
+    var deathdate: Date? = null,
 
     //доп. информация
     @Column(name = "INFO")
-    @Size(min = 0, max = 1000, message = "{validation.info.Size.message}")
-    var info :  String? = null,
+    @Size(min = 0, max = 1000)
+    var info: String? = null,
 
     //Все работы данного автора
     @ManyToMany(targetEntity = EditionEntity::class)
@@ -73,8 +72,7 @@ class AuthorEntity (
         inverseJoinColumns = [JoinColumn(name = "EDITION_ID")]
     )
     val editions: MutableSet<EditionEntity> = mutableSetOf()
-)
-{
+) {
     @Formula("(SURNAME || ' ' || FIRST_NAME || ' ' || PATRONYMIC)")
     @Transient
     lateinit var fio: String

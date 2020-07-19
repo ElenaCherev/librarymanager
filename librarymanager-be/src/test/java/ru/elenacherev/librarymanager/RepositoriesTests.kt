@@ -5,6 +5,8 @@ import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
 import org.springframework.data.domain.Pageable
 import ru.elenacherev.librarymanager.domain.entity.AuthorEntity
@@ -29,19 +31,20 @@ import ru.elenacherev.librarymanager.domain.repository.ReaderRepository
 import ru.elenacherev.librarymanager.domain.repository.SectionRepository
 
 /** Testing nonempty repository */
+@EnableAutoConfiguration
 @DataJpaTest
 class RepositoriesTests (
     //val entityManager: TestEntityManager,
-    val authorRepository: AuthorRepository,
-    val bookRepository: BookRepository,
-    val bookUsingRepository: BookUsingRepository,
-    val editionRepository: EditionRepository,
-    val genreRepository: GenreRepository,
-    val langRepository: LangRepository,
-    val orderRepository: OrderRepository,
-    val publishingHouseRepository: PublishingHouseRepository,
-    val readerRepository: ReaderRepository,
-    val sectionRepository: SectionRepository
+    @Autowired val authorRepository: AuthorRepository,
+    @Autowired val bookRepository: BookRepository,
+    @Autowired val bookUsingRepository: BookUsingRepository,
+    @Autowired val editionRepository: EditionRepository,
+    @Autowired val genreRepository: GenreRepository,
+    @Autowired val langRepository: LangRepository,
+    @Autowired val orderRepository: OrderRepository,
+    @Autowired val publishingHouseRepository: PublishingHouseRepository,
+    @Autowired val readerRepository: ReaderRepository,
+    @Autowired val sectionRepository: SectionRepository
 ) {
     var genre: GenreEntity? = null
     var lang: LangEntity? = null

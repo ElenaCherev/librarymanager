@@ -14,13 +14,13 @@ import javax.validation.constraints.Size
 
 @Entity
 @Table(name = "GENRES")
-class GenreEntity (
-    // уникальный ID, генерируется сам в БД
+data class GenreEntity(
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     @Column(name = "GENRE_ID")
-    @get: NotNull
-    var genreId:  Long? = null,
+    @get:NotNull
+    var genreId: Long? = null,
 
     //версия, инкрементится при редактировании записи
     @Version

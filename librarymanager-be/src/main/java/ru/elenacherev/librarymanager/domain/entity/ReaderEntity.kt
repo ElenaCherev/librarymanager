@@ -23,11 +23,12 @@ import javax.validation.constraints.Size
  */
 @Entity
 @Table(name = "READERS")
-class ReaderEntity (
+data class ReaderEntity(
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //уникальный ID, генерируется сам в БД
+    @GeneratedValue
     @Column(name = "READER_ID")
-    @get: NotNull
+    @get:NotNull
     var readerId: Long? = null,
 
     //версия, инкрементится при редактировании записи
@@ -37,24 +38,24 @@ class ReaderEntity (
 
     //имя
     @Column(name = "FIRST_NAME")
-    @NotEmpty(message = "{validation.firstname.notempty.message}")
-    @Size(min = 3, max = 60, message = "{validation.firstname.size.message}")
-    var firstName:  String,
+    @NotEmpty
+    @Size(min = 3, max = 60)
+    var firstName: String,
 
     //фамилия
     @Column(name = "SURNAME")
-    @NotEmpty(message = "{validation.surname.notempty.message}")
-    @Size(min = 1, max = 60, message = "{validation.surname.size.message}")
-    var surname:  String? = null,
+    @NotEmpty
+    @Size(min = 1, max = 60)
+    var surname: String? = null,
 
     //отчество
     @Column(name = "PATRONYMIC")
-    @Size(min = 0, max = 60, message = "{validation.patronymic.Size.message}")
+    @Size(min = 0, max = 60)
     var patronymic: String? = null,
 
     //дата рождения, чтобы камасутру мелким не выдать
     @Column(name = "BIRTHDATE")
-    @NotNull(message = "{validation.birthday.NotEmpty.message}")
+    @NotNull
     @Temporal(TemporalType.DATE)
     var birthdate: Date,
 
@@ -64,13 +65,13 @@ class ReaderEntity (
 
     //телефон, чтобы присылать смс о готовых заказах и задолжностях
     @Column(name = "TELEPHONE")
-    @Size(min = 0, max = 12, message = "{validation.telephone.Size.message}")
-    var telephone:  String? = null,
+    @Size(min = 0, max = 12)
+    var telephone: String? = null,
 
     //электронная почта. Уникальное поле, используется для авторизации
     @Column(name = "EMAIL")
-    @NotEmpty(message = "{validation.email.NotEmpty.message}")
-    @Size(min = 4, max = 200, message = "{validation.email.Size.message}")
+    @NotEmpty
+    @Size(min = 4, max = 200)
     var email: String,
 
     @OneToMany(mappedBy = "reader", cascade = [CascadeType.ALL], orphanRemoval = true)
@@ -78,9 +79,8 @@ class ReaderEntity (
 
     @OneToMany(mappedBy = "reader", cascade = [CascadeType.ALL], orphanRemoval = true)
     val bookUsings: MutableSet<BookUsingEntity> = mutableSetOf()
-)
-{
-        @Formula("(SURNAME || ' ' || FIRST_NAME || ' ' || PATRONYMIC)")
-        @Transient
-        lateinit var fio: String
+) {
+    @Formula("(SURNAME || ' ' || FIRST_NAME || ' ' || PATRONYMIC)")
+    @Transient
+    lateinit var fio: String
 }

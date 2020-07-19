@@ -4,7 +4,6 @@ import java.util.*
 import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
 import javax.persistence.Id
 import javax.persistence.JoinColumn
 import javax.persistence.ManyToOne
@@ -16,23 +15,24 @@ import javax.validation.constraints.NotNull
 
 @Entity
 @Table(name = "BOOK_USINGS")
-class BookUsingEntity (
+data class BookUsingEntity(
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //уникальный ID, генерируется сам в БД
+    @GeneratedValue
     @Column(name = "BOOK_USING_ID")
     @get: NotNull
-    var bookUsingId:  Long? = null,
+    var bookUsingId: Long? = null,
 
     //версия, инкрементится при редактировании записи
     @Version
     @Column(name = "VERSION")
-    var version: Int  = 0,
+    var version: Int = 0,
 
     //Книгу взяли
     @Temporal(TemporalType.DATE)
     @Column(name = "START_DATE")
-    @NotNull(message = "{validation.startDate.NotEmpty.message}")
-    var startDate:  Date,
+    @NotNull
+    var startDate: Date,
 
     //Книгу вернули
     @Temporal(TemporalType.DATE)

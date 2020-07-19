@@ -1,7 +1,9 @@
 package ru.elenacherev.librarymanager
 
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
+import org.springframework.boot.test.mock.mockito.MockBean
 import org.springframework.test.web.servlet.MockMvc
 import ru.elenacherev.librarymanager.domain.repository.AuthorRepository
 import ru.elenacherev.librarymanager.domain.repository.BookRepository
@@ -14,37 +16,38 @@ import ru.elenacherev.librarymanager.domain.repository.PublishingHouseRepository
 import ru.elenacherev.librarymanager.domain.repository.ReaderRepository
 import ru.elenacherev.librarymanager.domain.repository.SectionRepository
 
+@EnableAutoConfiguration
 @WebMvcTest
 class ControllerTests(
-    val mockMvc: MockMvc
+    @Autowired val mockMvc: MockMvc
 ) {
-    @MockkBean
+    @MockBean
     lateinit var authorRepository: AuthorRepository
 
-    @MockkBean
+    @MockBean
     lateinit var bookRepository: BookRepository
 
-    @MockkBean
+    @MockBean
     lateinit var bookUsingRepository: BookUsingRepository
 
-    @MockkBean
+    @MockBean
     lateinit var editionRepository: EditionRepository
 
-    @MockkBean
+    @MockBean
     lateinit var genreRepository: GenreRepository
 
-    @MockkBean
+    @MockBean
     lateinit var langRepository: LangRepository
 
-    @MockkBean
+    @MockBean
     lateinit var orderRepository: OrderRepository
 
-    @MockkBean
+    @MockBean
     lateinit var publishingHouseRepository: PublishingHouseRepository
 
-    @MockkBean
+    @MockBean
     lateinit var readerRepository: ReaderRepository
 
-    @MockkBean
+    @MockBean
     lateinit var sectionRepository: SectionRepository
 }

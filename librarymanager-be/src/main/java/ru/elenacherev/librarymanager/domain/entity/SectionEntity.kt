@@ -17,22 +17,23 @@ import javax.validation.constraints.Size
 
 @Entity
 @Table(name = "SECTIONS")
-class SectionEntity (
+data class SectionEntity(
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //уникальный ID, генерируется сам в БД
+    @GeneratedValue
     @Column(name = "SECTION_ID")
-    @get: NotNull
-    var sectionId:  Long? = null,
+    @get:NotNull
+    var sectionId: Long? = null,
 
     //версия, инкрементится при редактировании записи
     @Version
     @Column(name = "VERSION")
-    var version: Int  = 0,
+    var version: Int = 0,
 
     @Column(name = "TITLE")
-    @NotEmpty(message = "{validation.title.notempty.message}")
-    @Size(min = 3, max = 60, message = "{validation.title.size.message}")
-    var title:   String,
+    @NotEmpty
+    @Size(min = 3, max = 60)
+    var title: String,
 
     @ManyToOne
     @JoinColumn(name = "PARENT_SECTION_ID")

@@ -17,17 +17,18 @@ import javax.validation.constraints.Size
 
 @Entity
 @Table(name = "PUBLISHING_HOUSES")
-class PublishingHouseEntity (
+data class PublishingHouseEntity(
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //уникальный ID, генерируется сам в БД
+    @GeneratedValue
     @Column(name = "PUBLISHING_HOUSE_ID")
-    @NotNull
+    @get:NotNull
     var publishingHouseId: Long? = null,
 
     //версия, инкрементится при редактировании записи
     @Version
     @Column(name = "VERSION")
-    var version: Int  = 0,
+    var version: Int = 0,
 
     @Column(name = "TITLE")
     @Size(min = 1, max = 255)

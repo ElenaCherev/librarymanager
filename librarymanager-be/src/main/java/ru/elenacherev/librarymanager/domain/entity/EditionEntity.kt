@@ -1,6 +1,7 @@
 package ru.elenacherev.librarymanager.domain.entity
 
 import ru.elenacherev.librarymanager.api.enum.AgeRating
+import java.util.*
 import javax.persistence.CascadeType
 import javax.persistence.Column
 import javax.persistence.Entity
@@ -20,17 +21,18 @@ import javax.validation.constraints.Size
 
 @Entity
 @Table(name = "EDITIONS")
-class EditionEntity (
+data class EditionEntity(
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //уникальный ID, генерируется сам в БД
+    @GeneratedValue
     @Column(name = "EDITION_ID")
-    @get: NotNull
-    var editionId:  Long? = null,
+    @get:NotNull
+    var editionId: Long? = null,
 
     //версия, инкрементится при редактировании записи
     @Version
     @Column(name = "VERSION")
-    var version: Int  = 0,
+    var version: Int = 0,
 
     @Column(name = "TITLE")
     @Size(min = 1, max = 255)
@@ -41,7 +43,7 @@ class EditionEntity (
     var workTitle: String,
 
     @Column(name = "YEAR")
-    var year: Int  = 0,
+    var year: Int = 0,
 
     @ManyToOne
     @JoinColumn(name = "GENERE_ID")

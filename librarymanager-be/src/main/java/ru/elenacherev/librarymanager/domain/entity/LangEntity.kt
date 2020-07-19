@@ -3,6 +3,7 @@ package ru.elenacherev.librarymanager.domain.entity
 import javax.persistence.CascadeType
 import javax.persistence.Column
 import javax.persistence.Entity
+import javax.persistence.GeneratedValue
 import javax.persistence.Id
 import javax.persistence.OneToMany
 import javax.persistence.Table
@@ -12,10 +13,12 @@ import javax.validation.constraints.Size
 
 @Entity
 @Table(name = "LANGS")
-class LangEntity(
+data class LangEntity(
+
     @Id
+    @GeneratedValue
     @Column(name = "LANG_ID")
-    @get: NotNull
+    @get:NotNull
     var langId: Long? = null,
 
     //версия, инкрементится при редактировании записи
