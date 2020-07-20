@@ -17,7 +17,7 @@ import javax.validation.constraints.Size
 @Table(name = "GENRES")
 data class GenreEntity(
 
-    @Column(name = "GENRE_ID")
+    @Column(name = "GENRE_ID", nullable = false, updatable = false)
     @GeneratedValue
     @Id
     @get:NotNull
@@ -25,7 +25,7 @@ data class GenreEntity(
 
     //версия, инкрементится при редактировании записи
     @Version
-    @Column(name = "VERSION")
+    @Column(name = "VERSION", nullable = false)
     var version: Int = 0,
 
     @Column(name = "TITLE")

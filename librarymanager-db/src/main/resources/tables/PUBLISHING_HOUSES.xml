@@ -2,12 +2,14 @@
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.8.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
     <changeSet author="owle8" id="11b077bc-105f-4f1b-8fa8-82478c1747e2">
         <createTable tableName="PUBLISHING_HOUSES">
-            <column name="PUBLISHING_HOUSE_ID" type="${uuid_type}" valueComputed="${uuid_gen}">
+            <column name="PUBLISHING_HOUSE_ID" type="${uuid_type}">
                 <constraints nullable="false" unique="true" />
             </column>
             <column name="LOGO" type="BLOB"/>
             <column name="TITLE" type="VARCHAR2(255)"/>
-            <column name="VERSION" type="NUMBER(10, 0)"/>
+            <column name="VERSION" type="NUMBER(10, 0)">
+                <constraints nullable="false" />
+            </column>
         </createTable>
     </changeSet>
 </databaseChangeLog>

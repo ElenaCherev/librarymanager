@@ -25,7 +25,7 @@ import javax.validation.constraints.Size
 @Table(name = "READERS")
 data class ReaderEntity(
 
-    @Column(name = "READER_ID")
+    @Column(name = "READER_ID", nullable = false, updatable = false)
     @GeneratedValue
     @Id
     @get:NotNull
@@ -33,7 +33,7 @@ data class ReaderEntity(
 
     //версия, инкрементится при редактировании записи
     @Version
-    @Column(name = "VERSION")
+    @Column(name = "VERSION", nullable = false)
     var version: Int = 0,
 
     //имя

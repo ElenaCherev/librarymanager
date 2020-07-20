@@ -24,7 +24,7 @@ import javax.validation.constraints.Size
 @Table(name = "AUTHORS")
 data class AuthorEntity(
 
-    @Column(name = "AUTHOR_ID")
+    @Column(name = "AUTHOR_ID", nullable = false, updatable = false)
     @GeneratedValue
     @Id
     @get:NotNull

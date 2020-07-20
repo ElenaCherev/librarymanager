@@ -20,7 +20,7 @@ import javax.validation.constraints.Size
 @Table(name = "PUBLISHING_HOUSES")
 data class PublishingHouseEntity(
 
-    @Column(name = "PUBLISHING_HOUSE_ID")
+    @Column(name = "PUBLISHING_HOUSE_ID", nullable = false, updatable = false)
     @GeneratedValue
     @Id
     @get:NotNull
@@ -28,7 +28,7 @@ data class PublishingHouseEntity(
 
     //версия, инкрементится при редактировании записи
     @Version
-    @Column(name = "VERSION")
+    @Column(name = "VERSION", nullable = false)
     var version: Int = 0,
 
     @Column(name = "TITLE")

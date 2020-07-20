@@ -2,14 +2,16 @@
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.8.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
     <changeSet author="owle8" id="5e8eb641-d848-417f-b0e4-e79fba5b6c6f">
         <createTable tableName="BOOKS">
-            <column name="BOOK_ID" type="${uuid_type}" valueComputed="${uuid_gen}">
+            <column name="BOOK_ID" type="${uuid_type}">
                 <constraints nullable="false" unique="true" />
             </column>
             <column name="IS_AVAILABLE" type="NUMBER(1, 0)"/>
             <column name="IS_RESERVED" type="NUMBER(1, 0)"/>
             <column name="SHELF_NUMBER" type="NUMBER(10, 0)"/>
-            <column name="VERSION" type="NUMBER(10, 0)"/>
             <column name="EDITION_ID" type="${uuid_type}"/>
+            <column name="VERSION" type="NUMBER(10, 0)">
+                <constraints nullable="false" />
+            </column>
         </createTable>
     </changeSet>
 </databaseChangeLog>

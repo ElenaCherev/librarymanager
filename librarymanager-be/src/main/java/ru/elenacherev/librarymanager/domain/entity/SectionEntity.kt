@@ -20,7 +20,7 @@ import javax.validation.constraints.Size
 @Table(name = "SECTIONS")
 data class SectionEntity(
 
-    @Column(name = "SECTION_ID")
+    @Column(name = "SECTION_ID", nullable = false, updatable = false)
     @GeneratedValue
     @Id
     @get:NotNull
@@ -28,7 +28,7 @@ data class SectionEntity(
 
     //версия, инкрементится при редактировании записи
     @Version
-    @Column(name = "VERSION")
+    @Column(name = "VERSION", nullable = false)
     var version: Int = 0,
 
     @Column(name = "TITLE")

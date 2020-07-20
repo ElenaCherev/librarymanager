@@ -17,14 +17,14 @@ import javax.validation.constraints.Size
 @Table(name = "LANGS")
 data class LangEntity(
 
-    @Column(name = "LANG_ID")
+    @Column(name = "LANG_ID", nullable = false, updatable = false)
     @GeneratedValue
     @Id
     @get:NotNull
     var langId: UUID? = null,
 
     //версия, инкрементится при редактировании записи
-    @Column(name = "VERSION")
+    @Column(name = "VERSION", nullable = false)
     @Version
     var version: Int = 0,
 

@@ -14,14 +14,14 @@ import javax.validation.constraints.NotNull
 @Table(name = "LIBRARIANS")
 data class LibrarianEntity(
 
-    @Column(name = "LIBRARIAN_ID")
+    @Column(name = "LIBRARIAN_ID", nullable = false, updatable = false)
     @GeneratedValue
     @Id
     @get:NotNull
     var librarianId: UUID? = null,
 
     //версия, инкрементится при редактировании записи
-    @Column(name = "VERSION")
+    @Column(name = "VERSION", nullable = false)
     @Version
     var version: Int = 0
 )

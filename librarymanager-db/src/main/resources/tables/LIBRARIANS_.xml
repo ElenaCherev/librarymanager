@@ -2,10 +2,12 @@
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.8.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
     <changeSet author="owle8" id="c4bfc8cf-db6c-427b-9012-079449d67583">
         <createTable tableName="LIBRARIANS">
-            <column name="LIBRARIAN_ID" type="${uuid_type}" valueComputed="${uuid_gen}">
+            <column name="LIBRARIAN_ID" type="${uuid_type}">
                 <constraints nullable="false" unique="true" />
             </column>
-            <column name="VERSION" type="NUMBER(10, 0)"/>
+            <column name="VERSION" type="NUMBER(10, 0)">
+                <constraints nullable="false" />
+            </column>
         </createTable>
     </changeSet>
 </databaseChangeLog>

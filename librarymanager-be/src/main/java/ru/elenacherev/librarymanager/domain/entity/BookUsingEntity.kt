@@ -19,7 +19,7 @@ import javax.validation.constraints.NotNull
 @Table(name = "BOOK_USINGS")
 data class BookUsingEntity(
 
-    @Column(name = "BOOK_USING_ID")
+    @Column(name = "BOOK_USING_ID", nullable = false, updatable = false)
     @GeneratedValue
     @Id
     @get:NotNull
@@ -27,7 +27,7 @@ data class BookUsingEntity(
 
     //версия, инкрементится при редактировании записи
     @Version
-    @Column(name = "VERSION")
+    @Column(name = "VERSION", nullable = false)
     var version: Int = 0,
 
     //Книгу взяли

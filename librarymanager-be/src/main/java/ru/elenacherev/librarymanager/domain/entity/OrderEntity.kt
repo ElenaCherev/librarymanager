@@ -21,7 +21,7 @@ import javax.validation.constraints.NotNull
 @Table(name = "ORDERS")
 data class OrderEntity(
 
-    @Column(name = "ORDER_ID")
+    @Column(name = "ORDER_ID", nullable = false, updatable = false)
     @GeneratedValue
     @Id
     @get:NotNull
@@ -29,7 +29,7 @@ data class OrderEntity(
 
     //версия, инкрементится при редактировании записи
     @Version
-    @Column(name = "VERSION")
+    @Column(name = "VERSION", nullable = false)
     var version: Int = 0,
 
     //дата выполнения заказа (когда его выдали)
