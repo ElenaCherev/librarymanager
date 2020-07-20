@@ -18,7 +18,6 @@ import javax.validation.constraints.Size
 data class LangEntity(
 
     @Column(name = "LANG_ID")
-    @ColumnDefault("random_uuid()")
     @GeneratedValue
     @Id
     @get:NotNull

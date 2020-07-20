@@ -22,7 +22,6 @@ import javax.validation.constraints.NotNull
 data class OrderEntity(
 
     @Column(name = "ORDER_ID")
-    @ColumnDefault("random_uuid()")
     @GeneratedValue
     @Id
     @get:NotNull

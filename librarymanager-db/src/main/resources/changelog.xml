@@ -1,8 +1,13 @@
 <?xml version="1.1" encoding="UTF-8" standalone="no"?>
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.8.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
-    <property name="uuid" value="varchar(36)" dbms="mysql, h2, mariadb"/>
-    <property name="uuid" value="UUID" dbms="oracle"/>
+    <property name="uuid_type" value="uuid" dbms="postgresql"/>
+    <property name="uuid_type" value="uniqueidentifier" dbms="mssql"/>
+    <property name="uuid_type" value="RAW(16)" dbms="oracle"/>
+
+    <property name="uuid_gen" value="uid.uuid_generate_v4()" dbms="postgresql"/>
+    <property name="uuid_gen" value="NEWID()" dbms="mssql"/>
+    <property name="uuid_gen" value="sys_guid()" dbms="oracle"/>
 
     <include file="tables/changelog.xml" relativeToChangelogFile="true"/>
     <include file="sql/changelog.xml" relativeToChangelogFile="true"/>

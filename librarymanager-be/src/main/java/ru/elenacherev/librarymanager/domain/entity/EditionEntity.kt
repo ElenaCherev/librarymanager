@@ -24,7 +24,6 @@ import javax.validation.constraints.Size
 data class EditionEntity(
 
     @Column(name = "EDITION_ID")
-    @ColumnDefault("random_uuid()")
     @GeneratedValue
     @Id
     @get:NotNull

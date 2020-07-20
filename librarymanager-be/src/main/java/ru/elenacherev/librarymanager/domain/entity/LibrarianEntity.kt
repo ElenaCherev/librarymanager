@@ -15,7 +15,6 @@ import javax.validation.constraints.NotNull
 data class LibrarianEntity(
 
     @Column(name = "LIBRARIAN_ID")
-    @ColumnDefault("random_uuid()")
     @GeneratedValue
     @Id
     @get:NotNull

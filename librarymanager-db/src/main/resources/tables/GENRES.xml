@@ -2,7 +2,9 @@
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.8.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
     <changeSet author="owle8" id="d2f25848-0adb-4c71-a33d-8765816c98b9">
         <createTable tableName="GENRES">
-            <column name="GENRE_ID" type="${uuid}"/>
+            <column name="GENRE_ID" type="${uuid_type}" valueComputed="${uuid_gen}">
+                <constraints nullable="false" unique="true" />
+            </column>
             <column name="TITLE" type="VARCHAR2(255)"/>
             <column name="VERSION" type="NUMBER(10, 0)"/>
         </createTable>
