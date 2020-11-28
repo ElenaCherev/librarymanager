@@ -15,11 +15,11 @@ import ru.elenacherev.librarymanager.mapper.map
 import java.util.*
 
 @Service
-class OrderService (
+class OrderService(
     val orderRepository: OrderRepository,
     val readerRepository: ReaderRepository,
     val editionRepository: EditionRepository
-){
+) {
     @Transactional(readOnly = true)
     fun findAllByPage(pageable: Pageable): Page<Order> {
         return orderRepository
@@ -35,7 +35,7 @@ class OrderService (
     }
 
     @Transactional(readOnly = true)
-    fun findOrderById(orderId: Long): Order {
+    fun findOrderById(orderId: UUID): Order {
         return orderRepository
             .findById(orderId)
             .map(OrderEntity::map)
@@ -43,12 +43,12 @@ class OrderService (
     }
 
     @Transactional
-    fun save(orderId: Long, dto: Order): Order {
+    fun save(orderId: UUID, dto: Order): Order {
         val readerEntity: ReaderEntity = readerRepository.findById(dto.readerId).get()
         val editionEntity: EditionEntity = editionRepository.findById(dto.editionId).get()
         return orderRepository.findById(orderId)
             .map { entity -> dto.map(entity, readerEntity, editionEntity) }
-            .map{ order: OrderEntity -> orderRepository.saveAndFlush(order) }
+            .map { order: OrderEntity -> orderRepository.saveAndFlush(order) }
             .map(OrderEntity::map)
             .orElse(null)
     }
@@ -58,8 +58,8 @@ class OrderService (
         val readerEntity: ReaderEntity = readerRepository.findById(dto.readerId).get()
         val editionEntity: EditionEntity = editionRepository.findById(dto.editionId).get()
         return Optional.of(dto)
-            .map{ order -> order.map( readerEntity, editionEntity) }
-            .map{ order: OrderEntity -> orderRepository.saveAndFlush(order) }
+            .map { order -> order.map(readerEntity, editionEntity) }
+            .map { order: OrderEntity -> orderRepository.saveAndFlush(order) }
             .map(OrderEntity::map)
             .orElse(null)
     }

@@ -2,13 +2,17 @@
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.8.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
     <changeSet author="owle8" id="3b7a0e2b-d43b-4f7e-b424-023eafb5aeb5">
         <createTable tableName="ORDERS">
-            <column name="ORDER_ID" type="NUMBER(19, 0)"/>
+            <column name="ORDER_ID" type="${uuid_type}">
+                <constraints nullable="false" unique="true" />
+            </column>
             <column name="COMPLETE_DATE" type="date"/>
             <column name="ORDER_DATE" type="date"/>
             <column name="ORDER_STATE" type="VARCHAR2(255)"/>
-            <column name="VERSION" type="NUMBER(10, 0)"/>
-            <column name="EDITION_ID" type="NUMBER(19, 0)"/>
-            <column name="READER_ID" type="NUMBER(19, 0)"/>
+            <column name="EDITION_ID" type="${uuid_type}"/>
+            <column name="READER_ID" type="${uuid_type}"/>
+            <column name="VERSION" type="NUMBER(10, 0)">
+                <constraints nullable="false" />
+            </column>
         </createTable>
     </changeSet>
 </databaseChangeLog>

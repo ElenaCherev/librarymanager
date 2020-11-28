@@ -1,7 +1,8 @@
 package ru.elenacherev.librarymanager.api.dto
 
-data class Lang
-(
-    var langId: Long? = null,
-    val title : String
+import java.util.*
+
+data class Lang(
+    var langId: UUID? = null,
+    val title: String
 )

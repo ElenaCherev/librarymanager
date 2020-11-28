@@ -9,7 +9,7 @@ spring:
     driverClassName: oracle.jdbc.OracleDriver
     database-platform: org.hibernate.dialect.OracleDialect
     username: SYSTEM
-    password: admin
+    password: Newpassword1
   liquibase:
     change-log: classpath:changelog.xml
   jpa:

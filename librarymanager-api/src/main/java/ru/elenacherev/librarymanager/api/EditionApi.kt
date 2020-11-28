@@ -5,12 +5,12 @@ import org.springframework.data.domain.Pageable
 import ru.elenacherev.librarymanager.api.dto.Book
 import ru.elenacherev.librarymanager.api.dto.Edition
 import ru.elenacherev.librarymanager.api.dto.Order
+import java.util.*
 import javax.validation.Valid
 
-interface EditionApi 
-{
+interface EditionApi {
     fun getEdition(
-        editionId:  Long
+        editionId: UUID
     ): Edition?
 
     fun searchEditions(
@@ -22,27 +22,27 @@ interface EditionApi
     ): Edition
 
     fun saveEdition(
-        editionId:  Long,
+        editionId: UUID,
         edition: @Valid Edition
     ): Edition
 
     fun searchBooksByEditionId(
-        editionId:  Long,
+        editionId: UUID,
         pageable: Pageable
     ): Page<Book>
 
     fun searchOrdersByEditionId(
-        editionId:  Long,
+        editionId: UUID,
         pageable: Pageable
     ): Page<Order>
 
     fun updateBooksByEditionId(
-        editionId:  Long,
-        bookIds:  List<Long>
+        editionId: UUID,
+        bookIds: List<UUID>
     ): List<Book>
 
     fun updateOrdersByEditionId(
-        editionId:  Long,
-        orderIds:  List<Long>
+        editionId: UUID,
+        orderIds: List<UUID>
     ): List<Order>
 }

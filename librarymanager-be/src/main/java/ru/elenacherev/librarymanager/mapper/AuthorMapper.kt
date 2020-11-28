@@ -13,7 +13,7 @@ fun AuthorEntity.map() = Author(
     deathdate = deathdate,
     info = info,
     fio = fio,
-    edidionIds = editions.map(EditionEntity::editionId)
+    edidionIds = editions.mapNotNull(EditionEntity::editionId)
 )
 
 fun Author.map() = AuthorEntity(

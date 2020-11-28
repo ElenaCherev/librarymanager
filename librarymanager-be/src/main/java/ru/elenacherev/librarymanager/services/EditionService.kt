@@ -9,7 +9,6 @@ import ru.elenacherev.librarymanager.api.dto.Book
 import ru.elenacherev.librarymanager.api.dto.Edition
 import ru.elenacherev.librarymanager.api.dto.Order
 import ru.elenacherev.librarymanager.domain.entity.BookEntity
-import ru.elenacherev.librarymanager.domain.entity.BookUsingEntity
 import ru.elenacherev.librarymanager.domain.entity.EditionEntity
 import ru.elenacherev.librarymanager.domain.entity.GenreEntity
 import ru.elenacherev.librarymanager.domain.entity.LangEntity
@@ -27,7 +26,7 @@ import ru.elenacherev.librarymanager.mapper.map
 import java.util.*
 
 @Service
-class EditionService (
+class EditionService(
     val editionRepository: EditionRepository,
     val genreRepository: GenreRepository,
     val langRepository: LangRepository,
@@ -35,7 +34,7 @@ class EditionService (
     val publishingHouseRepository: PublishingHouseRepository,
     val bookRepository: BookRepository,
     val orderRepository: OrderRepository
-){
+) {
     @Transactional(readOnly = true)
     fun findAll(): List<Edition> {
         return editionRepository
@@ -51,14 +50,14 @@ class EditionService (
     }
 
     @Transactional(readOnly = true)
-    fun findById(id: Long): Edition {
+    fun findById(id: UUID): Edition {
         return editionRepository.findById(id)
             .map(EditionEntity::map)
             .orElse(null)
     }
 
     @Transactional
-    fun save(editionId: Long, dto: Edition): Edition {
+    fun save(editionId: UUID, dto: Edition): Edition {
         val genreEntity: GenreEntity = genreRepository.findById(dto.genreId).get()
         val langEntity: LangEntity = langRepository.findById(dto.langId).get()
         val publLangEntity: LangEntity = langRepository.findById(dto.publLangId).get()
@@ -67,14 +66,15 @@ class EditionService (
             .findById(dto.publishingHouseId)
             .orElse(null)
         return editionRepository.findById(editionId)
-            .map{ dto.map(
-                        langEntity,
-                        publLangEntity,
-                        publHouseEntity,
-                        genreEntity,
-                        sectionEntity)
+            .map {
+                dto.map(
+                    langEntity,
+                    publLangEntity,
+                    publHouseEntity,
+                    genreEntity,
+                    sectionEntity)
             }
-            .map{ edition: EditionEntity -> editionRepository.saveAndFlush(edition) }
+            .map { edition: EditionEntity -> editionRepository.saveAndFlush(edition) }
             .map(EditionEntity::map)
             .get()
     }
@@ -90,21 +90,22 @@ class EditionService (
             .orElse(null)
 
         return Optional.of(dto)
-            .map{ dto.map(
-                        langEntity,
-                        publLangEntity,
-                        publHouseEntity,
-                        genreEntity,
-                        sectionEntity
-                    )
+            .map {
+                dto.map(
+                    langEntity,
+                    publLangEntity,
+                    publHouseEntity,
+                    genreEntity,
+                    sectionEntity
+                )
             }
-            .map{ edition: EditionEntity -> editionRepository.saveAndFlush(edition) }
+            .map { edition: EditionEntity -> editionRepository.saveAndFlush(edition) }
             .map(EditionEntity::map)
             .get()
     }
 
     @Transactional(readOnly = true)
-    fun findAllBooksByEditionId(editionId: Long, pageable: Pageable): Page<Book> {
+    fun findAllBooksByEditionId(editionId: UUID, pageable: Pageable): Page<Book> {
         return editionRepository.findById(editionId)
             .map { entity -> bookRepository.findAllByEdition(entity, pageable) }
             .orElse(Page.empty())
@@ -112,7 +113,7 @@ class EditionService (
     }
 
     @Transactional(readOnly = true)
-    fun findAllOrdersByEditionId(editionId: Long, pageable: Pageable): Page<Order> {
+    fun findAllOrdersByEditionId(editionId: UUID, pageable: Pageable): Page<Order> {
         return editionRepository.findById(editionId)
             .map { entity -> orderRepository.findAllByEdition(entity, pageable) }
             .orElse(Page.empty())
@@ -120,7 +121,7 @@ class EditionService (
     }
 
     @Transactional
-    fun updateBooksByEditionId(editionId: Long, bookIds: List<Long>): List<Book> {
+    fun updateBooksByEditionId(editionId: UUID, bookIds: List<UUID>): List<Book> {
         return editionRepository
             .findById(editionId)
             .map { editionEntity ->
@@ -128,14 +129,14 @@ class EditionService (
                 editionEntity.books += bookIds.map(bookRepository::getOne)
                 return@map editionEntity
             }
-            .map{ edition: EditionEntity -> editionRepository.saveAndFlush(edition) }
-            .map{ edition: EditionEntity -> edition.books }
+            .map { edition: EditionEntity -> editionRepository.saveAndFlush(edition) }
+            .map { edition: EditionEntity -> edition.books }
             .orElse(mutableSetOf())
             .map(BookEntity::map)
     }
 
     @Transactional
-    fun updateOrdersByEditionId(editionId: Long, orderIds: List<Long>): List<Order> {
+    fun updateOrdersByEditionId(editionId: UUID, orderIds: List<UUID>): List<Order> {
         return editionRepository
             .findById(editionId)
             .map { editionEntity ->
@@ -143,8 +144,8 @@ class EditionService (
                 editionEntity.orders += orderIds.map(orderRepository::getOne)
                 return@map editionEntity
             }
-            .map{ edition: EditionEntity -> editionRepository.saveAndFlush(edition) }
-            .map{ obj: EditionEntity -> obj.orders }
+            .map { edition: EditionEntity -> editionRepository.saveAndFlush(edition) }
+            .map { obj: EditionEntity -> obj.orders }
             .orElse(mutableSetOf())
             .map(OrderEntity::map)
     }

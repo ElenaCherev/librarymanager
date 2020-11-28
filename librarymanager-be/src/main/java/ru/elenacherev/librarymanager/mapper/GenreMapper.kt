@@ -7,8 +7,9 @@ fun GenreEntity.map() = Genre(
     genreId = genreId,
     title = title
 )
+
 fun Genre.map() = GenreEntity(title = title)
 
-fun Genre.map(entity:GenreEntity) = entity.also {
+fun Genre.map(entity: GenreEntity) = entity.also {
     it.title = title
 }

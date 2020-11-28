@@ -11,18 +11,19 @@ import ru.elenacherev.librarymanager.domain.entity.LangEntity
 import ru.elenacherev.librarymanager.domain.repository.EditionRepository
 import ru.elenacherev.librarymanager.domain.repository.LangRepository
 import ru.elenacherev.librarymanager.mapper.map
+import java.util.*
 
 @Service
-class LangService (
+class LangService(
     val langRepository: LangRepository,
     val editionRepository: EditionRepository
-){
+) {
     @Transactional
-    fun save(langId:Long, dto: Lang): Lang {
+    fun save(langId: UUID, dto: Lang): Lang {
         return langRepository
             .findById(langId)
-            .map (dto:: map)
-            .map{ obj: LangEntity -> langRepository.saveAndFlush(obj) }
+            .map(dto::map)
+            .map { obj: LangEntity -> langRepository.saveAndFlush(obj) }
             .map(LangEntity::map)
             .orElse(null)
     }
@@ -35,7 +36,7 @@ class LangService (
     }
 
     @Transactional(readOnly = true)
-    fun findLangById(langId: Long): Lang {
+    fun findLangById(langId: UUID): Lang {
         return langRepository
             .findById(langId)
             .map(LangEntity::map)
@@ -43,7 +44,7 @@ class LangService (
     }
 
     @Transactional(readOnly = true)
-    fun findEditionsByLangId(langId: Long, pageable: Pageable): Page<Edition> {
+    fun findEditionsByLangId(langId: UUID, pageable: Pageable): Page<Edition> {
         return langRepository
             .findById(langId)
             .map { entity -> editionRepository.findAllByLang(entity, pageable) }
@@ -52,29 +53,29 @@ class LangService (
     }
 
     @Transactional(readOnly = true)
-    fun findEditionsByPublLangId(langId: Long, pageable: Pageable): Page<Edition> {
+    fun findEditionsByPublLangId(langId: UUID, pageable: Pageable): Page<Edition> {
         return langRepository.findById(langId)
             .map { entity -> editionRepository.findAllByPublLang(entity, pageable) }
             .orElse(Page.empty())
             .map(EditionEntity::map)
     }
 
-    fun updateEditionsByLangId(langId: Long, editionIds: List<Long>): List<Edition> {
+    fun updateEditionsByLangId(langId: UUID, editionIds: List<UUID>): List<Edition> {
         return langRepository
             .findById(langId)
             .map { langEntity ->
                 langEntity.editions.clear()
                 langEntity.editions +=
-                    editionIds.map(editionRepository:: getOne)
+                    editionIds.map(editionRepository::getOne)
                 return@map langEntity
             }
-            .map{ obj: LangEntity -> langRepository.saveAndFlush(obj) }
-            .map{ obj: LangEntity -> obj.editions }
+            .map { obj: LangEntity -> langRepository.saveAndFlush(obj) }
+            .map { obj: LangEntity -> obj.editions }
             .orElse(mutableSetOf())
             .map(EditionEntity::map)
     }
 
-    fun updateEditionsByPubllangId(publlangId: Long, editionIds: List<Long>): List<Edition> {
+    fun updateEditionsByPubllangId(publlangId: UUID, editionIds: List<UUID>): List<Edition> {
         return langRepository
             .findById(publlangId)
             .map { langEntity ->
@@ -82,8 +83,8 @@ class LangService (
                 langEntity.publLangEditions += editionIds.map(editionRepository::getOne)
                 return@map langEntity
             }
-            .map{ obj: LangEntity -> langRepository.saveAndFlush(obj) }
-            .map{ obj: LangEntity -> obj.publLangEditions }
+            .map { obj: LangEntity -> langRepository.saveAndFlush(obj) }
+            .map { obj: LangEntity -> obj.publLangEditions }
             .orElse(mutableSetOf())
             .map(EditionEntity::map)
     }

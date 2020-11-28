@@ -14,10 +14,10 @@ import ru.elenacherev.librarymanager.mapper.map
 import java.util.*
 
 @Service
-class PublishingHouseService (
+class PublishingHouseService(
     val publishingHouseRepository: PublishingHouseRepository,
     val editionRepository: EditionRepository
-){
+) {
     @Transactional(readOnly = true)
     fun findAll(): List<PublishingHouse> {
         return publishingHouseRepository
@@ -26,15 +26,14 @@ class PublishingHouseService (
     }
 
     @Transactional(readOnly = true)
-    fun findAllByPage(pageable: Pageable): Page<PublishingHouse>
-    {
+    fun findAllByPage(pageable: Pageable): Page<PublishingHouse> {
         return publishingHouseRepository
             .findAll(pageable)
             .map(PublishingHouseEntity::map)
     }
 
     @Transactional(readOnly = true)
-    fun findPublishingHouseById(publishingHouseId: Long): PublishingHouse {
+    fun findPublishingHouseById(publishingHouseId: UUID): PublishingHouse {
         return publishingHouseRepository
             .findById(publishingHouseId)
             .map(PublishingHouseEntity::map)
@@ -42,11 +41,11 @@ class PublishingHouseService (
     }
 
     @Transactional
-    fun save(publishingHouseId: Long, dto: PublishingHouse): PublishingHouse {
+    fun save(publishingHouseId: UUID, dto: PublishingHouse): PublishingHouse {
         return publishingHouseRepository
             .findById(publishingHouseId)
             .map(dto::map)
-            .map{ publishingHouse: PublishingHouseEntity -> publishingHouseRepository.saveAndFlush(publishingHouse) }
+            .map { publishingHouse: PublishingHouseEntity -> publishingHouseRepository.saveAndFlush(publishingHouse) }
             .map(PublishingHouseEntity::map)
             .orElse(null)
     }
@@ -55,13 +54,13 @@ class PublishingHouseService (
     fun create(dto: PublishingHouse): PublishingHouse {
         return Optional.of(dto)
             .map(PublishingHouse::map)
-            .map{ publishingHouse: PublishingHouseEntity -> publishingHouseRepository.saveAndFlush(publishingHouse) }
+            .map { publishingHouse: PublishingHouseEntity -> publishingHouseRepository.saveAndFlush(publishingHouse) }
             .map(PublishingHouseEntity::map)
             .orElse(null)
     }
 
     @Transactional(readOnly = true)
-    fun findEditionsByPublishingHouseId(publishingHouseId: Long, pageable: Pageable): Page<Edition> {
+    fun findEditionsByPublishingHouseId(publishingHouseId: UUID, pageable: Pageable): Page<Edition> {
         return publishingHouseRepository
             .findById(publishingHouseId)
             .map { publHouseEntity -> editionRepository.findAllByPublishingHouse(publHouseEntity, pageable) }
@@ -70,8 +69,8 @@ class PublishingHouseService (
     }
 
     fun updateEditionsByPublishingHouseId(
-        publishingHouseId: Long,
-        editionIds: List<Long>
+        publishingHouseId: UUID,
+        editionIds: List<UUID>
     ): List<Edition> {
         return publishingHouseRepository
             .findById(publishingHouseId)
@@ -80,8 +79,8 @@ class PublishingHouseService (
                 publishingHouseEntity.editions += editionIds.map(editionRepository::getOne)
                 return@map publishingHouseEntity
             }
-            .map{ publishingHouse: PublishingHouseEntity -> publishingHouseRepository.saveAndFlush(publishingHouse) }
-            .map{obj: PublishingHouseEntity -> obj.editions}
+            .map { publishingHouse: PublishingHouseEntity -> publishingHouseRepository.saveAndFlush(publishingHouse) }
+            .map { obj: PublishingHouseEntity -> obj.editions }
             .orElse(mutableSetOf())
             .map(EditionEntity::map)
     }

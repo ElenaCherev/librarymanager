@@ -5,7 +5,8 @@ import org.springframework.stereotype.Repository
 import org.springframework.transaction.annotation.Propagation
 import org.springframework.transaction.annotation.Transactional
 import ru.elenacherev.librarymanager.domain.entity.GenreEntity
+import java.util.*
 
 @Repository
 @Transactional(propagation = Propagation.MANDATORY)
-interface GenreRepository : JpaRepository<GenreEntity, Long> 
+interface GenreRepository : JpaRepository<GenreEntity, UUID>

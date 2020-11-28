@@ -1,7 +1,6 @@
 package ru.elenacherev.librarymanager.controller
 
 import org.springframework.data.domain.Pageable
-import org.springframework.http.MediaType
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
@@ -12,8 +11,9 @@ import org.springframework.web.bind.annotation.RestController
 import ru.elenacherev.librarymanager.api.LibrarianApi
 import ru.elenacherev.librarymanager.api.dto.Librarian
 import ru.elenacherev.librarymanager.services.LibrarianService
+import java.util.*
 
-@RequestMapping(value = ["librarymanager/librarians"], produces = [MediaType.APPLICATION_JSON_VALUE])
+@RequestMapping("/librarians")
 @RestController
 class LibrarianController(
     val librarianService: LibrarianService
@@ -21,7 +21,7 @@ class LibrarianController(
 
     @GetMapping("/{librarianid}")
     override fun getLibrarian(
-        @PathVariable("librarianid") librarianId: Long
+        @PathVariable("librarianid") librarianId: UUID
     ) = librarianService.findLibrarianById(librarianId)
 
     @PostMapping("/search")
@@ -36,7 +36,7 @@ class LibrarianController(
 
     @PutMapping("/{librarianid}")
     override fun saveLibrarian(
-        @PathVariable("librarianid") librarianId: Long,
+        @PathVariable("librarianid") librarianId: UUID,
         @RequestBody librarian: Librarian
     ) = librarianService.save(librarianId, librarian)
 }

@@ -27,13 +27,13 @@
     </changeSet>
     <changeSet author="owle8" id="bfcf44d1-e37b-41a2-a94e-3597d8c6de27">
         <addForeignKeyConstraint
-                baseColumnNames="GENERE_ID"
+                baseColumnNames="GENRE_ID"
                 baseTableName="EDITIONS"
-                constraintName="FK_EDITION_GENERE"
+                constraintName="FK_EDITION_GENRE"
                 deferrable="false"
                 initiallyDeferred="false"
-                referencedColumnNames="GENERE_ID"
-                referencedTableName="GENERES"
+                referencedColumnNames="GENRE_ID"
+                referencedTableName="GENRES"
                 validate="true"
         />
     </changeSet>

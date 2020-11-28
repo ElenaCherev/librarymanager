@@ -18,11 +18,11 @@ import java.util.*
 
 //Реализация службы доступа к данным о читателях
 @Service
-class ReaderService (
+class ReaderService(
     val readerRepository: ReaderRepository,
     val orderRepository: OrderRepository,
     val bookUsingRepository: BookUsingRepository
-){
+) {
     @Transactional(readOnly = true)
     fun findAll(): List<Reader> {
         return readerRepository
@@ -38,7 +38,7 @@ class ReaderService (
     }
 
     @Transactional(readOnly = true)
-    fun findById(id: Long): Reader {
+    fun findById(id: UUID): Reader {
         return readerRepository
             .findById(id)
             .map(ReaderEntity::map)
@@ -46,11 +46,11 @@ class ReaderService (
     }
 
     @Transactional
-    fun save(readerId: Long, dto: Reader): Reader {
+    fun save(readerId: UUID, dto: Reader): Reader {
         return readerRepository
             .findById(readerId)
             .map(dto::map)
-            .map{ reader: ReaderEntity -> readerRepository.saveAndFlush(reader) }
+            .map { reader: ReaderEntity -> readerRepository.saveAndFlush(reader) }
             .map(ReaderEntity::map)
             .orElse(null)
     }
@@ -59,25 +59,25 @@ class ReaderService (
     fun create(dto: Reader): Reader {
         return Optional.of(dto)
             .map(Reader::map)
-            .map{ reader: ReaderEntity -> readerRepository.saveAndFlush(reader) }
+            .map { reader: ReaderEntity -> readerRepository.saveAndFlush(reader) }
             .map(ReaderEntity::map)
             .orElse(null)
     }
 
     @Transactional(readOnly = true)
     fun findOrdersByReaderId(
-        readerId: Long,
+        readerId: UUID,
         pageable: Pageable
     ): Page<Order> {
         return readerRepository
             .findById(readerId)
-            .map {entity -> orderRepository.findAllByReader(entity, pageable)}
+            .map { entity -> orderRepository.findAllByReader(entity, pageable) }
             .orElse(Page.empty())
             .map(OrderEntity::map)
     }
 
     @Transactional
-    fun updateOrders(readerId: Long, orderIds: List<Long>): List<Order> {
+    fun updateOrders(readerId: UUID, orderIds: List<UUID>): List<Order> {
         return readerRepository
             .findById(readerId)
             .map { readerEntity ->
@@ -85,14 +85,14 @@ class ReaderService (
                 readerEntity.orders += orderIds.map(orderRepository::getOne)
                 return@map readerEntity
             }
-            .map{ reader: ReaderEntity -> readerRepository.saveAndFlush(reader) }
-            .map{obj: ReaderEntity -> obj.orders}
+            .map { reader: ReaderEntity -> readerRepository.saveAndFlush(reader) }
+            .map { obj: ReaderEntity -> obj.orders }
             .orElse(mutableSetOf())
             .map(OrderEntity::map)
     }
 
     @Transactional(readOnly = true)
-    fun findBookUsingsByReaderId(readerId: Long, pageable: Pageable): Page<BookUsing> {
+    fun findBookUsingsByReaderId(readerId: UUID, pageable: Pageable): Page<BookUsing> {
         return readerRepository
             .findById(readerId)
             .map { entity -> bookUsingRepository.findAllByReader(entity, pageable) }
@@ -101,7 +101,7 @@ class ReaderService (
     }
 
     @Transactional
-    fun updateBookUsings(readerId: Long, bookUsingIds: List<Long>): List<BookUsing> {
+    fun updateBookUsings(readerId: UUID, bookUsingIds: List<UUID>): List<BookUsing> {
         return readerRepository
             .findById(readerId)
             .map { readerEntity ->
@@ -109,8 +109,8 @@ class ReaderService (
                 readerEntity.bookUsings += bookUsingIds.map(bookUsingRepository::getOne)
                 return@map readerEntity
             }
-            .map{ reader: ReaderEntity -> readerRepository.saveAndFlush(reader) }
-            .map{ obj: ReaderEntity -> obj.bookUsings }
+            .map { reader: ReaderEntity -> readerRepository.saveAndFlush(reader) }
+            .map { obj: ReaderEntity -> obj.bookUsings }
             .orElse(mutableSetOf())
             .map(BookUsingEntity::map)
     }

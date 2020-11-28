@@ -1,13 +1,14 @@
 package ru.elenacherev.librarymanager.domain.entity
 
+import org.hibernate.annotations.ColumnDefault
 import ru.elenacherev.librarymanager.api.enum.AgeRating
+import java.util.*
 import javax.persistence.CascadeType
 import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.EnumType
 import javax.persistence.Enumerated
 import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
 import javax.persistence.Id
 import javax.persistence.JoinColumn
 import javax.persistence.ManyToMany
@@ -16,32 +17,36 @@ import javax.persistence.OneToMany
 import javax.persistence.Table
 import javax.persistence.Version
 import javax.validation.constraints.NotNull
+import javax.validation.constraints.Size
 
 @Entity
 @Table(name = "EDITIONS")
-class EditionEntity (
+data class EditionEntity(
+
+    @Column(name = "EDITION_ID", nullable = false, updatable = false)
+    @GeneratedValue
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //уникальный ID, генерируется сам в БД
-    @Column(name = "EDITION_ID")
-    @get: NotNull
-    var editionId:  Long? = null,
+    @get:NotNull
+    var editionId: UUID? = null,
 
     //версия, инкрементится при редактировании записи
     @Version
-    @Column(name = "VERSION")
-    var version: Int  = 0,
+    @Column(name = "VERSION", nullable = false)
+    var version: Int = 0,
 
     @Column(name = "TITLE")
+    @Size(min = 1, max = 255)
     var title: String,
 
     @Column(name = "WORK_TITLE")
+    @Size(min = 1, max = 255)
     var workTitle: String,
 
     @Column(name = "YEAR")
-    var year: Int  = 0,
+    var year: Int = 0,
 
     @ManyToOne
-    @JoinColumn(name = "GENERE_ID")
+    @JoinColumn(name = "GENRE_ID")
     var genre: GenreEntity,
 
     @ManyToOne
@@ -56,12 +61,14 @@ class EditionEntity (
     var publishingYear: Int = 0,
 
     @Column(name = "ISBN")
+    @Size(min = 1, max = 255)
     var isbn: String,
 
     @Column(name = "IS_ILLUSTRATED")
     var isIllustrated: Boolean = false,
 
     @Column(name = "DOWNLOAD_LINK")
+    @Size(min = 1, max = 255)
     var downloadLink: String? = null,
 
     @Enumerated(EnumType.ORDINAL)
@@ -69,6 +76,7 @@ class EditionEntity (
     var age: AgeRating,
 
     @Column(name = "INFO")
+    @Size(min = 1, max = 255)
     var info: String? = null,
 
     @ManyToOne

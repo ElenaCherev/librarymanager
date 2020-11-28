@@ -1,10 +1,11 @@
 package ru.elenacherev.librarymanager.domain.entity
 
+import org.hibernate.annotations.ColumnDefault
+import java.time.Instant
 import java.util.*
 import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
 import javax.persistence.Id
 import javax.persistence.JoinColumn
 import javax.persistence.ManyToOne
@@ -16,33 +17,32 @@ import javax.validation.constraints.NotNull
 
 @Entity
 @Table(name = "BOOK_USINGS")
-class BookUsingEntity (
+data class BookUsingEntity(
+
+    @Column(name = "BOOK_USING_ID", nullable = false, updatable = false)
+    @GeneratedValue
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //уникальный ID, генерируется сам в БД
-    @Column(name = "BOOK_USING_ID")
-    @get: NotNull
-    var bookUsingId:  Long? = null,
+    @get:NotNull
+    var bookUsingId: UUID? = null,
 
     //версия, инкрементится при редактировании записи
     @Version
-    @Column(name = "VERSION")
-    var version: Int  = 0,
+    @Column(name = "VERSION", nullable = false)
+    var version: Int = 0,
 
     //Книгу взяли
-    @Temporal(TemporalType.DATE)
     @Column(name = "START_DATE")
-    @NotNull(message = "{validation.startDate.NotEmpty.message}")
-    var startDate:  Date,
+    @NotNull
+    var startDate: Instant,
 
     //Книгу вернули
-    @Temporal(TemporalType.DATE)
     @Column(name = "END_DATE")
-    var endDate: Date? = null,
+    var endDate: Instant? = null,
 
     //кто взял книгу
     @ManyToOne
     @JoinColumn(name = "READER_ID")
-    var reader: ReaderEntity? = null,
+    var reader: ReaderEntity,
 
     //какую книгу взяли
     @ManyToOne

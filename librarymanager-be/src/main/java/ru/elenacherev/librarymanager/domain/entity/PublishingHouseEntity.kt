@@ -1,34 +1,38 @@
 package ru.elenacherev.librarymanager.domain.entity
 
+import org.hibernate.annotations.ColumnDefault
+import java.util.*
 import javax.persistence.Basic
 import javax.persistence.CascadeType
 import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.FetchType
 import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
 import javax.persistence.Id
 import javax.persistence.Lob
 import javax.persistence.OneToMany
 import javax.persistence.Table
 import javax.persistence.Version
 import javax.validation.constraints.NotNull
+import javax.validation.constraints.Size
 
 @Entity
 @Table(name = "PUBLISHING_HOUSES")
-class PublishingHouseEntity (
+data class PublishingHouseEntity(
+
+    @Column(name = "PUBLISHING_HOUSE_ID", nullable = false, updatable = false)
+    @GeneratedValue
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //уникальный ID, генерируется сам в БД
-    @Column(name = "PUBLISHING_HOUSE_ID")
-    @get: NotNull
-    var publishingHouseId: Long? = null,
+    @get:NotNull
+    var publishingHouseId: UUID? = null,
 
     //версия, инкрементится при редактировании записи
     @Version
-    @Column(name = "VERSION")
-    var version: Int  = 0,
+    @Column(name = "VERSION", nullable = false)
+    var version: Int = 0,
 
     @Column(name = "TITLE")
+    @Size(min = 1, max = 255)
     var title: String,
 
     @Basic(fetch = FetchType.LAZY)

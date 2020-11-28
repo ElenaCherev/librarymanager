@@ -11,13 +11,14 @@ import ru.elenacherev.librarymanager.domain.entity.GenreEntity
 import ru.elenacherev.librarymanager.domain.repository.EditionRepository
 import ru.elenacherev.librarymanager.domain.repository.GenreRepository
 import ru.elenacherev.librarymanager.mapper.map
+import java.util.*
 
 
 @Service
-class GenreService (
+class GenreService(
     val genreRepository: GenreRepository,
     val editionRepository: EditionRepository
-){
+) {
     @Transactional(readOnly = true)
     fun findAll(): List<Genre> {
         return genreRepository
@@ -26,24 +27,24 @@ class GenreService (
     }
 
     @Transactional(readOnly = true)
-    fun findById(id: Long): Genre {
+    fun findById(id: UUID): Genre {
         return genreRepository.findById(id)
             .map(GenreEntity::map)
             .orElse(null)
     }
 
     @Transactional
-    fun save(genreId:Long, dto: Genre): Genre {
+    fun save(genreId: UUID, dto: Genre): Genre {
         return genreRepository
             .findById(genreId)
-            .map (dto::map)
-            .map{ genre: GenreEntity -> genreRepository.saveAndFlush(genre) }
+            .map(dto::map)
+            .map { genre: GenreEntity -> genreRepository.saveAndFlush(genre) }
             .map(GenreEntity::map)
             .orElse(null)
     }
 
     @Transactional(readOnly = true)
-    fun findEditionsByGenreId(genreId: Long, pageable: Pageable): Page<Edition> {
+    fun findEditionsByGenreId(genreId: UUID, pageable: Pageable): Page<Edition> {
         return genreRepository.findById(genreId)
             .map { entity -> editionRepository.findAllByGenre(entity, pageable) }
             .orElse(Page.empty())
@@ -51,7 +52,7 @@ class GenreService (
     }
 
     @Transactional
-    fun updateEditionsByGenreId(genreId: Long, editionIds: List<Long>): List<Edition> {
+    fun updateEditionsByGenreId(genreId: UUID, editionIds: List<UUID>): List<Edition> {
         return genreRepository
             .findById(genreId)
             .map { genreEntity ->
@@ -60,8 +61,8 @@ class GenreService (
                     editionIds.map(editionRepository::getOne)
                 return@map genreEntity
             }
-            .map{ genre: GenreEntity -> genreRepository.saveAndFlush(genre) }
-            .map{ genre: GenreEntity -> genre.editions }
+            .map { genre: GenreEntity -> genreRepository.saveAndFlush(genre) }
+            .map { genre: GenreEntity -> genre.editions }
             .orElse(mutableSetOf())
             .map(EditionEntity::map)
     }

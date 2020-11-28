@@ -5,47 +5,48 @@ import org.springframework.data.domain.Pageable
 import ru.elenacherev.librarymanager.api.dto.Edition
 import ru.elenacherev.librarymanager.api.dto.Genre
 import ru.elenacherev.librarymanager.api.dto.Lang
+import java.util.*
 
 interface DictionaryApi {
     fun getGenre(
-        genreId:  Long
+        genreId: UUID
     ): Genre?
 
     fun searchGenres(): List<Genre>
 
     fun searchEditionsByGenreId(
-        genreId:  Long,
+        genreId: UUID,
         pageable: Pageable
     ): Page<Edition>
 
     fun getLang(
-        langId:  Long
+        langId: UUID
     ): Lang?
 
     fun searchLangs(): List<Lang>
 
     fun searchEditionsByLangId(
-        langId:  Long,
+        langId: UUID,
         pageable: Pageable
     ): Page<Edition>
 
     fun searchEditionsByPublLangId(
-        publLangId:  Long,
+        publLangId: UUID,
         pageable: Pageable
     ): Page<Edition>
 
     fun updateEditionsByGenreId(
-        genreId:  Long,
-        editionIds:  List<Long>
+        genreId: UUID,
+        editionIds: List<UUID>
     ): List<Edition>
 
     fun updateEditionsByLangId(
-        langId:  Long,
-        editionIds:  List<Long>
+        langId: UUID,
+        editionIds: List<UUID>
     ): List<Edition>
 
     fun updateEditionsByPubllangId(
-        publLangId:  Long,
-        editionIds:  List<Long>
+        publLangId: UUID,
+        editionIds: List<UUID>
     ): List<Edition>
 }

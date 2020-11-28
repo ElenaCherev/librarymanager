@@ -3,12 +3,13 @@ package ru.elenacherev.librarymanager.api
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import ru.elenacherev.librarymanager.api.dto.Librarian
+import java.util.*
 import javax.validation.Valid
-import javax.validation.constraints.NotNull
 
 interface LibrarianApi {
+
     fun getLibrarian(
-        librarianId:  Long
+        librarianId: UUID
     ): Librarian?
 
     fun searchLibrarians(
@@ -20,7 +21,7 @@ interface LibrarianApi {
     ): Librarian
 
     fun saveLibrarian(
-        librarianId:  Long,
+        librarianId: UUID,
         librarian: @Valid Librarian
     ): Librarian
 }

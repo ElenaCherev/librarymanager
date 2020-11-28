@@ -1,10 +1,11 @@
 package ru.elenacherev.librarymanager.domain.entity
 
+import org.hibernate.annotations.ColumnDefault
+import java.util.*
 import javax.persistence.CascadeType
 import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
 import javax.persistence.Id
 import javax.persistence.JoinColumn
 import javax.persistence.ManyToOne
@@ -15,17 +16,18 @@ import javax.validation.constraints.NotNull
 
 @Entity
 @Table(name = "BOOKS")
-class BookEntity (
+data class BookEntity(
+
+    @Column(name = "BOOK_ID", nullable = false, updatable = false)
+    @GeneratedValue
     @Id
-    @Column(name = "BOOK_ID")
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //уникальный ID, генерируется сам в БД
     @get:NotNull
-    var bookId:  Long? = null,
+    var bookId: UUID? = null,
 
     //версия, инкрементится при редактировании записи
+    @Column(name = "VERSION", nullable = false)
     @Version
-    @Column(name = "VERSION")
-    var version:Int  = 0,
+    var version: Int = 0,
 
     @Column(name = "IS_RESERVED")
     var isReserved: Boolean = false,

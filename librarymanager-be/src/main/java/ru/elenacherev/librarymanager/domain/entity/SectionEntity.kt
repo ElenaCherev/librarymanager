@@ -1,10 +1,11 @@
 package ru.elenacherev.librarymanager.domain.entity
 
+import org.hibernate.annotations.ColumnDefault
+import java.util.*
 import javax.persistence.CascadeType
 import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
 import javax.persistence.Id
 import javax.persistence.JoinColumn
 import javax.persistence.ManyToOne
@@ -17,22 +18,23 @@ import javax.validation.constraints.Size
 
 @Entity
 @Table(name = "SECTIONS")
-class SectionEntity (
+data class SectionEntity(
+
+    @Column(name = "SECTION_ID", nullable = false, updatable = false)
+    @GeneratedValue
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //уникальный ID, генерируется сам в БД
-    @Column(name = "SECTION_ID")
-    @get: NotNull
-    var sectionId:  Long? = null,
+    @get:NotNull
+    var sectionId: UUID? = null,
 
     //версия, инкрементится при редактировании записи
     @Version
-    @Column(name = "VERSION")
-    var version: Int  = 0,
+    @Column(name = "VERSION", nullable = false)
+    var version: Int = 0,
 
     @Column(name = "TITLE")
-    @NotEmpty(message = "{validation.title.notempty.message}")
-    @Size(min = 3, max = 60, message = "{validation.title.size.message}")
-    var title:   String,
+    @NotEmpty
+    @Size(min = 3, max = 60)
+    var title: String,
 
     @ManyToOne
     @JoinColumn(name = "PARENT_SECTION_ID")

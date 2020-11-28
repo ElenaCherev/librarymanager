@@ -4,11 +4,13 @@ import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import ru.elenacherev.librarymanager.api.dto.Edition
 import ru.elenacherev.librarymanager.api.dto.PublishingHouse
+import java.util.*
 import javax.validation.Valid
 
 interface PublishingHouseApi {
+
     fun getPublishingHouse(
-        publishingHouseId:  Long
+        publishingHouseId: UUID
     ): PublishingHouse?
 
     fun searchPublishingHouses(
@@ -20,18 +22,17 @@ interface PublishingHouseApi {
     ): PublishingHouse
 
     fun savePublishingHouse(
-        publishingHouseId:  Long,
+        publishingHouseId: UUID,
         publishingHouse: @Valid PublishingHouse
     ): PublishingHouse
 
     fun searchEditions(
-        publishingHouseId:  Long,
+        publishingHouseId: UUID,
         pageable: Pageable
     ): Page<Edition>
 
     fun updateEditionsByPublishingHouseId(
-        publishingHouseId:  Long,
-        editionIds:  List<Long>
+        publishingHouseId: UUID,
+        editionIds: List<UUID>
     ): List<Edition>
-
 }

@@ -1,7 +1,6 @@
 package ru.elenacherev.librarymanager.controller
 
 import org.springframework.data.domain.Pageable
-import org.springframework.http.MediaType
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
@@ -12,9 +11,10 @@ import org.springframework.web.bind.annotation.RestController
 import ru.elenacherev.librarymanager.api.BookUsingApi
 import ru.elenacherev.librarymanager.api.dto.BookUsing
 import ru.elenacherev.librarymanager.services.BookUsingService
+import java.util.*
 import javax.validation.Valid
 
-@RequestMapping(value = ["librarymanager/bookUsings"], produces = [MediaType.APPLICATION_JSON_VALUE])
+@RequestMapping("/bookUsings")
 @RestController
 class BookUsingController(
     val bookUsingService: BookUsingService
@@ -22,7 +22,7 @@ class BookUsingController(
 
     @GetMapping("/{bookusingid}")
     override fun getBookUsing(
-        @PathVariable("bookusingid") bookusingid: Long
+        @PathVariable("bookusingid") bookusingid: UUID
     ) = bookUsingService.findBookUsingById(bookusingid)
 
     @PostMapping("/search")
@@ -37,7 +37,7 @@ class BookUsingController(
 
     @PutMapping("/{bookusingid}")
     override fun saveBookUsing(
-        @PathVariable("bookusingid") bookUsingId: Long,
+        @PathVariable("bookusingid") bookUsingId: UUID,
         @RequestBody bookUsing: @Valid BookUsing
     ) = bookUsingService.save(bookUsingId, bookUsing)
 }

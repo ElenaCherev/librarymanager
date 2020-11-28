@@ -20,24 +20,24 @@ fun EditionEntity.map() = Edition(
     age = age,
     info = info,
     langString = lang.title,
-    langId = lang.langId ?: 0,
+    langId = lang.langId!!,
     publLangString = publLang.title,
-    publLangId = publLang.langId ?: 0,
-    publishingHouseId = publishingHouse.publishingHouseId ?: 0,
+    publLangId = publLang.langId!!,
+    publishingHouseId = publishingHouse.publishingHouseId!!,
     publishingHouseString = publishingHouse.title,
-    genreId = genre.genreId ?: 0,
+    genreId = genre.genreId!!,
     genreString = genre.title,
-    sectionId = section.sectionId ?: 0,
+    sectionId = section.sectionId!!,
     sectionTitle = section.title,
-    authorFIOs = authors.map(AuthorEntity::fio),
-    authorIds = authors.map(AuthorEntity::authorId)
+    authorFIOs = authors.mapNotNull(AuthorEntity::fio),
+    authorIds = authors.mapNotNull(AuthorEntity::authorId)
 )
 
 fun Edition.map(
-    langEntity: LangEntity ,
-    publLangEntity: LangEntity ,
+    langEntity: LangEntity,
+    publLangEntity: LangEntity,
     publishingHouseEntity: PublishingHouseEntity,
-    genreEntity: GenreEntity ,
+    genreEntity: GenreEntity,
     sectionEntity: SectionEntity
 ) = EditionEntity(
     title = title,
@@ -58,10 +58,10 @@ fun Edition.map(
 
 fun Edition.map(
     entity: EditionEntity,
-    langEntity: LangEntity ,
-    publLangEntity: LangEntity ,
+    langEntity: LangEntity,
+    publLangEntity: LangEntity,
     publishingHouseEntity: PublishingHouseEntity,
-    genreEntity: GenreEntity ,
+    genreEntity: GenreEntity,
     sectionEntity: SectionEntity
 ) = entity.also {
     it.title = title

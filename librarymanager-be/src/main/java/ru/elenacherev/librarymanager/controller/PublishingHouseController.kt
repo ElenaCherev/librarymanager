@@ -1,7 +1,6 @@
 package ru.elenacherev.librarymanager.controller
 
 import org.springframework.data.domain.Pageable
-import org.springframework.http.MediaType
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
@@ -13,8 +12,9 @@ import org.springframework.web.bind.annotation.RestController
 import ru.elenacherev.librarymanager.api.PublishingHouseApi
 import ru.elenacherev.librarymanager.api.dto.PublishingHouse
 import ru.elenacherev.librarymanager.services.PublishingHouseService
+import java.util.*
 
-@RequestMapping(value = ["librarymanager/publishinghouse"], produces = [MediaType.APPLICATION_JSON_VALUE])
+@RequestMapping("/publishinghouse")
 @RestController
 class PublishingHouseController(
     val publishingHouseService: PublishingHouseService
@@ -22,7 +22,7 @@ class PublishingHouseController(
 
     @GetMapping("/{publishinghouseid}")
     override fun getPublishingHouse(
-        @PathVariable("publishinghouseid") publishingHouseId: Long
+        @PathVariable("publishinghouseid") publishingHouseId: UUID
     ): PublishingHouse {
         return publishingHouseService.findPublishingHouseById(publishingHouseId)
     }
@@ -39,19 +39,19 @@ class PublishingHouseController(
 
     @PutMapping("/{publishinghouseid}")
     override fun savePublishingHouse(
-        @PathVariable("publishinghouseid") publishingHouseId: Long,
+        @PathVariable("publishinghouseid") publishingHouseId: UUID,
         @RequestBody publishingHouse: PublishingHouse
     ) = publishingHouseService.save(publishingHouseId, publishingHouse)
 
     @PostMapping("/{publishinghouseid}/editions/search")
     override fun searchEditions(
-        @PathVariable("publishinghouseid") publishingHouseId: Long,
+        @PathVariable("publishinghouseid") publishingHouseId: UUID,
         pageable: Pageable
     ) = publishingHouseService.findEditionsByPublishingHouseId(publishingHouseId, pageable)
 
     @PutMapping("/{publishinghouseid}/editions/")
     override fun updateEditionsByPublishingHouseId(
-        @PathVariable("publishinghouseid") publishingHouseId: Long,
-        @RequestParam("list") editionIds: List<Long>
+        @PathVariable("publishinghouseid") publishingHouseId: UUID,
+        @RequestParam("list") editionIds: List<UUID>
     ) = publishingHouseService.updateEditionsByPublishingHouseId(publishingHouseId, editionIds)
 }

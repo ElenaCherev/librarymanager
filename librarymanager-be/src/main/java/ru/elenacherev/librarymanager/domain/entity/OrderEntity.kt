@@ -1,5 +1,6 @@
 package ru.elenacherev.librarymanager.domain.entity
 
+import org.hibernate.annotations.ColumnDefault
 import ru.elenacherev.librarymanager.api.enum.OrderState
 import java.util.*
 import javax.persistence.Column
@@ -7,7 +8,6 @@ import javax.persistence.Entity
 import javax.persistence.EnumType
 import javax.persistence.Enumerated
 import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
 import javax.persistence.Id
 import javax.persistence.JoinColumn
 import javax.persistence.ManyToOne
@@ -19,17 +19,18 @@ import javax.validation.constraints.NotNull
 
 @Entity
 @Table(name = "ORDERS")
-class OrderEntity (
+data class OrderEntity(
+
+    @Column(name = "ORDER_ID", nullable = false, updatable = false)
+    @GeneratedValue
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //уникальный ID, генерируется сам в БД
-    @Column(name = "ORDER_ID")
-    @get: NotNull
-    var orderId: Long? = null,
+    @get:NotNull
+    var orderId: UUID? = null,
 
     //версия, инкрементится при редактировании записи
     @Version
-    @Column(name = "VERSION")
-    var version: Int  = 0,
+    @Column(name = "VERSION", nullable = false)
+    var version: Int = 0,
 
     //дата выполнения заказа (когда его выдали)
     @Temporal(TemporalType.DATE)
@@ -39,7 +40,7 @@ class OrderEntity (
     //дата создания заказа
     @Temporal(TemporalType.DATE)
     @Column(name = "ORDER_DATE")
-    @NotNull(message = "{validation.orderDate.NotEmpty.message}")
+    @NotNull
     var orderDate: Date,
 
     // состояние заказа

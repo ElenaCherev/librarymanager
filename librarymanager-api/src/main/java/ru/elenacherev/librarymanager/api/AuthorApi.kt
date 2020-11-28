@@ -4,11 +4,12 @@ import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import ru.elenacherev.librarymanager.api.dto.Author
 import ru.elenacherev.librarymanager.api.dto.Edition
+import java.util.*
 import javax.validation.Valid
 
 interface AuthorApi {
     fun getAuthor(
-        authorId: Long
+        authorId: UUID
     ): Author?
 
     fun createAuthor(
@@ -16,7 +17,7 @@ interface AuthorApi {
     ): Author
 
     fun saveAuthor(
-        authorId: Long,
+        authorId: UUID,
         author: @Valid Author
     ): Author
 
@@ -25,12 +26,12 @@ interface AuthorApi {
     ): Page<Author>
 
     fun searchEditions(
-        authorId: Long,
+        authorId: UUID,
         pageable: Pageable
     ): Page<Edition>
 
     fun updateEditionsByAuthorId(
-        authorId: Long,
-        editionIds: List<Long>
+        authorId: UUID,
+        editionIds: List<UUID>
     ): List<Edition>
 }

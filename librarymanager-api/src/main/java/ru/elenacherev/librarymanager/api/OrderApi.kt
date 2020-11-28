@@ -3,11 +3,13 @@ package ru.elenacherev.librarymanager.api
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import ru.elenacherev.librarymanager.api.dto.Order
+import java.util.*
 import javax.validation.Valid
 
 interface OrderApi {
+
     fun getOrder(
-        orderId:  Long
+        orderId: UUID
     ): Order?
 
     fun searchOrders(
@@ -19,7 +21,7 @@ interface OrderApi {
     ): Order
 
     fun saveOrder(
-        orderId:  Long,
+        orderId: UUID,
         order: @Valid Order
     ): Order
 }
