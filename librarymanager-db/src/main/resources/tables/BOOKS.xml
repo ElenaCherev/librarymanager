@@ -3,7 +3,7 @@
     <changeSet author="owle8" id="5e8eb641-d848-417f-b0e4-e79fba5b6c6f">
         <createTable tableName="BOOKS">
             <column name="BOOK_ID" type="${uuid_type}">
-                <constraints nullable="false" unique="true" />
+                <constraints nullable="false" unique="false" />
             </column>
             <column name="IS_AVAILABLE" type="NUMBER(1, 0)"/>
             <column name="IS_RESERVED" type="NUMBER(1, 0)"/>

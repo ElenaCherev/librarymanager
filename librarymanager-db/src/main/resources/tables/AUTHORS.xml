@@ -3,7 +3,7 @@
     <changeSet author="owle8" id="8fc6b982-cb9e-45d2-a4e1-092d5115511c">
         <createTable tableName="AUTHORS">
             <column name="AUTHOR_ID" type="${uuid_type}">
-                <constraints nullable="false" unique="true" />
+                <constraints nullable="false" unique="false" />
             </column>
             <column name="BIRTHDATE" type="date"/>
             <column name="DEATHDATE" type="date"/>

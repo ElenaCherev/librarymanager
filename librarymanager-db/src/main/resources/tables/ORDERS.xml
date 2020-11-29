@@ -3,7 +3,7 @@
     <changeSet author="owle8" id="3b7a0e2b-d43b-4f7e-b424-023eafb5aeb5">
         <createTable tableName="ORDERS">
             <column name="ORDER_ID" type="${uuid_type}">
-                <constraints nullable="false" unique="true" />
+                <constraints nullable="false" unique="false" />
             </column>
             <column name="COMPLETE_DATE" type="date"/>
             <column name="ORDER_DATE" type="date"/>

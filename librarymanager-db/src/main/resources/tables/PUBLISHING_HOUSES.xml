@@ -3,7 +3,7 @@
     <changeSet author="owle8" id="11b077bc-105f-4f1b-8fa8-82478c1747e2">
         <createTable tableName="PUBLISHING_HOUSES">
             <column name="PUBLISHING_HOUSE_ID" type="${uuid_type}">
-                <constraints nullable="false" unique="true" />
+                <constraints nullable="false" unique="false" />
             </column>
             <column name="LOGO" type="BLOB"/>
             <column name="TITLE" type="VARCHAR2(255)"/>

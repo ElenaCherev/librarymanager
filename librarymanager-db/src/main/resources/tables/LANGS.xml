@@ -3,7 +3,7 @@
     <changeSet author="owle8" id="5e1f1eb9-b4e6-4051-8933-c8f5f44d61da">
         <createTable tableName="LANGS">
             <column name="LANG_ID" type="${uuid_type}">
-                <constraints nullable="false" unique="true" />
+                <constraints nullable="false" unique="false" />
             </column>
             <column name="TITLE" type="VARCHAR2(255)"/>
             <column name="VERSION" type="NUMBER(10, 0)">
